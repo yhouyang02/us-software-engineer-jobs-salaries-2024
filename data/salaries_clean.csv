@@ -1,0 +1,738 @@
+company,company_score,primary_title,secondary_title,experience_level,location,min_salary,max_salary,avg_salary,source
+ViewSoft,4.8,Software Engineer,n/a,Intermediate,"Manassas, VA",68000,94000,81000,Glassdoor
+Workiva,4.3,Software Engineer,n/a,Intermediate,Remote,61000,104000,82500,Employer
+"Garmin International, Inc.",3.9,Software Engineer,C#,Intermediate,"Cary, NC",95000,118000,106500,Glassdoor
+Snapchat,3.5,Software Engineer,Fullstack,Entry,"Los Angeles, CA",97000,145000,121000,Employer
+Vitesco Technologies Group AG,3.1,Software Engineer,n/a,Intermediate,"Seguin, TX",85000,108000,96500,Glassdoor
+Spotify,3.9,Software Engineer,Backend,Intermediate,"New York, NY",123000,175000,149000,Employer
+Infor,4,Software Engineer,n/a,Entry,"Alpharetta, GA",77000,94000,85500,Glassdoor
+Amerisoft Corporation,5,Software Engineer,n/a,Intermediate,"Farmington Hills, MI",71000,100000,85500,Glassdoor
+WHOOP,3.3,Software Engineer,Backend,Intermediate,"Boston, MA",94000,148000,121000,Glassdoor
+PFF,4.2,Software Engineer,n/a,Senior,Remote,147000,189000,168000,Employer
+Salesforce,4.1,Software Engineer,n/a,Intermediate,"San Francisco, CA",90000,113000,101500,Employer
+"HealthMine Services, Inc.",3.8,Software Engineer,n/a,Intermediate,Remote,54000,79000,66500,Glassdoor
+Honeywell,4.1,Software Engineer,n/a,Entry,"Aguadilla, PR",91000,135000,113000,Glassdoor
+Legrand AV,3.7,Software Engineer,n/a,Intermediate,Unknown,70000,135000,102500,Employer
+Athenahealth,4,Software Engineer,n/a,Intermediate,"Boston, MA",192000,288000,240000,Employer
+Amex,4.1,Software Engineer,Java,Intermediate,"Plantation, FL",100000,125000,112500,Employer
+SOFT LABS NA,5,Software Engineer,n/a,Senior,"Northborough, MA",85000,127000,106000,Glassdoor
+Snapchat,3.5,Software Engineer,n/a,Intermediate,"Los Angeles, CA",69000,109000,89000,Glassdoor
+Hertz,3.2,Software Engineer,n/a,Intermediate,"Seattle, WA",124000,234000,179000,Employer
+Megaport,3.4,Software Engineer,Frontend,Intermediate,Unknown,84000,133000,108500,Glassdoor
+"7-Eleven, Inc.",3.4,Software Engineer,n/a,Intermediate,"Irving, TX",85000,150000,117500,Employer
+"Summit Technologies, Inc.",4.2,Software Engineer,n/a,Intermediate,"Springfield, MA",48000,89000,68500,Glassdoor
+Adobe,2.9,Software Engineer,n/a,Intermediate,"San Jose, CA",66000,97000,81500,Glassdoor
+The MITRE Corporation,4,Software Engineer,n/a,Entry,"Bedford, MA",108000,199000,153500,Employer
+Boston Children's Hospital,4.1,Software Engineer,n/a,Intermediate,"Boston, MA",102000,173000,137500,Employer
+Amex,3.2,Software Engineer,"JavaScript, React",Intermediate,"Sunrise, FL",124000,142000,133000,Employer
+Ahold Delhaize USA,4,Software Engineer,n/a,Intermediate,"Carlisle, PA",94000,133000,113500,Glassdoor
+Artera Technologies,4.2,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",70000,116000,93000,Glassdoor
+Adobe,4.3,Software Engineer,n/a,Intermediate,"Lehi, UT",142000,178000,160000,Employer
+Workiva,3.5,Software Engineer,n/a,Senior,Remote,87000,135000,111000,Employer
+Samsung Electronics,3.4,Software Engineer,n/a,Intermediate,"Mountain View, CA",77000,182000,129500,Employer
+IPG Photonics,3.7,Software Engineer,n/a,Intermediate,"Oxford, MA",101000,144000,122500,Glassdoor
+Crafty,3.3,Software Engineer,n/a,Intermediate,"Chicago, IL",101000,168000,134500,Employer
+"Crunchyroll, LLC",4.2,Software Engineer,n/a,Senior,"San Francisco, CA",74000,118000,96000,Glassdoor
+LEGO,3.9,Software Engineer,Backend,Intermediate,"Irvine, CA",100000,200000,150000,Employer
+Principal Financial Group,4.1,Software Engineer,n/a,Intermediate,"Des Moines, IA",51000,78000,64500,Glassdoor
+INTEL,3.4,Security Engineer,n/a,Intermediate,"Phoenix, AZ",71000,237000,154000,Employer
+Hasbro,4.4,Software Engineer,Unreal,Intermediate,"Renton, WA",87000,116000,101500,Glassdoor
+Software Engineering Institute,4.2,Software Engineer,n/a,Intermediate,"Pittsburgh, PA",116000,184000,150000,Employer
+University of Dayton,4.4,Software Engineer,n/a,Entry,"Dayton, OH",75000,103000,89000,Glassdoor
+MIT,3.7,Software Engineer,n/a,Intermediate,"Cambridge, MA",155000,221000,188000,Employer
+Amazon.com Services LLC,5,Software Engineer,n/a,Intermediate,"Seattle, WA",112000,165000,138500,Employer
+DaqScribe Solutions,3.9,Software Engineer,n/a,Entry,Unknown,73000,109000,91000,Glassdoor
+West Virginia University,4.5,Software Engineer,n/a,Intermediate,"Morgantown, WV",120000,150000,135000,Employer
+McKesson,3.9,Software Engineer,n/a,Intermediate,Unknown,88000,124000,106000,Glassdoor
+Noblis,2,Software Engineer,n/a,Intermediate,"Chantilly, VA",77000,87000,82000,Employer
+eimagine,3.5,Software Engineer,n/a,Intermediate,Unknown,65000,90000,77500,Employer
+CSL SOFTWARE SOLUTIONS,4.1,Software Engineer,n/a,Intermediate,"Burlington, VT",74000,101000,87500,Glassdoor
+Chewy,3.8,Software Engineer,n/a,Intermediate,"Bellevue, WA",74000,111000,92500,Glassdoor
+ERPA,4.3,QA/Test Engineer,n/a,Intermediate,"Dublin, OH",147000,186000,166500,Employer
+Afterpay,4.1,Software Engineer,n/a,Intermediate,"Seattle, WA",129000,174000,151500,Glassdoor
+Harvard University,5,Software Engineer,n/a,Intermediate,"Boston, MA",89000,125000,107000,Glassdoor
+Brooks Automation,3,Software Engineer,n/a,Intermediate,"Fremont, CA",165000,190000,177500,Employer
+DLRdmv,3.5,Software Engineer,n/a,Intermediate,"Dallas, TX",110000,160000,135000,Employer
+Movius Interactive Corporation,3.3,Software Engineer,Frontend,Intermediate,"Fremont, CA",61000,110000,85500,Glassdoor
+State Street,3.7,Software Engineer,n/a,Intermediate,"Burlington, MA",94000,154000,124000,Employer
+"Sonalysts, Inc.",3.8,Software Engineer,n/a,Entry,"Waterford, CT",75000,115000,95000,Employer
+"Preco, LLC",3.6,Software Engineer,n/a,Intermediate,"Somerset, WI",62000,106000,84000,Glassdoor
+HealthStream,3.6,Software Engineer,n/a,Intermediate,"Nashville, TN",72000,118000,95000,Glassdoor
+Aptiv plc,4,Software Engineer,n/a,Intermediate,"Troy, MI",75000,118000,96500,Glassdoor
+Zipongo,3.8,Software Engineer,n/a,Intermediate,Remote,98000,137000,117500,Glassdoor
+Snowflake,3.7,Software Engineer,n/a,Intermediate,"Bellevue, WA",113000,150000,131500,Employer
+Staffed4U,4.2,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",110000,140000,125000,Employer
+Honeycomb.io,4.2,Software Engineer,SRE,Intermediate,Unknown,141000,179000,160000,Employer
+Topaz Labs,3.8,DevOps Engineer,n/a,Intermediate,"Dallas, TX",77000,136000,106500,Glassdoor
+Brown and Caldwell,4.3,Software Engineer,n/a,Intermediate,"Atlanta, GA",79000,126000,102500,Glassdoor
+Vertafore,3.7,Software Engineer,n/a,Intermediate,"Melville, NY",87000,119000,103000,Glassdoor
+"Aerodyne Industries, LLC",3.1,Software Engineer,n/a,Intermediate,"Kennedy Sp Ct, FL",72000,94000,83000,Glassdoor
+KAIROS Inc,3.5,Software Engineer,n/a,Intermediate,"Dahlgren, VA",6000,7000,6500,Employer
+Topaz Labs,3.7,Software Engineer,n/a,Senior,"Dallas, TX",68000,106000,87000,Glassdoor
+S3,3.8,Software Engineer,n/a,Intermediate,"Stennis Space Center, MS",56000,88000,72000,Glassdoor
+"J. Paul Getty Trust, The",4.1,Software Engineer,n/a,Senior,"Los Angeles, CA",72000,113000,92500,Glassdoor
+Topaz Labs,3.4,Software Engineer,n/a,Intermediate,"Dallas, TX",90000,119000,104500,Glassdoor
+Rover.com,3.2,Software Engineer,n/a,Senior,"Seattle, WA",101000,135000,118000,Glassdoor
+University of Oregon,3.8,Software Engineer,n/a,Intermediate,"Eugene, OR",155000,180000,167500,Employer
+dï¿½ï¿½ï¿½ï¿½ï¿½ï¿½TER,4,Software Engineer,n/a,Intermediate,Unknown,85000,114000,99500,Glassdoor
+AHU Technologies,4.6,Software Engineer,n/a,Intermediate,"Newark, DE",130000,160000,145000,Employer
+ALSTOM,3.4,Software Engineer,n/a,Intermediate,"Pittsburgh, PA",160000,250000,205000,Employer
+ISPA Technology,3,System Engineer,n/a,Entry,"Washington, DC",120000,150000,135000,Employer
+"Universal Health Services, Inc. - Corporate Office",3.4,Data Engineer,n/a,Entry,"King of Prussia, PA",96000,146000,121000,Glassdoor
+Relias,3.8,Software Engineer,n/a,Entry,"Morrisville, NC",107000,144000,125500,Glassdoor
+Tickrs Clearing,3.1,Software Engineer,n/a,Intermediate,"Irvine, CA",138000,189000,163500,Glassdoor
+CTC Group,4.8,Software Engineer,n/a,Intermediate,"Fort Meade, MD",78000,118000,98000,Glassdoor
+GoTab Inc,3.5,DevOps Engineer,n/a,Entry,"Arlington, VA",113000,139000,126000,Glassdoor
+CSX,3.8,Software Engineer,n/a,Intermediate,"Jacksonville, FL",70000,109000,89500,Glassdoor
+Synergy ECP,4.4,Software Engineer,n/a,Entry,"Fort Meade, MD",73000,117000,95000,Glassdoor
+M&T Bank,5,Software Engineer,n/a,Senior,"Wilmington, DE",62000,107000,84500,Glassdoor
+Cardlytics,5,Software Engineer,n/a,Senior,"Menlo Park, CA",124000,169000,146500,Glassdoor
+"Stefanini, Inc",3.8,Cloud Engineer,AWS,Intermediate,"Richmond, VA",96000,117000,106500,Employer
+Innovative Systems,3.8,Software Engineer,n/a,Intermediate,"Pittsburgh, PA",84000,140000,112000,Glassdoor
+Parabola,3.8,Software Engineer,Fullstack,Intermediate,Unknown,66000,94000,80000,Glassdoor
+Vibrint,3.5,Software Engineer,Python,Entry,Unknown,70000,120000,95000,Employer
+Millennium Management,4.2,Software Engineer,n/a,Intermediate,Unknown,78000,126000,102000,Employer
+Sagitec,3.9,Software Engineer,n/a,Intermediate,"Saint Paul, MN",165000,209000,187000,Employer
+Careerus Soultions,4,DevOps Engineer,n/a,Intermediate,Unknown,90000,125000,107500,Glassdoor
+Innovien Solutions,3.3,Software Engineer,n/a,Senior,"Atlanta, GA",116000,150000,133000,Employer
+Ocean Power Technologies Inc,3.8,Software Engineer,n/a,Intermediate,Unknown,107000,192000,149500,Employer
+Riverside Research Institute,4.8,Software Engineer,n/a,Intermediate,"Fairborn, OH",79000,120000,99500,Glassdoor
+Staffed4U,5,Software Engineer,Java,Intermediate,"Annapolis Junction, MD",94000,153000,123500,Employer
+Uber Freight,5,Software Engineer,n/a,Intermediate,"Chicago, IL",84000,129000,106500,Glassdoor
+Diverse Career Solutions,3.7,Software Engineer,n/a,Intermediate,Unknown,48000,81000,64500,Glassdoor
+Snowflake,4.1,Software Engineer,n/a,Intermediate,"Bellevue, WA",82000,129000,105500,Glassdoor
+Likewize,4,DevOps Engineer,n/a,Entry,"Dallas, TX",61000,104000,82500,Glassdoor
+MassMutual Ascend,4,Software Engineer,n/a,Senior,"Cincinnati, OH",182000,244000,213000,Employer
+Washington DC government,4.7,Software Engineer,React,Intermediate,Remote,96000,116000,106000,Employer
+AnaVation,3.7,Software Engineer,n/a,Intermediate,"Quantico, VA",68000,136000,102000,Employer
+3R Info,3.9,Software Engineer,n/a,Intermediate,"Canton, MI",93000,132000,112500,Glassdoor
+Strategic Mission Elements,3.5,Software Engineer,"JavaScript, TypeScript",Intermediate,"Chantilly, VA",77000,125000,101000,Glassdoor
+"IPSecure, Inc.",3.9,Software Engineer,n/a,Senior,"Patrick AFB, FL",52000,200000,126000,Employer
+RELX,3.2,Software Engineer,n/a,Intermediate,Unknown,81000,118000,99500,Glassdoor
+Solventum,3.6,Software Engineer,Frontend,Intermediate,"Maplewood, MN",128000,192000,160000,Employer
+Focus Technology Solutions Inc,3,Cloud Engineer,n/a,Intermediate,"Boston, MA",150000,225000,187500,Employer
+"Adams, Inc.",3.2,Software Engineer,n/a,Intermediate,Unknown,85000,120000,102500,Employer
+CPS Insurance Services,3.4,Software Engineer,n/a,Entry,"Phoenix, AZ",192000,245000,218500,Employer
+Cephas,3.1,Software Engineer,n/a,Intermediate,"Melbourne, FL",114000,182000,148000,Employer
+Chubb,3.4,Software Engineer,Java,Intermediate,"Whitehouse Station, NJ",102000,134000,118000,Glassdoor
+Uber Freight,3.6,Software Engineer,Mobile,Senior,"San Francisco, CA",101000,160000,130500,Employer
+Consumers Energy,4.8,Software Engineer,n/a,Intermediate,"Jackson, MI",90000,124000,107000,Glassdoor
+U.S. Bank National Association,3.4,Software Engineer,n/a,Senior,"Hopkins, MN",88000,128000,108000,Glassdoor
+MedImpact Healthcare Systems,3.5,Software Engineer,n/a,Senior,"San Diego, CA",83000,131000,107000,Glassdoor
+IMC Financial Markets,3.1,Software Engineer,n/a,Entry,"Chicago, IL",70000,90000,80000,Employer
+Truveta,4,Software Engineer,n/a,Intermediate,"Seattle, WA",164000,182000,173000,Employer
+"Signature Science, LLC",4.2,Software Engineer,n/a,Intermediate,"Egg Harbor Township, NJ",73000,92000,82500,Employer
+JYG Innovations,4.1,Software Engineer,n/a,Intermediate,"Frederick, MD",108000,200000,154000,Employer
+Vensit,3.5,Software Engineer,n/a,Intermediate,"Sayreville, NJ",123000,160000,141500,Glassdoor
+Independent Software,3.9,Software Engineer,n/a,Intermediate,Unknown,112000,141000,126500,Glassdoor
+"Visionist, Inc.",3.5,Software Engineer,n/a,Entry,"Fort Meade, MD",101000,160000,130500,Employer
+NCR,3.1,Software Engineer,n/a,Intermediate,Unknown,69000,143000,106000,Employer
+Clearwater Analytics,3.6,Software Engineer,n/a,Senior,"Seattle, WA",120000,140000,130000,Employer
+"Technical Intelligence Solutions, LLC",3,Software Engineer,n/a,Intermediate,"Crystal City, VA",68000,120000,94000,Glassdoor
+CVS Health,3.8,Software Engineer,n/a,Entry,"Woonsocket, RI",104000,136000,120000,Glassdoor
+"Delta Defense, LLC",3.9,Data Engineer,n/a,Entry,"West Bend, WI",82000,115000,98500,Glassdoor
+Koalafi,3.2,Software Engineer,Backend,Intermediate,"Richmond, VA",161000,239000,200000,Employer
+INTEL,4.1,Research Engineer,n/a,Intermediate,Unknown,107000,150000,128500,Employer
+No.Inc,5,Software Engineer,n/a,Intermediate,"Baltimore, MD",91000,122000,106500,Glassdoor
+f5,3.5,Software Engineer,n/a,Senior,"Seattle, WA",103000,144000,123500,Glassdoor
+Arcadia Science,3.3,Software Engineer,n/a,Intermediate,"Berkeley, CA",80000,100000,90000,Employer
+Artint Knowledge Tech,3.5,Firmware Engineer,n/a,Entry,Remote,100000,128000,114000,Employer
+Castellum Inc,4.1,Software Engineer,n/a,Intermediate,"Patuxent River, MD",90000,180000,135000,Employer
+Instacart,3.7,Software Engineer,n/a,Senior,Remote,110000,130000,120000,Employer
+WALGREENS,4.4,Software Engineer,n/a,Intermediate,"Deerfield, IL",76000,121000,98500,Glassdoor
+Duquesne Light,3.6,Software Engineer,n/a,Senior,"Pittsburgh, PA",88000,111000,99500,Employer
+Super Micro Computer,3,Software Engineer,n/a,Intermediate,"San Jose, CA",73000,116000,94500,Glassdoor
+UCare,4.4,Software Engineer,Azure,Senior,"Minneapolis, MN",182000,273000,227500,Employer
+CyberCore Technologies,2.6,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",85000,113000,99000,Glassdoor
+CoinFlip,3.5,DevOps Engineer,AWS,Intermediate,"Chicago, IL",65000,95000,80000,Employer
+BI Labs,4.1,Software Engineer,n/a,Intermediate,"Plainsboro, NJ",109000,168000,138500,Employer
+Sahbi Systems,4.1,Software Engineer,n/a,Intermediate,Unknown,80000,99000,89500,Glassdoor
+Cultura Technologies Inc,4.4,Software Engineer,n/a,Senior,Remote,104000,153000,128500,Glassdoor
+Excelacom,4,DevOps Engineer,n/a,Intermediate,"Denver, CO",78000,129000,103500,Glassdoor
+Cityblock Health,4.1,Software Engineer,n/a,Senior,Unknown,82000,118000,100000,Glassdoor
+Rocket Software,4.3,ML/AI Engineer,n/a,Intermediate,Unknown,138000,294000,216000,Employer
+Huntington Ingalls Industries Inc.,3.3,Software Engineer,n/a,Intermediate,"Columbia, MD",136000,187000,161500,Glassdoor
+Intuitive Machines LLC,3.8,Software Engineer,n/a,Intermediate,"Houston, TX",295000,440000,367500,Employer
+Equifax,4.4,Software Engineer,n/a,Intermediate,"Alpharetta, GA",95000,146000,120500,Glassdoor
+Super Micro Computer,4,Software Engineer,n/a,Intermediate,"San Jose, CA",117000,161000,139000,Employer
+Blockit Now Inc,3.8,Software Engineer,n/a,Intermediate,"McKinney, TX",175000,250000,212500,Employer
+TENICA and Associates LLC,4.1,System Engineer,n/a,Intermediate,"Las Cruces, NM",55000,140000,97500,Employer
+Arch Capital Group Ltd.,3.9,Software Engineer,n/a,Intermediate,"Greensboro, NC",126000,234000,180000,Employer
+Lynker Corporation,3.9,Software Engineer,n/a,Intermediate,"Stennis Space Center, MS",78000,129000,103500,Employer
+YouTube,3.2,Software Engineer,Fullstack,Senior,"New York, NY",75000,102000,88500,Glassdoor
+Perforce Software,4.2,Software Engineer,n/a,Senior,Remote,115000,150000,132500,Employer
+World Vision USA,3.8,Software Engineer,n/a,Senior,Unknown,115000,160000,137500,Employer
+Featurespace,5,Software Engineer,n/a,Intermediate,"Atlanta, GA",82000,92000,87000,Employer
+Bigbear.ai,3.7,Software Engineer,n/a,Intermediate,"Columbia, MD",120000,130000,125000,Employer
+"Benistar Administrative Services, Inc.",3.9,Cloud Engineer,AWS,Intermediate,"Avon, CT",86000,131000,108500,Glassdoor
+State of Colorado Job Opportunities,4.7,Cloud Engineer,n/a,Intermediate,Unknown,92000,133000,112500,Glassdoor
+Intellisource Colorado LLC,3.1,Software Engineer,n/a,Senior,"Bentonville, AR",112000,165000,138500,Glassdoor
+"First Command Financial Services, Inc.",4.2,Software Engineer,n/a,Intermediate,Unknown,104000,145600,124800,Employer
+NBCUniversal,4.4,Software Engineer,n/a,Intermediate,"Englewood Cliffs, NJ",145000,162000,153500,Employer
+Artera Technologies,4.4,Software Engineer,n/a,Intermediate,Unknown,147000,189000,168000,Employer
+Thompson Gray Inc.,4.7,Software Engineer,n/a,Intermediate,Unknown,72000,159000,115500,Employer
+Origence,4,Software Engineer,n/a,Intermediate,Remote,79000,111000,95000,Glassdoor
+Medius,3.6,Software Engineer,n/a,Intermediate,"Jacksonville, FL",115000,161000,138000,Employer
+f5,3.8,Software Engineer,n/a,Senior,"Seattle, WA",82000,102000,92000,Employer
+CNH Industrial,3.8,Software Engineer,n/a,Intermediate,Remote,86000,136000,111000,Glassdoor
+Fusion Plus Solutions Inc.,3.7,Software Engineer,n/a,Intermediate,"Edison, NJ",170000,200000,185000,Employer
+University of Florida,3.2,Software Engineer,n/a,Intermediate,Unknown,90000,116000,103000,Glassdoor
+Northwestern Mutual,3.8,Software Engineer,n/a,Intermediate,"Franklin, WI",114000,152000,133000,Glassdoor
+Vibrint,3.8,Software Engineer,n/a,Entry,"Annapolis Junction, MD",80000,120000,100000,Employer
+Hubbell Incorporated,3.4,Software Engineer,n/a,Senior,"Avon, CT",95000,126000,110500,Glassdoor
+Valkyrie Enterprises,3.8,Software Engineer,n/a,Entry,"Huntsville, AL",138000,178000,158000,Employer
+Two Six Technologies,4.5,Software Engineer,n/a,Intermediate,"Herndon, VA",61000,147000,104000,Employer
+Decision Six,3.6,Software Engineer,n/a,Intermediate,Unknown,124000,211000,167500,Employer
+Microsoft,4.4,Software Engineer,n/a,Intermediate,"Redmond, WA",90000,117000,103500,Glassdoor
+Ateliere Creative Technologies,4.1,DevOps Engineer,n/a,Senior,"Los Angeles, CA",98000,209000,153500,Employer
+OpenAI,3.1,Firmware Engineer,n/a,Intermediate,"San Francisco, CA",78000,121000,99500,Glassdoor
+Two Six Technologies,2.7,Software Engineer,n/a,Intermediate,"Tysons Corner, VA",100000,165000,132500,Employer
+Sasken,4.1,Software Engineer,n/a,Intermediate,Unknown,71000,112000,91500,Glassdoor
+RealmOne,3.8,Software Engineer,n/a,Intermediate,Unknown,95000,152000,123500,Employer
+The Wolf Works LLC,4.4,Software Engineer,Node,Intermediate,"Austin, TX",86000,105000,95500,Glassdoor
+Millennium Management,3.8,Software Engineer,C#,Intermediate,"New York, NY",135000,216000,175500,Employer
+"Aflac, Incorporated",4,Software Engineer,n/a,Senior,Remote,93000,112000,102500,Employer
+RingCentral,3.9,Software Engineer,n/a,Intermediate,"Belmont, CA",104000,161000,132500,Glassdoor
+Dallas Area Rapid Transit,3.7,Software Engineer,n/a,Intermediate,"Dallas, TX",77000,121000,99000,Glassdoor
+W R Systems,3.5,Software Engineer,n/a,Intermediate,"Dahlgren, VA",95000,134000,114500,Glassdoor
+"CARECRAFT, INC",3.7,Software Engineer,n/a,Intermediate,"Carlsbad, CA",125000,178000,151500,Employer
+SpecialT Tech,3.1,Cloud Engineer,n/a,Intermediate,Remote,76000,108000,92000,Glassdoor
+"Hottinger, Bruel & Kjaer",4.5,Software Engineer,n/a,Intermediate,"Pompano Beach, FL",77000,116000,96500,Glassdoor
+"CPS Solutions, LLC",4.1,DevOps Engineer,n/a,Intermediate,Unknown,82000,106000,94000,Glassdoor
+Northwestern Memorial Healthcare,4.2,Software Engineer,n/a,Intermediate,"Chicago, IL",86000,120000,103000,Glassdoor
+The Swift Group,4.1,Software Engineer,n/a,Intermediate,"Columbia, MD",96000,146000,121000,Employer
+ASUS Computer International,4.9,Software Engineer,n/a,Intermediate,"Hillsboro, OR",96000,137000,116500,Glassdoor
+Persistent Systems,4.6,Software Engineer,n/a,Intermediate,Unknown,141000,239000,190000,Employer
+Cedar Inc,3.3,Software Engineer,n/a,Intermediate,"New York, NY",108000,140000,124000,Employer
+Salesforce,3.1,Software Engineer,n/a,Intermediate,"San Francisco, CA",83200,114400,98800,Employer
+CVS Health,2.4,Software Engineer,".NET, C#",Intermediate,"Scottsdale, AZ",108000,195000,151500,Employer
+Nautilus Hyosung America Inc,3.1,Software Engineer,n/a,Intermediate,"Irving, TX",111000,184000,147500,Employer
+Blue Origin,4.4,Firmware Engineer,n/a,Intermediate,"Seattle, WA",189000,284000,236500,Employer
+West Bend Insurance Company,4.9,Software Engineer,n/a,Intermediate,"West Bend, WI",79000,109000,94000,Glassdoor
+JBT Corporation,4.1,Software Engineer,C#,Intermediate,"Chalfont, PA",94000,129000,111500,Glassdoor
+Cedar Inc,3.1,Software Engineer,n/a,Senior,"New York, NY",56000,83000,69500,Glassdoor
+Allied Business Consulting,3.8,Software Engineer,n/a,Intermediate,"Somerset, NJ",202000,290000,246000,Employer
+"Chick-fil-A, Inc.",2.3,Software Engineer,Backend,Senior,"Atlanta, GA",70000,103000,86500,Glassdoor
+"US AMR-Jones Lang LaSalle Americas, Inc.",3.8,Software Engineer,n/a,Intermediate,"San Francisco, CA",86000,121000,103500,Glassdoor
+Smart IMS,3.8,Software Engineer,n/a,Intermediate,"Austin, TX",74000,107000,90500,Glassdoor
+Clearwater Analytics,4.7,Software Engineer,n/a,Intermediate,"San Jose, CA",81000,113000,97000,Glassdoor
+PayPal,3.9,Software Engineer,Backend,Intermediate,"San Jose, CA",72000,119000,95500,Glassdoor
+WALGREENS,4.6,Software Engineer,n/a,Senior,"Bellevue, WA",90000,125000,107500,Glassdoor
+The Swift Group,3.7,Software Engineer,n/a,Intermediate,"McLean, VA",80000,150000,115000,Employer
+Hewlett Packard,3.5,Software Engineer,n/a,Intermediate,"Spring, TX",72000,144000,108000,Employer
+Microsoft,4,Software Engineer,n/a,Intermediate,"Redmond, WA",70000,95000,82500,Employer
+New River Systems Corporation,4.4,System Engineer,n/a,Intermediate,Remote,100000,140000,120000,Employer
+"Modern Technology Solutions, Inc.",4.6,Software Engineer,n/a,Entry,"Chantilly, VA",124000,234000,179000,Employer
+PQSecure Technologies,3.7,Firmware Engineer,n/a,Intermediate,"Boca Raton, FL",88000,119000,103500,Glassdoor
+ISPA Technology,4.4,Software Engineer,n/a,Senior,"San Diego, CA",123000,198000,160500,Employer
+OnMed,5,Software Engineer,SRE,Intermediate,"Tampa, FL",158000,176000,167000,Employer
+Grote Industries,4.2,Firmware Engineer,n/a,Intermediate,"Madison, IN",160000,180000,170000,Employer
+WALGREENS,3.9,DevOps Engineer,n/a,Intermediate,"Deerfield, IL",87000,119000,103000,Glassdoor
+Cloud Software Group,4.5,Software Engineer,n/a,Intermediate,"Naperville, IL",97000,145000,121000,Employer
+WALGREENS,4.6,Software Engineer,"Fullstack, Java, JavaScript",Senior,"Bellevue, WA",89000,139000,114000,Glassdoor
+NationMind Infoservices Pvt Ltd,3.6,Software Engineer,n/a,Intermediate,Unknown,53000,103000,78000,Employer
+Arrowstreet Capital,3.4,Software Engineer,Fullstack,Intermediate,"Boston, MA",129000,228000,178500,Employer
+Favorited,4.8,Software Engineer,Fullstack,Intermediate,"Santa Monica, CA",150000,250000,200000,Employer
+Strategic Thermal Labs,2.5,Software Engineer,n/a,Intermediate,"Georgetown, TX",116000,163000,139500,Glassdoor
+IdolSoft,3.3,Software Engineer,n/a,Intermediate,"Irving, TX",104000,127000,115500,Glassdoor
+BI Labs,3.1,Software Engineer,n/a,Intermediate,"Plainsboro, NJ",53000,96000,74500,Employer
+Verily,3.5,Software Engineer,Frontend,Intermediate,"San Bruno, CA",60000,90000,75000,Employer
+Colonial Pipeline Company,4.4,Software Engineer,n/a,Intermediate,"Alpharetta, GA",143000,191000,167000,Employer
+Leader Communications Inc,4.2,Software Engineer,n/a,Intermediate,"Hill AFB, UT",142000,162000,152000,Employer
+UCare,3.3,Software Engineer,n/a,Senior,"Minneapolis, MN",89000,129000,109000,Glassdoor
+CliftonLarsonAllen,4.8,DevOps Engineer,n/a,Intermediate,"Minneapolis, MN",94000,156000,125000,Employer
+Two Six Technologies,3.9,Software Engineer,n/a,Entry,Remote,80000,148000,114000,Glassdoor
+BAE Systems,3.9,Software Engineer,n/a,Intermediate,"Herndon, VA",62000,105000,83500,Employer
+Nodal Exchange,3.5,Software Engineer,n/a,Intermediate,"Herndon, VA",81000,164000,122500,Employer
+Gomez & Companies,3.5,Software Engineer,n/a,Intermediate,Unknown,98000,145000,121500,Glassdoor
+"T-Mobile USA, Inc.",3.7,Software Engineer,"API, Fullstack",Intermediate,"Canoga Park, CA",157000,207000,182000,Employer
+M&T Bank,3.5,Software Engineer,n/a,Senior,"Bellevue, WA",133000,143000,138000,Employer
+Pressco Technology,4.5,Software Engineer,"API, Java, Spring",Senior,"Buffalo, NY",79000,159000,119000,Employer
+YouTube,3.8,QA/Test Engineer,n/a,Intermediate,"Solon, OH",132000,190000,161000,Glassdoor
+ISPA Technology,4.2,ML/AI Engineer,n/a,Senior,"New York, NY",90000,143000,116500,Glassdoor
+Scentsy Inc,4,System Engineer,n/a,Intermediate,Unknown,101000,187000,144000,Employer
+STRATASCORP,3.5,Software Engineer,n/a,Intermediate,"Meridian, ID",58000,103000,80500,Glassdoor
+3R Info,3.8,Software Engineer,n/a,Intermediate,"Arlington, VA",125000,200000,162500,Employer
+Gelber Group,5,Software Engineer,n/a,Senior,"Los Altos, CA",110000,143000,126500,Glassdoor
+"PeopleTec, Inc.",3.5,Software Engineer,n/a,Intermediate,"Chicago, IL",166400,176800,171600,Employer
+Flysoft,5,Software Engineer,n/a,Intermediate,Unknown,78000,112000,95000,Glassdoor
+Ingrain Systems Inc.,3.9,Software Engineer,n/a,Intermediate,"Jamesburg, NJ",95000,125000,110000,Glassdoor
+Carrier,4.7,Software Engineer,n/a,Intermediate,"Sherman, TX",92000,158000,125000,Employer
+NCR,4.2,Software Engineer,n/a,Intermediate,"Charlotte, NC",147000,180000,163500,Employer
+AnaVation,3.5,Software Engineer,"Fullstack, Java",Senior,Unknown,75000,102000,88500,Glassdoor
+Soar Technology,3.5,Software Engineer,n/a,Intermediate,"Quantico, VA",60000,112000,86000,Employer
+Red Ventures,3.1,Software Engineer,n/a,Intermediate,"Ann Arbor, MI",108000,151000,129500,Glassdoor
+CVS Health,4.1,Software Engineer,n/a,Intermediate,"San Juan, PR",123000,196000,159500,Employer
+"Messenger, LLC",4.4,Software Engineer,n/a,Intermediate,"Lansing, MI",116000,166000,141000,Glassdoor
+Nelnet,3.5,Software Engineer,n/a,Intermediate,"Auburn, IN",59000,107000,83000,Glassdoor
+Slate Magazine,4.8,Software Engineer,n/a,Intermediate,"Lincoln, NE",104000,163000,133500,Glassdoor
+Adobe,3.5,Software Engineer,n/a,Intermediate,"Washington, DC",68000,80000,74000,Employer
+Airgas,4.1,Software Engineer,n/a,Intermediate,"Lehi, UT",83000,107000,95000,Glassdoor
+Umbra,3.9,Firmware Engineer,n/a,Intermediate,"Cheshire, CT",109000,209000,159000,Employer
+Uber,3.8,Software Engineer,n/a,Senior,"Santa Barbara, CA",97000,197000,147000,Employer
+Collaborative Robotics,3.7,Software Engineer,n/a,Intermediate,"San Francisco, CA",57000,96000,76500,Glassdoor
+Werfen,3.3,Software Engineer,n/a,Intermediate,"Santa Clara, CA",98000,145000,121500,Glassdoor
+Snapchat,4.3,Software Engineer,n/a,Intermediate,"Bedford, MA",66000,90000,78000,Glassdoor
+"Canon Medical Research USA, Inc",3.7,Graphics Engineer,n/a,Entry,"New York, NY",114400,124800,119600,Employer
+Raytheon,4,Software Engineer,n/a,Intermediate,"Cambridge, MA",79000,168000,123500,Employer
+Snapchat,3.8,Software Engineer,n/a,Entry,"Annapolis Junction, MD",102000,174000,138000,Employer
+Hudson River Trading,3.9,Software Engineer,n/a,Senior,"Los Angeles, CA",73000,108000,90500,Glassdoor
+Whisker,4.3,Software Engineer,n/a,Intermediate,"New York, NY",110000,190000,150000,Employer
+Mastercard,3.1,Software Engineer,n/a,Senior,"Auburn Hills, MI",94000,137000,115500,Glassdoor
+Savannah River Mission Completion,3.6,Software Engineer,n/a,Intermediate,"O Fallon, MO",89000,113000,101000,Glassdoor
+Mill-Max,3.8,Software Engineer,n/a,Entry,"Aiken, SC",80000,100000,90000,Employer
+Disney Entertainment & ESPN Technology,3.8,Software Engineer,n/a,Entry,"Oyster Bay, NY",128000,179000,153500,Glassdoor
+Coca-Cola,4.2,Software Engineer,n/a,Senior,"Seattle, WA",74000,125000,99500,Glassdoor
+Kaleido,4.1,Software Engineer,n/a,Senior,"Atlanta, GA",90000,187000,138500,Employer
+M&T Bank,3.7,Software Engineer,Fullstack,Intermediate,"Raleigh, NC",143000,256000,199500,Employer
+Lufburrow & Co,3.4,Software Engineer,"API, Java, Spring",Intermediate,"Buffalo, NY",114000,145000,129500,Glassdoor
+Boost Tech,4.1,Software Engineer,n/a,Intermediate,"Havre de Grace, MD",101000,155000,128000,Glassdoor
+BAE Systems,3.9,Software Engineer,n/a,Senior,Remote,84000,128000,106000,Glassdoor
+Numerica Corporation,4.7,Software Engineer,Mobile,Intermediate,Unknown,71000,104000,87500,Glassdoor
+Veracity Engineering,4.6,Software Engineer,n/a,Intermediate,"Fort Collins, CO",99000,137000,118000,Glassdoor
+M&T Bank,4.1,Software Engineer,Backend,Intermediate,"Palo Alto, CA",141000,211000,176000,Employer
+CVS Health,4.2,Software Engineer,n/a,Intermediate,"Wilmington, DE",76000,128000,102000,Employer
+Microsoft,4.1,Software Engineer,"Azure, Java",Entry,"Woonsocket, RI",93000,129000,111000,Glassdoor
+Northwest Talent Solutions LLC,3.6,Software Engineer,n/a,Intermediate,Unknown,93000,131000,112000,Glassdoor
+Honda Research Institute USA,4.2,Software Engineer,n/a,Senior,"Boston, MA",86000,145000,115500,Glassdoor
+Activision,4,Software Engineer,Mobile,Intermediate,"San Jose, CA",67000,112000,89500,Glassdoor
+thatgamecompany,3.6,Software Engineer,n/a,Senior,"Santa Monica, CA",116000,150000,133000,Employer
+BNY Mellon,4,DevOps Engineer,Build/Release,Intermediate,Unknown,85000,115000,100000,Employer
+Recruiting From Scratch,3.6,Software Engineer,Backend,Entry,"Lake Mary, FL",90000,115000,102500,Glassdoor
+"Akina, Inc.",3.9,Software Engineer,n/a,Intermediate,"San Francisco, CA",92000,156000,124000,Employer
+Vonnen,4.8,Software Engineer,"Kubernetes, Python",Entry,"Annapolis Junction, MD",150000,200000,175000,Employer
+Capgemini,4.5,Software Engineer,n/a,Intermediate,"Santa Clara, CA",95000,147000,121000,Glassdoor
+"Stefanini, Inc",3.6,Software Engineer,Redis,Intermediate,"Irving, TX",102000,148000,125000,Glassdoor
+Infosys,4.7,Software Engineer,n/a,Intermediate,"Dearborn, MI",83200,124800,104000,Employer
+"Link, LLC",4.9,DevOps Engineer,Build/Release,Intermediate,"Chicago, IL",86000,109000,97500,Glassdoor
+Autodesk,3.9,Software Engineer,Golang,Intermediate,"Annapolis Junction, MD",87000,125000,106000,Glassdoor
+BCT LLC,3.9,Software Engineer,n/a,Intermediate,Unknown,156000,166400,161200,Employer
+JPMorgan Chase & Co,4.8,Software Engineer,n/a,Intermediate,Unknown,142000,183000,162500,Employer
+WR Systems,4.2,Software Engineer,n/a,Intermediate,"Jersey City, NJ",77000,125000,101000,Glassdoor
+Acuity Brands,3.5,Software Engineer,n/a,Intermediate,"Dahlgren, VA",162000,244000,203000,Employer
+Cisco Systems,4.1,Software Engineer,n/a,Intermediate,"Conyers, GA",85000,104000,94500,Glassdoor
+WALGREENS,3.3,QA/Test Engineer,n/a,Intermediate,"San Jose, CA",140000,145000,142500,Employer
+"Vivint, Inc.",3.8,Software Engineer,n/a,Senior,"Deerfield, IL",95000,130000,112500,Glassdoor
+Caelum Research Corporation,4.1,Software Engineer,n/a,Senior,"Lehi, UT",90000,150000,120000,Employer
+Oracle,4.5,Software Engineer,n/a,Intermediate,"Carlisle, PA",140000,150000,145000,Employer
+Fidelity Investments,3.8,Software Engineer,n/a,Intermediate,"Redwood City, CA",183000,297000,240000,Employer
+Colorado State University,4.5,Cloud Engineer,n/a,Intermediate,"Westlake, TX",120000,140000,130000,Employer
+Bayer,2.3,Software Engineer,n/a,Entry,"Fort Collins, CO",97000,129000,113000,Glassdoor
+USAA,3.9,Software Engineer,n/a,Intermediate,"Indianola, PA",50000,90000,70000,Employer
+Accenture Federal Services,3.1,Software Engineer,"Javascript, React",Senior,"San Antonio, TX",74000,122000,98000,Employer
+Gundersen Health System,5,Software Engineer,n/a,Intermediate,"Lorton, VA",85000,150000,117500,Employer
+"JRC Integrated Systems, LLC",3.9,Software Engineer,n/a,Intermediate,"Onalaska, WI",82000,114000,98000,Glassdoor
+XL Softek,3.9,Software Engineer,n/a,Intermediate,"Washington, DC",107000,150000,128500,Employer
+kasmo cloud solutions,4,Software Engineer,n/a,Intermediate,"Suwanee, GA",215000,220000,217500,Employer
+"ICR, Inc.",4.2,Software Engineer,n/a,Intermediate,"Carol Stream, IL",90000,180000,135000,Employer
+Workday,4,Software Engineer,n/a,Intermediate,"Aurora, CO",130000,160000,145000,Employer
+360care,3,Software Engineer,n/a,Senior,"Atlanta, GA",75000,126000,100500,Glassdoor
+Amex,3.5,Software Engineer,n/a,Intermediate,"Louisville, KY",79000,119000,99000,Glassdoor
+DKW Communications,3.5,Software Engineer,Java,Senior,"Sunrise, FL",125000,150000,137500,Employer
+"SICK, Inc.",4.1,Software Engineer,n/a,Senior,"Point Mugu NAWC, CA",77000,102000,89500,Glassdoor
+Antithesis,3.2,Software Engineer,n/a,Intermediate,"Minneapolis, MN",102000,138000,120000,Glassdoor
+Rekuten Global,3.9,Software Engineer,"Rails, Ruby",Entry,Remote,115000,155000,135000,Glassdoor
+Tencent,4,Software Engineer,n/a,Senior,"Vienna, VA",84000,132000,108000,Glassdoor
+Zoox,4.1,Security Engineer,n/a,Entry,"Palo Alto, CA",80000,108000,94000,Glassdoor
+CyberCore Technologies,4.3,Software Engineer,n/a,Entry,Unknown,148000,230000,189000,Employer
+Synergy ECP,4.1,Software Engineer,n/a,Intermediate,"Foster City, CA",81000,101000,91000,Glassdoor
+Innovative Defense Technologies (IDT),3.9,Software Engineer,n/a,Senior,"Annapolis Junction, MD",65000,112000,88500,Glassdoor
+VETERANS ENGINEERING INCORPORATED,4.1,Software Engineer,"Backend, Python",Intermediate,"Annapolis Junction, MD",88000,117000,102500,Glassdoor
+Solvere Technical Group,3.6,Software Engineer,n/a,Intermediate,"Fall River, MA",10000,20000,15000,Employer
+"IRALOGIX,Inc",3.9,Cloud Engineer,n/a,Intermediate,Unknown,111000,153000,132000,Glassdoor
+Nava,3.8,Software Engineer,n/a,Intermediate,"Indian Head, MD",91000,126000,108500,Glassdoor
+f5,3.6,Software Engineer,n/a,Senior,"Pittsburgh, PA",125000,140000,132500,Employer
+BAE Systems,4.5,Software Engineer,n/a,Senior,Remote,66000,116000,91000,Glassdoor
+Synergy ECP,3.4,Software Engineer,n/a,Senior,"San Jose, CA",108000,146000,127000,Glassdoor
+GE HEALTHCARE,4,Software Engineer,n/a,Entry,"Lexington Park, MD",90000,130000,110000,Employer
+TC Energy,2.4,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",80000,90000,85000,Employer
+Principal Financial Group,4.3,Software Engineer,n/a,Senior,"Milwaukee, WI",86000,119000,102500,Glassdoor
+Schlumberger,3.4,Software Engineer,n/a,Intermediate,"Houston, TX",120000,250000,185000,Employer
+IXL Learning,3.8,Software Engineer,n/a,Senior,Unknown,54000,83000,68500,Employer
+JBT Corporation,4.6,Software Engineer,n/a,Intermediate,"Houston, TX",55000,90000,72500,Employer
+FLASH Technology Group,4.2,Software Engineer,n/a,Intermediate,"San Mateo, CA",84000,157000,120500,Employer
+Innovative Defense Technologies (IDT),3.7,DevOps Engineer,n/a,Intermediate,"Chalfont, PA",96000,128000,112000,Glassdoor
+Fairfax County Public Schools,4.2,Software Engineer,n/a,Entry,"Laurel, MD",106000,125000,115500,Employer
+Scholarly,4.5,Software Engineer,n/a,Intermediate,Unknown,81000,123000,102000,Glassdoor
+Innovative Defense Technologies (IDT),3,Software Engineer,n/a,Intermediate,"Wilton Woods, VA",92000,131000,111500,Glassdoor
+Burst Inc.,2,Software Engineer,n/a,Intermediate,"Seattle, WA",115000,166000,140500,Glassdoor
+USN Technical Associates,3.9,Security Engineer,n/a,Intermediate,"Fall River, MA",113000,161000,137000,Glassdoor
+SNC,2.8,Software Engineer,n/a,Intermediate,"Lexington, MA",160000,385000,272500,Employer
+Decision Six,4.1,Software Engineer,n/a,Intermediate,"Los Angeles, CA",62000,102000,82000,Glassdoor
+Laiba Technologies,4.4,Software Engineer,n/a,Intermediate,"Southern Pines, NC",73000,110000,91500,Glassdoor
+Teamups,4.4,DevOps Engineer,n/a,Intermediate,"Newtown Square, PA",200000,370000,285000,Employer
+Delta Dental Ins.,4,Software Engineer,n/a,Intermediate,"Everett, WA",93000,147000,120000,Glassdoor
+Valkyrie Enterprises,4.1,Software Engineer,n/a,Senior,"Seattle, WA",69000,107000,88000,Glassdoor
+UiPath,3.7,Software Engineer,n/a,Intermediate,"Alpharetta, GA",50000,60000,55000,Employer
+Atlas Copco Tools & Assembly Systems LLC,3.7,Software Engineer,n/a,Intermediate,"Huntsville, AL",70000,108000,89000,Glassdoor
+ANB Sourcing LLC,3.8,Software Engineer,n/a,Senior,"Bellevue, WA",102000,134000,118000,Glassdoor
+McIntire Solutions,4.5,Software Engineer,n/a,Intermediate,"Auburn Hills, MI",103000,133000,118000,Glassdoor
+Literati,3.7,DevOps Engineer,n/a,Intermediate,"Chantilly, VA",84000,110000,97000,Glassdoor
+"Rochester Software Associates, Inc.",4.1,Software Engineer,n/a,Intermediate,"Agoura Hills, CA",66000,94000,80000,Glassdoor
+Plaid,3.7,Software Engineer,"Fullstack, React",Intermediate,Unknown,102000,149000,125500,Glassdoor
+TigerGraph,3.9,Software Engineer,C#,Intermediate,Unknown,187000,197000,192000,Employer
+"Garmin International, Inc.",3.7,Software Engineer,n/a,Intermediate,"New York, NY",70000,96000,83000,Glassdoor
+Resilio Inc.,4.4,Software Engineer,n/a,Intermediate,"Redwood City, CA",100000,110000,105000,Employer
+Candid,3.7,QA/Test Engineer,n/a,Entry,"Salem, OR",83000,116000,99500,Glassdoor
+Amex,4.3,Software Engineer,n/a,Intermediate,Unknown,100000,250000,175000,Employer
+Radiance Technologies,4.4,Software Engineer,n/a,Intermediate,Unknown,100000,115000,107500,Employer
+Fabletics,3.6,Software Engineer,n/a,Intermediate,"Phoenix, AZ",64000,101000,82500,Glassdoor
+Delta Dental Ins.,3.7,Software Engineer,R,Intermediate,"Stennis Space Center, MS",66000,68000,67000,Employer
+Fractal Analytics,4.1,Software Engineer,n/a,Senior,Unknown,79000,117000,98000,Glassdoor
+York Space Systems,4.2,Software Engineer,n/a,Intermediate,Unknown,118000,169000,143500,Glassdoor
+Proteus Co.,3.5,Software Engineer,n/a,Intermediate,Unknown,56000,89000,72500,Glassdoor
+Software Productivity Strategists,3.3,Software Engineer,Fullstack,Senior,"Greenwood Village, CO",130000,270000,200000,Employer
+NeuroPace,4.2,Software Engineer,n/a,Intermediate,"Lincoln, NE",110000,157000,133500,Employer
+OceanFrogs,2.5,Software Engineer,n/a,Intermediate,"Rockville, MD",93000,130000,111500,Glassdoor
+"iconectiv, LLC.",3.5,Software Engineer,Fullstack,Intermediate,"Mountain View, CA",120000,140000,130000,Employer
+The Aerospace Corporation,3.9,Software Engineer,Fullstack,Intermediate,"Duluth, GA",94000,160000,127000,Employer
+Fetch Package,4.8,Software Engineer,Oracle,Intermediate,"Bridgewater, NJ",101000,144000,122500,Glassdoor
+Zenith Services,4.7,Data Engineer,n/a,Intermediate,"Chantilly, VA",108000,156000,132000,Glassdoor
+Matthews International Corporation,3.9,Software Engineer,Frontend,Senior,"Austin, TX",74000,100000,87000,Glassdoor
+Oracle,2.9,Software Engineer,React,Intermediate,"Bentonville, AR",73000,100000,86500,Glassdoor
+NVIDIA,4,Software Engineer,n/a,Intermediate,"Apopka, FL",112000,196000,154000,Employer
+PingWind,4,Software Engineer,n/a,Intermediate,Unknown,98000,137000,117500,Glassdoor
+Versaterm,3.5,Software Engineer,Fullstack,Senior,"Santa Clara, CA",80000,94000,87000,Employer
+Apollo Technology Solutions LLC,4.3,Software Engineer,n/a,Intermediate,"Scott Air Force Base, IL",89000,130000,109500,Glassdoor
+Navrit Creation,3.6,Software Engineer,n/a,Intermediate,"Lexington, SC",78000,131000,104500,Glassdoor
+Amazon.com Services LLC,5,Software Engineer,React,Senior,"Charlotte, NC",65000,107000,86000,Glassdoor
+Schneider Electric,3.6,Software Engineer,n/a,Intermediate,"Colony, AL",130000,300000,215000,Employer
+Akira Technologies Inc.,3.7,Software Engineer,n/a,Intermediate,"Boston, MA",66000,98000,82000,Employer
+CTC Group,4.2,Software Engineer,n/a,Intermediate,"Secaucus, NJ",153000,225000,189000,Employer
+Space Coast Intelligent Solutions,3.9,Software Engineer,n/a,Intermediate,"Washington, DC",69000,103000,86000,Employer
+Credo,3.9,Software Engineer,Python,Intermediate,"Fort Meade, MD",83000,114000,98500,Glassdoor
+9th networks Inc,4.4,Software Engineer,n/a,Senior,"Melbourne, FL",107000,174000,140500,Employer
+Walter P Moore,4.1,DevOps Engineer,Go,Intermediate,"Jersey City, NJ",175000,265000,220000,Employer
+LinQuest Corporation,3.9,Software Engineer,n/a,Senior,Unknown,53000,107000,80000,Employer
+CodeSignal,3.8,Software Engineer,Frontend,Intermediate,"Washington, DC",124800,166400,145600,Employer
+Hewlett Packard,5,Software Engineer,n/a,Intermediate,"Beavercreek, OH",86000,128000,107000,Glassdoor
+Dupli Envelope & Graphics,4.8,Software Engineer,n/a,Intermediate,"San Francisco, CA",165000,215000,190000,Employer
+Coinbase,4.2,QA/Test Engineer,n/a,Intermediate,"Fort Collins, CO",165000,215000,190000,Employer
+LSEG (London Stock Exchange Group),4,Software Engineer,n/a,Intermediate,"Syracuse, NY",102000,138000,120000,Glassdoor
+Inabia Software & Consulting Inc.,3.8,Software Engineer,n/a,Intermediate,Remote,76000,175000,125500,Employer
+PMall,4.5,Software Engineer,Fullstack,Intermediate,"Washington, DC",96000,118000,107000,Employer
+Alloy,4,Software Engineer,n/a,Intermediate,"Bellevue, WA",86000,129000,107500,Employer
+QinetiQ US,3.9,Software Engineer,Frontend,Intermediate,"Burr Ridge, IL",160000,385000,272500,Employer
+Caterpillar,4,Software Engineer,n/a,Intermediate,Unknown,184000,337000,260500,Employer
+"Jason Pharmaceuticals, Inc.",4,Software Engineer,n/a,Intermediate,"McLean, VA",127000,184000,155500,Employer
+IntelliBridge LLC,3.6,Software Engineer,n/a,Intermediate,"Peoria, IL",79000,130000,104500,Glassdoor
+Snyk,3.4,Software Engineer,n/a,Senior,"Lehi, UT",120000,207000,163500,Employer
+OpenAI,4.2,Software Engineer,n/a,Intermediate,"Washington, DC",112000,152000,132000,Employer
+Vertex Professional Service LLC,2.7,Software Engineer,"Go, Typescript",Senior,"Boston, MA",130000,158000,144000,Glassdoor
+"deciBel Research, Inc.",2.7,Software Engineer,Backend,Intermediate,"San Francisco, CA",103000,172000,137500,Employer
+OpenAI,4.4,Software Engineer,n/a,Intermediate,"Orlando, FL",82000,209000,145500,Employer
+COMSOL Inc.,3.1,Software Engineer,n/a,Intermediate,"Huntsville, AL",116000,174000,145000,Employer
+Infosys,3.8,Software Engineer,Fullstack,Intermediate,"San Francisco, CA",130000,165000,147500,Employer
+Hero Facility Services,3.8,Software Engineer,n/a,Intermediate,"Burlington, MA",150000,185000,167500,Employer
+QED Systems LLC,3.9,Software Engineer,Python,Entry,"Charlotte, NC",98000,209000,153500,Employer
+Kasasa,4.4,Software Engineer,n/a,Entry,"Melbourne, FL",102000,204000,153000,Employer
+"Delta Air Lines, Inc.",3.7,Software Engineer,n/a,Intermediate,"Aberdeen Proving Ground, MD",125000,140000,132500,Employer
+HAN IT,3.6,Software Engineer,n/a,Senior,"Austin, TX",108000,216000,162000,Employer
+Innovative Solutions and Support,3.9,Software Engineer,n/a,Intermediate,"Atlanta, GA",79000,116000,97500,Glassdoor
+Promega,4.8,Software Engineer,Python,Intermediate,"Morris Plains, NJ",67000,128000,97500,Employer
+Revenue Management Solutions Llc,3.7,Software Engineer,n/a,Intermediate,"Exton, PA",129000,162000,145500,Employer
+Cityblock Health,3.8,Software Engineer,n/a,Intermediate,"Madison, WI",90000,110000,100000,Employer
+Astrion,3.7,DevOps Engineer,n/a,Intermediate,"Oklahoma City, OK",117000,306000,211500,Employer
+Diverse Career Solutions,3.4,Software Engineer,n/a,Senior,Unknown,100000,115000,107500,Employer
+Synergy ECP,4.2,Software Engineer,n/a,Intermediate,"Eglin AFB, FL",87000,142000,114500,Glassdoor
+"ICR, Inc.",4,Software Engineer,n/a,Senior,Remote,92000,132000,112000,Glassdoor
+Broadridge,3.8,Software Engineer,n/a,Intermediate,"Columbia, MD",105000,160000,132500,Employer
+Zurn Elkay Water Solutions,5,System Engineer,n/a,Intermediate,"Mason, OH",144000,196000,170000,Glassdoor
+Florida State College at Jacksonville,4.2,DevOps Engineer,n/a,Intermediate,"Newark, NJ",69000,91000,80000,Glassdoor
+Q9Software,3.1,Software Engineer,n/a,Intermediate,"Milwaukee, WI",80000,110000,95000,Employer
+JPMorgan Chase & Co,3.8,Software Engineer,n/a,Senior,"Jacksonville, FL",100000,153000,126500,Glassdoor
+The Bank of New York Mellon Corporation,3.4,Software Engineer,n/a,Senior,"Germantown, MD",170000,200000,185000,Employer
+Cisco Systems,4.5,Software Engineer,n/a,Intermediate,"Jersey City, NJ",87000,124000,105500,Glassdoor
+Grand Canyon Education,4,Software Engineer,n/a,Intermediate,"Pittsburgh, PA",185000,206000,195500,Employer
+Captivation Software,3.3,Software Engineer,n/a,Intermediate,"San Jose, CA",80000,133000,106500,Employer
+DocuSign,4.6,Software Engineer,n/a,Entry,"Phoenix, AZ",90000,127000,108500,Glassdoor
+"Canon Medical Research USA, Inc.",3.6,Software Engineer,"AWS, Docker, Java, React",Intermediate,"Annapolis Junction, MD",108000,199000,153500,Employer
+Standard Bots,2.5,Software Engineer,n/a,Intermediate,"San Francisco, CA",62000,102000,82000,Glassdoor
+American AgCredit,4.1,Software Engineer,n/a,Intermediate,"Boston, MA",85000,104000,94500,Glassdoor
+KAPSCH,4,QA/Test Engineer,n/a,Intermediate,"Glen Cove, NY",73000,127000,100000,Employer
+Prevail,3.9,DevOps Engineer,n/a,Intermediate,Remote,100000,140000,120000,Glassdoor
+DCS Corp,4.8,Software Engineer,n/a,Intermediate,"Chantilly, VA",160000,194000,177000,Employer
+Consensus Health,3.9,Software Engineer,n/a,Intermediate,"San Francisco, CA",107000,145000,126000,Glassdoor
+Rippling,4.2,Software Engineer,n/a,Intermediate,"Dayton, OH",74000,131000,102500,Glassdoor
+"Engineering Technology Associates, Inc.",5,Software Engineer,"Frontend, Fullstack",Intermediate,"San Francisco, CA",33280,95680,64480,Employer
+Fusion Innovation,5,Software Engineer,n/a,Intermediate,"Norcross, GA",70000,120000,95000,Employer
+"Clarity Innovations, LLC",4.1,QA/Test Engineer,n/a,Intermediate,"Dearborn, MI",160000,225000,192500,Employer
+RippleMatch Opportunities,3.9,Software Engineer,n/a,Intermediate,"Herndon, VA",99000,134000,116500,Glassdoor
+Power3 Solutions and Partnering Companies,3.5,Software Engineer,Java,Entry,"Annapolis Junction, MD",102000,143000,122500,Glassdoor
+Datadog,3.9,Software Engineer,n/a,Intermediate,"Chicago, IL",150000,240000,195000,Employer
+PACCAR,4.2,Software Engineer,Python,Intermediate,"Annapolis Junction, MD",160000,170000,165000,Employer
+Front,4.1,Software Engineer,Frontend,Senior,Unknown,144000,200000,172000,Employer
+Northrop Grumman,4.1,QA/Test Engineer,n/a,Intermediate,"Mount Vernon, WA",110000,120000,115000,Employer
+Pegasystems,4.1,Software Engineer,Backend,Intermediate,"San Francisco, CA",165000,211000,188000,Employer
+Lawrence Berkeley National Laboratory,3.6,Software Engineer,n/a,Entry,"Linthicum, MD",92000,116000,104000,Glassdoor
+Zoox,3.9,Software Engineer,n/a,Intermediate,"San Francisco, CA",66000,132000,99000,Employer
+GLOBALFOUNDRIES,3.7,Software Engineer,n/a,Entry,"Atlanta, GA",140000,175000,157500,Employer
+TRU47,4.8,Software Engineer,n/a,Intermediate,"Boston, MA",169000,225000,197000,Employer
+Schneider Electric,4.1,ML/AI Engineer,n/a,Entry,"Malta, NY",61000,95000,78000,Employer
+Gopuff,3.2,Software Engineer,n/a,Intermediate,Remote,90000,125000,107500,Employer
+Gopuff,3.6,QA/Test Engineer,n/a,Intermediate,"Foxborough, MA",162000,284000,223000,Employer
+Camelot Integrated Solutions Inc.,3.9,Software Engineer,n/a,Senior,"Miami, FL",91000,137000,114000,Employer
+CVS Health,5,Software Engineer,n/a,Senior,"Miami, FL",160000,175000,167500,Employer
+BOEING,4.6,Software Engineer,n/a,Senior,"Houston, TX",177000,323000,250000,Employer
+Publix,3.4,Software Engineer,n/a,Intermediate,"Hartford, CT",133000,193000,163000,Employer
+Experian,4.9,Software Engineer,n/a,Entry,"Annapolis Junction, MD",81000,99000,90000,Glassdoor
+OpenAI,4.3,Software Engineer,n/a,Intermediate,"Lakeland, FL",85000,95000,90000,Employer
+ByteDance,3.6,Software Engineer,n/a,Senior,Unknown,180000,339000,259500,Employer
+Alterra Mountain Company,4.2,Software Engineer,Fullstack,Intermediate,"San Francisco, CA",163000,200000,181500,Employer
+Experian,3.8,Software Engineer,Frontend,Senior,"Seattle, WA",85000,150000,117500,Employer
+"Clarity Innovations, LLC",3.4,Software Engineer,"Mobile, React",Intermediate,"Denver, CO",80000,110000,95000,Employer
+Amazon Advertising LLC,3.4,Software Engineer,n/a,Senior,Unknown,93000,128000,110500,Glassdoor
+BOEING,4.1,Software Engineer,n/a,Entry,"Annapolis Junction, MD",112000,154000,133000,Employer
+Bose,4.1,QA/Test Engineer,n/a,Intermediate,Unknown,155000,221000,188000,Employer
+Macyï¿½ï,4.1,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",102000,132000,117000,Employer
+Microsoft,5,Software Engineer,n/a,Intermediate,"Framingham, MA",80000,111000,95500,Glassdoor
+DraftKings,4.1,Software Engineer,n/a,Senior,"Johns Creek, GA",187000,280000,233500,Employer
+GE Appliances,4,Software Engineer,n/a,Intermediate,"Redmond, WA",105000,155000,130000,Glassdoor
+Quantum Systems Inc,4.1,Software Engineer,iOS,Senior,Remote,92000,120000,106000,Glassdoor
+"Kaseware, Inc.",4.1,Software Engineer,n/a,Intermediate,"Louisville, KY",230000,280000,255000,Employer
+Microsoft,4.1,Software Engineer,n/a,Intermediate,"Moorpark, CA",94000,128000,111000,Glassdoor
+JBT Corporation,4.6,Software Engineer,n/a,Intermediate,"Redmond, WA",80000,180000,130000,Employer
+Fanatics Inc.,3.9,Software Engineer,n/a,Senior,"Buffalo Grove, IL",93000,129000,111000,Glassdoor
+Innovative Defense Technologies (IDT),4.1,Software Engineer,n/a,Senior,"Chalfont, PA",105000,190000,147500,Employer
+Microchip Technology,4,Software Engineer,"AWS, Java",Intermediate,Unknown,139000,169000,154000,Employer
+"Crunchyroll, LLC",4.2,Software Engineer,Frontend,Intermediate,"Mount Laurel, NJ",54000,98000,76000,Employer
+Accrete.AI,3.7,Software Engineer,n/a,Entry,"San Jose, CA",55000,186000,120500,Employer
+Roku,3.8,Software Engineer,Android,Senior,"Culver City, CA",101000,139000,120000,Glassdoor
+Early Warning Services,3.6,ML/AI Engineer,n/a,Intermediate,"New York, NY",88000,120000,104000,Glassdoor
+Workday,5,Software Engineer,n/a,Senior,"Boston, MA",129000,202000,165500,Employer
+Grainger,4.1,Software Engineer,Java,Intermediate,"Scottsdale, AZ",70000,115000,92500,Employer
+Costco Wholesale,4.7,Software Engineer,Frontend,Intermediate,"Boulder, CO",91000,134000,112500,Glassdoor
+Mochi Health,3.5,Software Engineer,n/a,Senior,"Lake Forest, IL",92000,124000,108000,Glassdoor
+Jacobs,4.2,Software Engineer,n/a,Intermediate,"Seattle, WA",115000,190000,152500,Employer
+Boeing Intelligence & Analytics,4.2,Software Engineer,Frontend,Senior,"San Francisco, CA",94000,139000,116500,Glassdoor
+NetApp,4,QA/Test Engineer,n/a,Intermediate,"Kennedy Space Center, FL",140000,216000,178000,Glassdoor
+Alphataraxia,3.9,Software Engineer,n/a,Entry,"Annapolis Junction, MD",90000,103000,96500,Employer
+DaqScribe Solutions,4.7,Software Engineer,n/a,Intermediate,"San Jose, CA",95000,170000,132500,Employer
+BOEING,4,Software Engineer,n/a,Senior,"Washington, DC",343000,637000,490000,Employer
+Honeywell,4.8,Software Engineer,n/a,Intermediate,Unknown,172000,223000,197500,Employer
+Uber,3.9,Software Engineer,n/a,Entry,Unknown,218400,239200,228800,Employer
+State Street,3.4,Software Engineer,"Azure, C#",Intermediate,"Phoenix, AZ",93000,186000,139500,Employer
+"Garmin International, Inc.",3.9,Software Engineer,n/a,Senior,"New York, NY",83000,110000,96500,Glassdoor
+Honeywell,5,Firmware Engineer,n/a,Intermediate,"Salem, OR",88000,140000,114000,Employer
+Honeywell,4.3,Software Engineer,n/a,Intermediate,"Lehi, UT",95000,136000,115500,Glassdoor
+Johns Hopkins University,4.8,Software Engineer,n/a,Intermediate,"Mason, OH",100000,130000,115000,Employer
+University of Vermont,4.1,Software Engineer,n/a,Intermediate,"Mason, OH",159000,175000,167000,Employer
+Federal Reserve Bank of Dallas,3.5,Software Engineer,n/a,Intermediate,"Baltimore, MD",104000,348000,226000,Employer
+"Grammarly, Inc.",4,Software Engineer,n/a,Intermediate,"Burlington, VT",98000,209000,153500,Employer
+SCD Information Technology,3.9,Software Engineer,n/a,Intermediate,"Dallas, TX",78000,104000,91000,Employer
+"Akina, Inc.",4,Software Engineer,n/a,Senior,"Columbia, MD",64000,128000,96000,Employer
+Volvo Group,3.9,Software Engineer,n/a,Entry,"Annapolis Junction, MD",117000,216000,166500,Employer
+Calspan Corporation,3.7,Software Engineer,"Go, JavaScript, Python",Senior,"Annapolis Junction, MD",135000,247000,191000,Employer
+Zoox,4.2,Software Engineer,Spring,Intermediate,"Shippensburg, PA",83000,136000,109500,Glassdoor
+"Garmin International, Inc.",3.8,Software Engineer,n/a,Entry,"Edwards AFB, CA",85000,130000,107500,Glassdoor
+"HireIO, Inc.",3.6,Software Engineer,n/a,Senior,"Olathe, KS",73000,88000,80500,Employer
+PAC GROUP LLC,3.5,Software Engineer,"Fullstack, Java",Intermediate,"Annapolis Junction, MD",59000,88000,73500,Employer
+Fanatics Inc.,3,Software Engineer,n/a,Intermediate,"San Jose, CA",105000,146000,125500,Glassdoor
+Emergent Software,4.1,System Engineer,n/a,Intermediate,"Suffolk, VA",70000,125000,97500,Employer
+Harvard University,4.1,Software Engineer,Backend,Senior,"New York, NY",62000,98000,80000,Glassdoor
+Zoox,4.9,Software Engineer,Python,Intermediate,Unknown,82000,119000,100500,Glassdoor
+Intone Networks,3.8,Software Engineer,n/a,Senior,"Boston, MA",80000,113000,96500,Glassdoor
+CARTIKTECH LLC,4.1,Software Engineer,n/a,Intermediate,"Foster City, CA",67000,106000,86500,Glassdoor
+Abbott Laboratories,3.9,Software Engineer,n/a,Intermediate,"Austin, TX",144000,200000,172000,Employer
+Prove,3.4,Software Engineer,n/a,Senior,"Chicago, IL",129000,224000,176500,Employer
+Schweitzer Engineering Laboratories,4.2,Software Engineer,n/a,Senior,"Chicago, IL",94972.8,114379.2,104676,Employer
+Themis Insight,3.9,Software Engineer,n/a,Senior,"New York, NY",130000,270000,200000,Employer
+World Vision USA,4.9,Software Engineer,C#,Entry,"Pullman, WA",140000,180000,160000,Employer
+Rippling,3.7,Software Engineer,n/a,Entry,Remote,69000,98000,83500,Glassdoor
+Hop Labs,4.2,Software Engineer,n/a,Senior,Unknown,59000,86000,72500,Glassdoor
+"Hawaiian Airlines, Inc.",3.2,Software Engineer,n/a,Senior,Unknown,80000,123000,101500,Glassdoor
+NetApp,3.9,Software Engineer,n/a,Intermediate,Remote,105000,152000,128500,Glassdoor
+Quantum Systems Inc,4.1,Software Engineer,n/a,Intermediate,"Honolulu, HI",135000,175000,155000,Employer
+Salesforce,3.9,Software Engineer,n/a,Intermediate,Remote,154000,279000,216500,Employer
+Visa,3.7,Software Engineer,n/a,Senior,"Moorpark, CA",86000,145000,115500,Glassdoor
+Honeywell,3.6,Software Engineer,Fullstack,Intermediate,"San Francisco, CA",104000,348000,226000,Employer
+Oliver Wyman Group,3.4,Software Engineer,n/a,Senior,"Austin, TX",76000,155000,115500,Employer
+NVIDIA,2.5,Software Engineer,n/a,Entry,"Richardson, TX",83000,114000,98500,Glassdoor
+Morgan Stanley,4.4,Software Engineer,n/a,Entry,"White Plains, NY",155000,221000,188000,Employer
+Amex,4.5,Software Engineer,n/a,Intermediate,"Santa Clara, CA",100000,200000,150000,Employer
+Multi State Lottery Association,4,Software Engineer,"Perl, Python",Entry,"Alpharetta, GA",83000,110000,96500,Glassdoor
+BAXTER,3.7,Software Engineer,n/a,Senior,"Johnston, IA",129000,207000,168000,Employer
+Afterpay,3.7,Software Engineer,n/a,Entry,"Houston, TX",161000,215000,188000,Glassdoor
+U.S. Bank National Association,4,Software Engineer,Backend,Senior,"Bellevue, WA",93000,132000,112500,Glassdoor
+Geon Technologies,3.8,Software Engineer,n/a,Intermediate,"San Francisco, CA",95000,115000,105000,Employer
+INTEL,5,Software Engineer,n/a,Intermediate,"Brookfield, WI",310000,465000,387500,Employer
+TDI Technologies,4.1,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",117000,160000,138500,Glassdoor
+DAIKIN COMFORT TECHNOLOGIES MFG LP,4.3,Software Engineer,n/a,Intermediate,"San Jose, CA",213000,293000,253000,Employer
+Intone Networks,4.4,Software Engineer,C#,Intermediate,Unknown,87000,124000,105500,Glassdoor
+Intone Networks,3.6,Software Engineer,n/a,Senior,"Chatsworth, CA",163000,294000,228500,Employer
+Wise,3.6,Software Engineer,n/a,Intermediate,"Westlake, TX",195000,230000,212500,Employer
+"Garmin International, Inc.",3.1,Cloud Engineer,n/a,Entry,"Phoenix, AZ",70000,90000,80000,Employer
+Nyla Technology Solutions,4.2,Software Engineer,n/a,Senior,"Austin, TX",86000,109000,97500,Employer
+Wellington Management,3,Software Engineer,.NET,Senior,"Cary, NC",79000,124000,101500,Glassdoor
+Synergy ECP,3.5,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",122000,147000,134500,Employer
+Costco Wholesale,3.1,Software Engineer,n/a,Senior,"Boston, MA",110000,154000,132000,Employer
+"Vizient, Inc.",4.5,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",119000,142000,130500,Employer
+Leidos,3.7,Software Engineer,n/a,Intermediate,"Seattle, WA",120000,150000,135000,Employer
+Noblis,3.7,Software Engineer,n/a,Senior,"Irving, TX",85000,131000,108000,Glassdoor
+ELEVI Associates,4.7,Software Engineer,n/a,Entry,"Annapolis Junction, MD",60000,80000,70000,Employer
+ASCENDING,4,Software Engineer,n/a,Intermediate,"Oklahoma City, OK",112000,177000,144500,Employer
+Trellint,4,Software Engineer,n/a,Senior,"Annapolis Junction, MD",90000,104000,97000,Employer
+Synergy ECP,4.1,Software Engineer,n/a,Intermediate,"Fairfax, VA",79000,159000,119000,Employer
+Lockheed Martin,3.6,Software Engineer,R,Intermediate,Unknown,195000,245000,220000,Employer
+"Trusted Space, Inc.",4.4,Software Engineer,n/a,Entry,"Columbia, MD",66000,112000,89000,Glassdoor
+State Street,4.2,Software Engineer,n/a,Intermediate,"Highlands Ranch, CO",145000,190000,167500,Employer
+"Availity, LLC.",4,Software Engineer,n/a,Intermediate,Unknown,86000,127000,106500,Glassdoor
+BorgWarner,1,Software Engineer,n/a,Intermediate,"Quincy, MA",120000,140000,130000,Employer
+Ford Motor Company,4.1,Software Engineer,"Kotlin, Node",Senior,"Jacksonville, FL",61000,89000,75000,Glassdoor
+Forterra,3.9,Software Engineer,n/a,Intermediate,"Auburn Hills, MI",68000,102000,85000,Glassdoor
+Epsilon,3.1,Software Engineer,n/a,Intermediate,"Dearborn, MI",79000,125000,102000,Glassdoor
+ByteDance,3.3,Software Engineer,n/a,Intermediate,Remote,100000,155000,127500,Glassdoor
+Logistics Management Institute,3.7,Software Engineer,n/a,Senior,"Chicago, IL",94000,122000,108000,Glassdoor
+"Hottinger, Bruel & Kjaer",3.9,Security Engineer,n/a,Intermediate,"San Jose, CA",124800,149760,137280,Employer
+Sirius XM,3.6,Cloud Engineer,n/a,Intermediate,Remote,105000,125000,115000,Employer
+Warner Bros. Discovery,3.8,Software Engineer,n/a,Intermediate,"Pompano Beach, FL",103000,147000,125000,Glassdoor
+Peloton,3.3,Software Engineer,"Python, Redis",Senior,"Oakland, CA",81000,118000,99500,Glassdoor
+Movius Interactive Corporation,3.4,Software Engineer,n/a,Intermediate,Unknown,122000,172000,147000,Glassdoor
+Accenture Federal Services,4,Software Engineer,SRE,Intermediate,Unknown,108000,216000,162000,Employer
+Corteva,3.9,Software Engineer,Backend,Intermediate,"Fremont, CA",122000,184000,153000,Employer
+IntraFi Network,3.3,Software Engineer,n/a,Intermediate,"Elkridge, MD",121000,181000,151000,Employer
+PSEG,3.9,Software Engineer,n/a,Intermediate,"Johnston, IA",78000,133000,105500,Employer
+Trane Technologies,3.6,Software Engineer,n/a,Intermediate,"Bethpage, NY",86000,139000,112500,Glassdoor
+Discord,4.3,Software Engineer,n/a,Intermediate,"Santa Clara, CA",88000,173000,130500,Employer
+Tesla,4.2,Software Engineer,n/a,Intermediate,"Saint Paul, MN",182000,244000,213000,Glassdoor
+Microsoft,4,Software Engineer,n/a,Intermediate,"San Francisco, CA",124000,155000,139500,Employer
+First American Financial Corporation,3.7,Software Engineer,Backend,Senior,"Fremont, CA",94000,129000,111500,Glassdoor
+IntraFi Network,3.6,Software Engineer,n/a,Intermediate,"Redmond, WA",151507.2,168334.4,159920.8,Employer
+Collins Aerospace,3.5,Software Engineer,n/a,Intermediate,"Idaho Falls, ID",130000,165000,147500,Employer
+Roche,4.3,Software Engineer,n/a,Intermediate,"Arlington, VA",65000,101000,83000,Glassdoor
+Qualtrics,3,Software Engineer,n/a,Intermediate,"Lenexa, KS",129000,224000,176500,Employer
+Edward Rose & Sons,4.4,Software Engineer,n/a,Senior,"Santa Clara, CA",161000,243000,202000,Employer
+Michelin,5,Data Engineer,n/a,Senior,"Seattle, WA",76000,107000,91500,Glassdoor
+"Garmin International, Inc.",4.7,Software Engineer,n/a,Intermediate,"Bloomfield Hills, MI",70000,85000,77500,Employer
+Smart IMS,4.3,Software Engineer,n/a,Entry,"Spartanburg, SC",75000,150000,112500,Employer
+Wipro,3.9,Firmware Engineer,n/a,Intermediate,"Olathe, KS",110000,150000,130000,Employer
+Harley-Davidson,3.8,Software Engineer,n/a,Intermediate,Unknown,98000,147000,122500,Glassdoor
+"VIZIO, Inc.",3.4,Software Engineer,PHP,Intermediate,"Tampa, FL",74000,92000,83000,Employer
+Geneva Technologies Inc.,3.4,Software Engineer,n/a,Entry,"Wauwatosa, WI",8000,12000,10000,Employer
+ElectronX,4.2,Software Engineer,n/a,Senior,"Dallas, TX",90000,131000,110500,Employer
+Camelot Integrated Solutions Inc.,3.7,Software Engineer,n/a,Intermediate,"Monument, CO",120000,150000,135000,Employer
+"JRC Integrated Systems, LLC",3.7,DevOps Engineer,n/a,Intermediate,Remote,126000,237000,181500,Employer
+Sabre Engineering,3.5,Software Engineer,n/a,Intermediate,"Houston, TX",50000,78000,64000,Glassdoor
+Thermoflow,4.2,Software Engineer,n/a,Intermediate,"Dahlgren, VA",94000,117000,105500,Glassdoor
+Fanatics Inc.,3.5,Software Engineer,n/a,Entry,"Columbia, MD",185000,200000,192500,Employer
+"Twitch Interactive, Inc.",3.5,Software Engineer,n/a,Intermediate,"Jacksonville, FL",103000,149000,126000,Employer
+Adtran,3.4,Software Engineer,n/a,Senior,"New York, NY",109000,141000,125000,Glassdoor
+Oncorre,3.8,Software Engineer,n/a,Intermediate,"Seattle, WA",76000,116000,96000,Glassdoor
+NMG Technology Services,3.8,Software Engineer,n/a,Senior,Unknown,37000,82000,59500,Employer
+Captivation Software,3.7,Software Engineer,n/a,Intermediate,"Bridgewater, NJ",129000,159000,144000,Glassdoor
+Invisible Technologies,3.7,Software Engineer,n/a,Intermediate,"Brooklyn, NY",80000,111000,95500,Glassdoor
+Metas Solutions,4.1,DevOps Engineer,n/a,Intermediate,"Annapolis Junction, MD",95000,133000,114000,Glassdoor
+"GAP Solutions, Inc.",4,Software Engineer,n/a,Senior,Remote,130000,140000,135000,Employer
+Independent Software,4.2,QA/Test Engineer,n/a,Intermediate,"Atlanta, GA",81000,118000,99500,Glassdoor
+InterImage,4.1,QA/Test Engineer,n/a,Intermediate,"Atlanta, GA",120000,150000,135000,Employer
+Tickets.com,5,Software Engineer,n/a,Entry,"Fort Meade, MD",180000,260000,220000,Employer
+Adobe,4.9,Software Engineer,Java,Intermediate,"Annapolis Junction, MD",86000,111000,98500,Glassdoor
+Embecta,3.3,Software Engineer,n/a,Senior,"Boulder, CO",83200,93600,88400,Employer
+Tesla,4.2,Software Engineer,n/a,Senior,"San Jose, CA",74000,109000,91500,Glassdoor
+CVS Health,4.1,Software Engineer,Fullstack,Senior,"Andover, MA",108000,116000,112000,Employer
+Space Systems Integration,3,Software Engineer,Backend,Senior,"Fremont, CA",103000,146000,124500,Glassdoor
+Cash App,4.5,Software Engineer,Fullstack,Intermediate,"Hartford, CT",89000,128000,108500,Glassdoor
+Index Engines Inc.,3.9,Software Engineer,n/a,Intermediate,"Seattle, WA",144000,198000,171000,Employer
+Ford Motor Company,4.4,ML/AI Engineer,n/a,Intermediate,"Cupertino, CA",160000,321000,240500,Employer
+Q9Software,4.1,Software Engineer,React,Intermediate,Unknown,97000,155000,126000,Glassdoor
+Squarespace,3.8,Software Engineer,n/a,Intermediate,"Dearborn, MI",120000,290000,205000,Employer
+"Advanced Micro Devices, Inc",3.4,Software Engineer,n/a,Intermediate,"Germantown, MD",87000,126000,106500,Glassdoor
+InterImage,3.7,Software Engineer,Java,Senior,Unknown,129000,224000,176500,Employer
+"Flow Systems, Inc",3.4,Software Engineer,n/a,Intermediate,"San Jose, CA",103000,141000,122000,Employer
+OpenAI,4.6,Software Engineer,Java,Entry,"Annapolis Junction, MD",135000,155000,145000,Employer
+Teradyne,3.8,Software Engineer,n/a,Intermediate,"Berthoud, CO",65000,118000,91500,Employer
+Meta,2.9,Software Engineer,n/a,Senior,"San Francisco, CA",80000,94000,87000,Employer
+Yellow Duck Technologies Inc.,4.3,Software Engineer,n/a,Intermediate,"North Reading, MA",104000,348000,226000,Employer
+Workday,4,Software Engineer,n/a,Senior,"Redmond, WA",300000,450000,375000,Employer
+Ops Tech Alliance,4.2,Software Engineer,n/a,Entry,"Annapolis Junction, MD",90000,126000,108000,Glassdoor
+CDK Global,3.7,Software Engineer,n/a,Senior,"Seattle, WA",78000,102000,90000,Glassdoor
+IAB Solutions LLC,3.7,Software Engineer,n/a,Senior,"Fort Meade, MD",110000,154000,132000,Employer
+General Assembly,4.2,Software Engineer,n/a,Entry,"Austin, TX",87000,171000,129000,Employer
+Delta Dental Ins.,4.3,Software Engineer,n/a,Senior,Unknown,125000,160000,142500,Employer
+Cotiviti,4.4,Software Engineer,n/a,Intermediate,"Denver, CO",83000,124000,103500,Employer
+BOEING,4.1,Software Engineer,n/a,Senior,"Alpharetta, GA",74000,98000,86000,Glassdoor
+Braum's,3.9,DevOps Engineer,n/a,Senior,Remote,102000,159000,130500,Employer
+Cummings Aerospace Inc,2.5,Software Engineer,n/a,Intermediate,"Annapolis Junction, MD",115000,165000,140000,Employer
+T.M. Bier & Associates,4.4,Software Engineer,n/a,Senior,"Oklahoma City, OK",108000,216000,162000,Employer
+Zelis,3.9,Software Engineer,n/a,Intermediate,"Largo, FL",90000,145000,117500,Employer
+TikTok,3.7,Software Engineer,n/a,Intermediate,Unknown,68000,104000,86000,Glassdoor
+Eaton,3.5,Software Engineer,"C#, Rust",Senior,Unknown,72000,108000,90000,Employer
+CVS Health,3,DevOps Engineer,Frontend,Entry,"San Jose, CA",69000,120000,94500,Glassdoor
+Zoox,3.7,Software Engineer,n/a,Intermediate,"Peachtree City, GA",72000,127000,99500,Glassdoor
+Radiance Technologies,3.9,Software Engineer,n/a,Intermediate,"Hartford, CT",158000,205000,181500,Employer
+Boston Consulting Group,4.2,Software Engineer,Fullstack,Senior,"San Francisco, CA",100000,160000,130000,Employer
+Sage,3.5,Software Engineer,Fullstack,Intermediate,"Beavercreek, OH",104000,112320,108160,Employer
+Neurable,4.4,Software Engineer,n/a,Intermediate,"Los Angeles, CA",130000,210000,170000,Employer
+ASM International,3.4,Software Engineer,C#,Intermediate,"Lawrenceville, GA",115000,159000,137000,Glassdoor
+Galvion,4,Software Engineer,n/a,Senior,"Boston, MA",138000,192000,165000,Glassdoor
+Prophet Software,3.6,Software Engineer,n/a,Intermediate,"Hillsboro, OR",89000,129000,109000,Glassdoor
+Ansira,4.1,Software Engineer,n/a,Entry,"Portsmouth, NH",130000,150000,140000,Employer
+Elder Research,4.7,Software Engineer,n/a,Intermediate,"Westlake Village, CA",177000,251000,214000,Employer
+3 Reasons Consulting,3.9,Software Engineer,Fullstack,Intermediate,Unknown,100000,158000,129000,Glassdoor
+"AB2 Consulting, Inc.",3.2,Software Engineer,Backend,Intermediate,"Fort George G Meade, MD",168000,253000,210500,Employer
+University of Maryland,4.1,Software Engineer,n/a,Intermediate,"San Diego, CA",167000,296000,231500,Employer
+CPI Card Group,3.6,QA/Test Engineer,n/a,Intermediate,"Okemos, MI",136000,200000,168000,Employer
+Simplot,3.8,Data Engineer,n/a,Intermediate,"College Park, MD",72800,104000,88400,Employer
+Walmart Advanced Systems and Robotics,4.1,Software Engineer,n/a,Intermediate,"Fort Wayne, IN",118000,142000,130000,Employer
+Fanatics Inc.,3.5,Software Engineer,n/a,Intermediate,"Boise, ID",109000,219000,164000,Employer
+GE HEALTHCARE,4,Software Engineer,n/a,Senior,"Andover, MA",64000,113000,88500,Glassdoor
+NORC at the University of Chicago,4.1,Software Engineer,Android,Intermediate,Unknown,104000,166000,135000,Employer
+WSSC Water,5,Software Engineer,n/a,Intermediate,"Washington, DC",181000,212000,196500,Employer
+RVO Health,4,Cloud Engineer,n/a,Intermediate,"Chicago, IL",91000,119000,105000,Glassdoor
+Wisenbaker Builder Services,3.8,Software Engineer,Build/Release,Intermediate,"Laurel, MD",70000,115000,92500,Employer
+Optum,3,Software Engineer,n/a,Intermediate,"Charlotte, NC",124000,211000,167500,Employer
+SoFi,3.9,Software Engineer,n/a,Intermediate,"Hillsboro, TX",161000,253000,207000,Employer
+Fanatics Inc.,4.1,Software Engineer,Java,Senior,"Eden Prairie, MN",90000,140000,115000,Employer
+Micron,3.4,Software Engineer,n/a,Senior,"Seattle, WA",123000,175000,149000,Employer
+Boeing,3.5,Software Engineer,n/a,Intermediate,"New York, NY",81000,131000,106000,Glassdoor
+bellelynn,3.6,Software Engineer,n/a,Intermediate,"Boise, ID",77000,104000,90500,Glassdoor
+Bertrandt,3.8,Software Engineer,n/a,Senior,"El Segundo, CA",125000,208000,166500,Employer
+Amazon.com Services LLC,3.7,Software Engineer,n/a,Senior,"Columbia, MD",80000,113000,96500,Glassdoor
+Salesforce,4,Software Engineer,n/a,Intermediate,"Sterling Heights, MI",129000,224000,176500,Employer
+Ford Motor Company,4.2,Software Engineer,n/a,Intermediate,"New York, NY",92000,133000,112500,Glassdoor
+EAI Technologies,3.8,Software Engineer,n/a,Intermediate,"Bellevue, WA",105000,130000,117500,Glassdoor
+Mahlet,4.1,Software Engineer,n/a,Intermediate,"Dearborn, MI",62000,89000,75500,Glassdoor
+New River Systems Corporation,4.4,Software Engineer,n/a,Entry,"Vienna, VA",110000,145000,127500,Employer
+REV Robotics,4.6,Software Engineer,n/a,Intermediate,"Burtonsville, MD",116000,128000,122000,Employer
+"IntelliGenesis, LLC",4.1,System Engineer,n/a,Intermediate,Unknown,111000,184000,147500,Employer
+Enersys,3.6,Software Engineer,n/a,Senior,"Carrollton, TX",138000,297000,217500,Employer
+University of Washington,4.7,Software Engineer,Fullstack,Entry,"Arlington, VA",109000,145000,127000,Glassdoor
+Hewlett Packard,3.8,Software Engineer,n/a,Entry,"Longmont, CO",97000,133000,115000,Glassdoor
+Movius Interactive Corporation,3.4,Software Engineer,n/a,Intermediate,"Seattle, WA",100000,145000,122500,Employer
+Noblis,4.1,Software Engineer,n/a,Intermediate,"Fort Collins, CO",86000,129000,107500,Glassdoor
+CEDENT,3.7,Software Engineer,Backend,Intermediate,"Fremont, CA",53000,96000,74500,Glassdoor
+Bank of America,3.5,Software Engineer,n/a,Intermediate,"McLean, VA",75000,131000,103000,Employer
+LinQuest Corporation,4.3,System Engineer,JAVA,Intermediate,"Warren, MI",119000,173000,146000,Glassdoor
+Hewlett Packard,3.5,Software Engineer,n/a,Intermediate,"Charlotte, NC",97000,126000,111500,Glassdoor
+Oracle,4,Software Engineer,n/a,Intermediate,Unknown,84000,106000,95000,Glassdoor
+Federal Reserve Bank of Boston,4.1,Software Engineer,Frontend,Intermediate,"Fort Collins, CO",81000,109000,95000,Glassdoor
+Collins Aerospace,3.5,Software Engineer,n/a,Intermediate,"Austin, TX",166000,228000,197000,Employer
+Apriva,3.9,Software Engineer,Fullstack,Intermediate,"Boston, MA",154000,279000,216500,Employer
+ASEC,3.9,Software Engineer,n/a,Intermediate,"Cedar Rapids, IA",115000,154000,134500,Employer
+T. Rowe Price,4.6,Software Engineer,n/a,Senior,"Phoenix, AZ",66000,109000,87500,Glassdoor
+S&S Activewear LLC,3.8,Software Engineer,n/a,Intermediate,"Patuxent River, MD",116000,204000,160000,Employer
+Peterson Technologies,4,Software Engineer,n/a,Intermediate,"Owings Mills, MD",102000,150000,126000,Glassdoor
+"LongPath Technologies, Inc.",3.7,Software Engineer,n/a,Senior,"Bolingbrook, IL",139000,184000,161500,Glassdoor
+Gradient,4,Software Engineer,n/a,Intermediate,"Hanover, MD",94000,118000,106000,Glassdoor
+Amazon.com Services LLC,4.2,Software Engineer,n/a,Senior,"Boulder, CO",94000,136000,115000,Glassdoor
+ENVISN INCORPORATED,3.7,Software Engineer,n/a,Senior,"Burlingame, CA",126000,265000,195500,Employer
+Intersoft Data Labs,3.5,Software Engineer,n/a,Intermediate,"Tempe, AZ",100000,135000,117500,Glassdoor
+Digital Insight Printing,4.1,QA/Test Engineer,n/a,Intermediate,"Indianola, PA",175000,209000,192000,Employer
+Teradyne,3.6,Software Engineer,n/a,Intermediate,"Columbia, MD",248000,385000,316500,Employer
+Beshenich Muir & Associates Llc,4.6,Software Engineer,n/a,Intermediate,Remote,91000,152000,121500,Employer
+Powermind Solutions,4.6,ML/AI Engineer,n/a,Intermediate,"North Reading, MA",129000,193000,161000,Employer
+Plaid,3.7,System Engineer,n/a,Intermediate,"Fort Belvoir, VA",98000,135000,116500,Glassdoor
+"Grammarly, Inc.",3.2,Software Engineer,n/a,Intermediate,Unknown,114000,149000,131500,Glassdoor
+ShipperHQ,4,Software Engineer,n/a,Intermediate,"San Francisco, CA",130000,236000,183000,Employer
+Bryn Neil,3.6,Software Engineer,Backend,Intermediate,Unknown,144000,288000,216000,Employer
+DCS Corp,3.9,Software Engineer,SRE,Senior,"Austin, TX",49000,84000,66500,Glassdoor
+Bank of America,3.4,Software Engineer,n/a,Intermediate,"Denver, CO",129000,224000,176500,Employer
+"Amazon Web Services, Inc.",3.8,Software Engineer,n/a,Intermediate,Unknown,118000,184000,151000,Glassdoor
+"Bio-Rad Laboratories, Inc.",4.1,Software Engineer,n/a,Intermediate,"Plano, TX",86000,116000,101000,Glassdoor
+"Audacy, Inc.",4.8,Software Engineer,n/a,Intermediate,"Seattle, WA",124000,234000,179000,Employer
+CyberKorp,4.2,Software Engineer,n/a,Intermediate,"Hercules, CA",80000,119000,99500,Employer
+Tesla,4.1,Software Engineer,Java,Entry,"Fort Meade, MD",234000,284000,259000,Employer
+OpenAI,3.1,Data Engineer,ETL,Intermediate,"Elkridge, MD",160000,385000,272500,Employer
+Electronic Warfare Associates,3.8,Software Engineer,n/a,Intermediate,"San Francisco, CA",82000,118000,100000,Glassdoor
+"BillGO, Inc.",3.3,Software Engineer,n/a,Senior,"Frisco, TX",69000,107000,88000,Glassdoor
+Genesys,3.6,Software Engineer,n/a,Intermediate,"Mount Laurel, NJ",95000,143000,119000,Employer
