@@ -1,18 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>D3 Project Starter Template</title>
     <meta charset="UTF-8">
-    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Salary Breakdown in the US</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>    
-    <!-- Add HTML content, SVG drawing area, ... -->
-    
-    <!-- D3 bundle -->
-    <script src="js/d3.v6.min.js"></script>
+<body>
 
-    <!-- Our JS code -->
+    <div id="container">
+        <h1 id="title">Software Engineer Salary Breakdown in the US</h1>
+
+        <div id="top-container">
+            <div id="bubble-chart">
+                <p class="view-title">Bubble Chart</p>
+                <svg id="bubble-svg"></svg>
+            </div>
+            <div id="map">
+                <p class="view-title">Map</p>
+                <svg id="map-svg"></svg>
+            </div>
+        </div>
+        <div id="scatter-plot">
+            <p class="view-title">Scatter Plot</p>
+            <svg id="scatter-svg"></svg>
+        </div>
+    </div>
+
+    <script src="js/d3.v6.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/bubble_chart.js"></script>
+     <script src="js/map.js"></script>
+      <script src="js/scatter_plot.js"></script>
+
 </body>
 </html>
