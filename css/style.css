@@ -7,10 +7,10 @@ body {
 
 #title {
     font-family: Arial, sans-serif;
-    font-size: 32px; 
-    font-weight: bold; 
-    text-transform: uppercase; 
-    text-align: center; 
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -28,9 +28,11 @@ body {
     width: 100%;
 }
 
-#bubble-chart, #map {
+#bubble-chart,
+#map {
     flex: 1;
-    border: 2px dashed black; /* place holder */
+    border: 2px dashed black;
+    /* place holder */
     padding: 10px;
     height: 500px;
     position: relative;
@@ -38,7 +40,8 @@ body {
 
 #scatter-plot {
     width: 80%;
-    border: 2px dashed black; /* place holder */
+    border: 2px dashed black;
+    /* place holder */
     padding: 10px;
     height: 500px;
 }
@@ -51,4 +54,13 @@ svg {
 .view-title {
     font-size: 18px;
     font-weight: bold;
+}
+
+.state {
+    cursor: pointer;
+    transition: fill 0.2s;
+}
+
+.state:hover {
+    fill-opacity: 0.8;
 }
