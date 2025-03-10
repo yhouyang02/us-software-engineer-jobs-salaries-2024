@@ -31,8 +31,7 @@ body {
 #bubble-chart,
 #map {
     flex: 1;
-    border: 2px dashed black;
-    /* place holder */
+   /* border: 2px dashed black; place holder */
     padding: 10px;
     height: 500px;
     position: relative;
@@ -40,8 +39,7 @@ body {
 
 #scatter-plot {
     width: 80%;
-    border: 2px dashed black;
-    /* place holder */
+   /* border: 2px dashed black; place holder */
     padding: 10px;
     height: 500px;
 }

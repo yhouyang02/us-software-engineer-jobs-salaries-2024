@@ -6,10 +6,10 @@ class GeoMap {
             containerHeight: 500,
             margin: { top: 10, right: 10, bottom: 10, left: 10 },
             tooltipPadding: 10,
-            legendBottom: 50,
-            legendLeft: 50,
+            legendTop: 20,
+            legendRight: 20,
             legendRectHeight: 12,
-            legendRectWidth: 150
+            legendRectWidth: 100
         };
         this.data = _data;
         this.initVis();
@@ -60,8 +60,63 @@ class GeoMap {
 
             vis.processData();
             vis.updateVis();
+            vis.createLegend();
         });
     }
+
+    /**
+     * Create legend for job counts
+     */
+      createLegend() {
+        let vis = this;
+
+        const legendGroup = vis.svg.append("g")
+            .attr("transform", `translate(${vis.width - vis.config.legendRight - vis.config.legendRectWidth - 50},${vis.config.legendTop})`);
+
+        // Add legend title
+        legendGroup.append("text")
+            .attr("x", vis.config.legendRectWidth / 2)
+            .attr("y", -10)
+            .attr("text-anchor", "middle")
+            .style("font-size", "14px")
+            .style("font-weight", "bold")
+            .text("Number of Jobs");
+
+        const legendGradient = vis.svg.append("defs")
+            .append("linearGradient")
+            .attr("id", "legend-gradient")
+            .attr("x1", "0%")
+            .attr("x2", "100%")
+            .attr("y1", "0%")
+            .attr("y2", "0%");
+
+        legendGradient.selectAll("stop")
+            .data(d3.range(0, 101, 10).map(d => ({ offset: `${d}%`, color: vis.colorScale(d) })))
+            .enter().append("stop")
+            .attr("offset", d => d.offset)
+            .attr("stop-color", d => d.color);
+
+        legendGroup.append("rect")
+            .attr("width", vis.config.legendRectWidth)
+            .attr("height", vis.config.legendRectHeight)
+            .style("fill", "url(#legend-gradient)");
+
+        // Create legend axis scale
+        const legendScale = d3.scaleLinear()
+            .domain([0, 100])
+            .range([0, vis.config.legendRectWidth]);
+
+        const legendAxis = d3.axisBottom(legendScale)
+            .tickValues(d3.range(0, 101, 20))
+            .tickSize(4)
+            .tickFormat(d3.format("d"));
+
+        // Append legend axis
+        legendGroup.append("g")
+            .attr("transform", `translate(0, ${vis.config.legendRectHeight})`)
+            .call(legendAxis);
+    }
+
 
     /**
      * Process data and aggregate job counts by state
@@ -131,9 +186,9 @@ class GeoMap {
                 const count = vis.stateJobCounts.get(stateName) || 0;
                 return vis.colorScale(count);
             })
-            .attr('stroke', '#fff')
-            .attr('stroke-width', 0.5)
-            .on('mouseover', function (event, d) {
+            .attr('stroke', 'black')
+            .attr('stroke-width', 1)
+             .on('mouseover', function (event, d) {
                 const stateName = d.properties.name;
                 const jobCount = vis.stateJobCounts.get(stateName) || 0;
 
@@ -159,8 +214,8 @@ class GeoMap {
             })
             .on('mouseout', function () {
                 d3.select(this)
-                    .attr('stroke-width', 0.5)
-                    .attr('stroke', '#fff');
+                    .attr('stroke-width', 1)
+                    .attr('stroke', 'black');
 
                 vis.tooltip.style('opacity', 0);
             });

@@ -33,7 +33,13 @@ class BubbleChart {
 
          vis.xAxisGroupFixed = vis.svg.append("g")
             .attr("transform", `translate(${vis.config.margin.left - 50},${vis.config.margin.top + vis.height + 60})`);
-
+          vis.svg.append("text")
+            .attr("class", "x-axis-label")
+            .attr("x", vis.config.containerWidth / 2)
+            .attr("y", vis.config.containerHeight + 50)
+            .attr("text-anchor", "middle")
+            .style("font-size", "14px")
+            .text("Company Rating");
 
         // Define X Scale for clusters
         vis.xScale = d3.scaleLinear()
@@ -79,23 +85,23 @@ class BubbleChart {
 
         // Append legend gradient
         const defs = vis.chartGroup.append("defs");
-        const linearGradient = defs.append("linearGradient")
-            .attr("id", "legend-gradient")
-            .attr("x1", "0%")
-            .attr("x2", "100%")
-            .attr("y1", "0%")
-            .attr("y2", "0%");
+        // const linearGradient = defs.append("linearGradient")
+        //     .attr("id", "legend-gradient")
+        //     .attr("x1", "0%")
+        //     .attr("x2", "100%")
+        //     .attr("y1", "0%")
+        //     .attr("y2", "0%");
 
-        // Define gradient color stops
-        linearGradient.selectAll("stop")
-            .data([
-                { offset: "0%", color: vis.colorScale(1) },
-                { offset: "50%", color: vis.colorScale(3) },
-                { offset: "100%", color: vis.colorScale(5) }
-            ])
-            .enter().append("stop")
-            .attr("offset", d => d.offset)
-            .attr("stop-color", d => d.color);
+        // // Define gradient color stops
+        // linearGradient.selectAll("stop")
+        //     .data([
+        //         { offset: "0%", color: vis.colorScale(1) },
+        //         { offset: "50%", color: vis.colorScale(3) },
+        //         { offset: "100%", color: vis.colorScale(5) }
+        //     ])
+        //     .enter().append("stop")
+        //     .attr("offset", d => d.offset)
+        //     .attr("stop-color", d => d.color);
 
         vis.chartGroup.append("text")
             .attr("x", legendX + legendWidth / 2)
