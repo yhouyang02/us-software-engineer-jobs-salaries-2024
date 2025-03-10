@@ -40,8 +40,18 @@ d3.csv("./data/salaries.csv").then(data => {
     const yAxisGroup = svg.append("g").attr("class", "y-axis");
     const gridGroup = svg.append("g").attr("class", "grid");
 
-    // setting up tooltip
-    const tooltip = d3.select(".tooltip");
+    // Creating a separate tooltip element (avoiding conflicts)
+    const customTooltip = d3.select("body")
+        .append("div")
+        .attr("class", "custom-tooltip")
+        .style("position", "absolute")
+        .style("background", "#f9f9f9")
+        .style("border", "1px solid #ddd")
+        .style("padding", "8px")
+        .style("border-radius", "5px")
+        .style("font-size", "12px")
+        .style("visibility", "hidden")
+        .style("pointer-events", "none");
 
     console.log("HERE3")
     // updateChart function
@@ -122,13 +132,13 @@ d3.csv("./data/salaries.csv").then(data => {
                     <strong>Avg Salary:</strong> $${d["Avg Salary"]}
                 `;
 
-                tooltip.style("visibility", "visible")
+                customTooltip.style("visibility", "visible")
                     .html(tooltipContent)
                     .style("left", (event.pageX + 10) + "px")
                     .style("top", (event.pageY - 10) + "px");
             })
             .on("mouseout", () => {
-                tooltip.style("visibility", "hidden");
+                customTooltip.style("visibility", "hidden");
             });
 
         enterCircles.merge(circles).transition().duration(500)
