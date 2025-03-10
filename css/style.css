@@ -63,3 +63,31 @@ svg {
     fill-opacity: 0.8;
 }
 
+.custom-tooltip {
+    position: absolute;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    visibility: hidden;
+    pointer-events: none;
+}
+.legend-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 12px;
+}
+.legend-color {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}

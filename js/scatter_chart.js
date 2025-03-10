@@ -141,6 +141,8 @@ d3.csv("./data/salaries.csv").then(data => {
                 customTooltip.style("visibility", "hidden");
             });
 
+
+
         enterCircles.merge(circles).transition().duration(500)
             .attr("cx", d => xScale(d["Avg Salary"]))
             .attr("cy", d => yScale(d["Company"]) + yScale.bandwidth() / 2);
