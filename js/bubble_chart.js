@@ -76,41 +76,66 @@ class BubbleChart {
      * Creates a color legend
      */
     createLegend() {
-        let vis = this;
+    let vis = this;
 
-        const legendWidth = 300,
-            legendHeight = 15,
-            legendX = vis.width / 2 - legendWidth / 2,
-            legendY = vis.config.containerHeight - 60;
+    const legendWidth = 150,
+        legendHeight = 15,
+        legendX = vis.config.margin.left + 20, // Move to upper left
+        legendY = vis.config.margin.top + 10; // Adjusted Y position
 
-        // Append legend gradient
-        const defs = vis.chartGroup.append("defs");
-        // const linearGradient = defs.append("linearGradient")
-        //     .attr("id", "legend-gradient")
-        //     .attr("x1", "0%")
-        //     .attr("x2", "100%")
-        //     .attr("y1", "0%")
-        //     .attr("y2", "0%");
+    // Append legend gradient inside the main SVG 
+    const defs = vis.svg.append("defs");
+    const linearGradient = defs.append("linearGradient")
+        .attr("id", "legend-gradient-bubblechart")
+        .attr("x1", "0%")
+        .attr("x2", "100%")
+        .attr("y1", "0%")
+        .attr("y2", "0%");
 
-        // // Define gradient color stops
-        // linearGradient.selectAll("stop")
-        //     .data([
-        //         { offset: "0%", color: vis.colorScale(1) },
-        //         { offset: "50%", color: vis.colorScale(3) },
-        //         { offset: "100%", color: vis.colorScale(5) }
-        //     ])
-        //     .enter().append("stop")
-        //     .attr("offset", d => d.offset)
-        //     .attr("stop-color", d => d.color);
+    // Define gradient color 
+    linearGradient.selectAll("stop")
+        .data([
+            { offset: "0%", color: vis.colorScale(1) },   // Low rating
+            { offset: "50%", color: vis.colorScale(3) },  // Medium rating
+            { offset: "100%", color: vis.colorScale(5) }  // High rating
+        ])
+        .enter().append("stop")
+        .attr("offset", d => d.offset)
+        .attr("stop-color", d => d.color);
 
-        vis.chartGroup.append("text")
-            .attr("x", legendX + legendWidth / 2)
-            .attr("y", legendY + 50)
-            .attr("text-anchor", "middle")
-            .style("font-size", "14px")
-            .style("fill", "#333")
-            .style("font-weight", "bold");
-    }
+    // Append the gradient rectangle
+    vis.svg.append("rect")
+        .attr("x", legendX)
+        .attr("y", legendY)
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .style("fill", "url(#legend-gradient-bubblechart)")
+
+    // Append legend labels
+    vis.svg.append("text")
+        .attr("x", legendX)
+        .attr("y", legendY + legendHeight + 15)
+        .attr("text-anchor", "start")
+        .style("font-size", "12px")
+        .text("1.0");
+
+    vis.svg.append("text")
+        .attr("x", legendX + legendWidth)
+        .attr("y", legendY + legendHeight + 15)
+        .attr("text-anchor", "end")
+        .style("font-size", "12px")
+        .text("5.0");
+
+    // Title for the legend
+    vis.svg.append("text")
+        .attr("x", legendX + legendWidth / 2)
+        .attr("y", legendY - 10)
+        .attr("text-anchor", "middle")
+        .style("font-size", "14px")
+        .style("fill", "#333")
+        .style("font-weight", "bold")
+        .text("Company Rating Scale");
+}
 
     /**
      * Setup Zooming and Panning
