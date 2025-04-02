@@ -11,7 +11,61 @@ class GeoMap {
             legendRectHeight: 12,
             legendRectWidth: 100
         };
+        this.stateAbbreviations = {
+            'AL': 'Alabama',
+            'AK': 'Alaska',
+            'AZ': 'Arizona',
+            'AR': 'Arkansas',
+            'CA': 'California',
+            'CO': 'Colorado',
+            'CT': 'Connecticut',
+            'DE': 'Delaware',
+            'FL': 'Florida',
+            'GA': 'Georgia',
+            'HI': 'Hawaii',
+            'ID': 'Idaho',
+            'IL': 'Illinois',
+            'IN': 'Indiana',
+            'IA': 'Iowa',
+            'KS': 'Kansas',
+            'KY': 'Kentucky',
+            'LA': 'Louisiana',
+            'ME': 'Maine',
+            'MD': 'Maryland',
+            'MA': 'Massachusetts',
+            'MI': 'Michigan',
+            'MN': 'Minnesota',
+            'MS': 'Mississippi',
+            'MO': 'Missouri',
+            'MT': 'Montana',
+            'NE': 'Nebraska',
+            'NV': 'Nevada',
+            'NH': 'New Hampshire',
+            'NJ': 'New Jersey',
+            'NM': 'New Mexico',
+            'NY': 'New York',
+            'NC': 'North Carolina',
+            'ND': 'North Dakota',
+            'OH': 'Ohio',
+            'OK': 'Oklahoma',
+            'OR': 'Oregon',
+            'PA': 'Pennsylvania',
+            'RI': 'Rhode Island',
+            'SC': 'South Carolina',
+            'SD': 'South Dakota',
+            'TN': 'Tennessee',
+            'TX': 'Texas',
+            'UT': 'Utah',
+            'VT': 'Vermont',
+            'VA': 'Virginia',
+            'WA': 'Washington',
+            'WV': 'West Virginia',
+            'WI': 'Wisconsin',
+            'WY': 'Wyoming',
+            'DC': 'District of Columbia'
+        };
         this.data = _data;
+        this.selectedState = null;
         this.initVis();
     }
 
@@ -127,28 +181,13 @@ class GeoMap {
         vis.stateJobCounts = new Map();
         vis.jobTitlesByState = new Map();
 
-        const stateAbbreviations = {
-            'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas',
-            'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware',
-            'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho',
-            'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas',
-            'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland',
-            'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi',
-            'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada',
-            'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York',
-            'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma',
-            'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina',
-            'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah',
-            'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia',
-            'WI': 'Wisconsin', 'WY': 'Wyoming', 'DC': 'District of Columbia'
-        };
 
         vis.data.forEach(d => {
             if (!d.location) return;
             let state = d.location.split(',').pop().trim();
 
-            if (state.length === 2 && stateAbbreviations[state]) {
-                state = stateAbbreviations[state];
+            if (state.length === 2 && vis.stateAbbreviations[state]) {
+                state = vis.stateAbbreviations[state];
             }
 
             const jobTitle = d.primary_title || "Unknown";
@@ -218,7 +257,109 @@ class GeoMap {
                     .attr('stroke', 'black');
 
                 vis.tooltip.style('opacity', 0);
+            })
+            .on('click', function(event, d) {
+                vis.handleStateClick(event, d);
             });
+    }
+
+    // Click on state to zoom in & display city jobs
+    handleStateClick(event, d) {
+        let vis = this;
+        const clickedState = d.properties.name;
+    
+        if (vis.selectedState === clickedState) {
+            vis.selectedState = null;
+            vis.resetZoom();
+            
+            // TODO: reset bubble chart filter here
+
+            return;
+        }
+    
+        vis.selectedState = clickedState;
+        const bounds = vis.geoPath.bounds(d);
+        const dx = bounds[1][0] - bounds[0][0];
+        const dy = bounds[1][1] - bounds[0][1];
+        const x = (bounds[0][0] + bounds[1][0]) / 2;
+        const y = (bounds[0][1] + bounds[1][1]) / 2;
+        const scale = 0.9 / Math.max(dx / vis.width, dy / vis.height);
+        const translate = [vis.width / 2 - scale * x, vis.height / 2 - scale * y];
+    
+        vis.chart.transition()
+            .duration(750)
+            .attr("transform", `translate(${translate})scale(${scale})`)
+            .on("end", () => {
+                vis.displayCityJobs(clickedState);
+            });
+    }
+    
+    displayCityJobs(stateName) {
+        let vis = this;
+
+        const experienceLevels = ["Entry", "Intermediate", "Senior"];
+        const colorScale = d3.scaleOrdinal()
+            .domain(experienceLevels)
+            .range(["#68ff68", "#65c1ff", "#c88bff"]);  // colors are based on experience levels from scatterplot
+        
+        d3.json('data/us-cities.json').then(cityData => {
+            const stateJobs = vis.data.filter(job => {
+                const jobState = job.location.split(',').pop().trim();
+                return jobState === stateName || 
+                       (jobState.length === 2 && vis.stateAbbreviations[jobState] === stateName);
+            });
+    
+            const jobCircles = vis.chart.selectAll('.job-circle')
+                .data(stateJobs)
+                .join('circle')
+                .attr('class', 'job-circle')
+                .attr('cx', d => {
+                    const location = d.location.trim();
+                    const coords = cityData[location] ? vis.projection([cityData[location].lng, cityData[location].lat]) : null;
+                    return coords ? coords[0] : 0;
+                })
+                .attr('cy', d => {
+                    const location = d.location.trim();
+                    return cityData[location] ? vis.projection([cityData[location].lng, cityData[location].lat])[1] : 0;
+                })
+                .attr('r', d => Math.sqrt(d.avg_salary) / 100)
+                .attr('fill', d => colorScale(d.experience_level))
+                .attr('stroke', 'black')
+                .attr('stroke-width', 1);
+    
+            jobCircles
+                .on('mouseover', (event, d) => {
+                    vis.tooltip
+                        .style('opacity', 1)
+                        .html(`
+                            <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+                                ${d.company}
+                            </div>
+                            <div>Title: ${d.primary_title}</div>
+                            <div>Salary: $${d.avg_salary.toLocaleString()}</div>
+                            <div>Location: ${d.location}</div>
+                        `)
+                        .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')
+                        .style('top', (event.pageY + vis.config.tooltipPadding) + 'px');
+                })
+                .on('mousemove', (event) => {
+                    vis.tooltip
+                        .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')
+                        .style('top', (event.pageY + vis.config.tooltipPadding) + 'px');
+                })
+                .on('mouseout', () => {
+                    vis.tooltip.style('opacity', 0);
+                });
+        });
+    }
+
+    resetZoom() {
+        let vis = this;
+
+        vis.chart.selectAll('.job-circle').remove();
+        vis.chart.transition()
+            .duration(750)
+            .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
     }
 
 }
