@@ -232,7 +232,7 @@ class GeoMap {
                 const jobCount = vis.stateJobCounts.get(stateName) || 0;
 
                 d3.select(this)
-                    .attr('stroke-width', 2)
+                    .attr('stroke-width', 0.6)
                     .attr('stroke', '#333');
 
                 vis.tooltip
@@ -253,7 +253,7 @@ class GeoMap {
             })
             .on('mouseout', function () {
                 d3.select(this)
-                    .attr('stroke-width', 1)
+                    .attr('stroke-width', 0.3)
                     .attr('stroke', 'black');
 
                 vis.tooltip.style('opacity', 0);
@@ -325,7 +325,7 @@ class GeoMap {
                 .attr('r', d => Math.sqrt(d.avg_salary) / 100)
                 .attr('fill', d => colorScale(d.experience_level))
                 .attr('stroke', 'black')
-                .attr('stroke-width', 1);
+                .attr('stroke-width', 0.2);
     
             jobCircles
                 .on('mouseover', (event, d) => {
