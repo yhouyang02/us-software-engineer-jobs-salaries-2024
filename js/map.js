@@ -66,8 +66,11 @@ class GeoMap {
         };
         this.data = _data;
         this.selectedState = null;
+        this.bubbleChart;
         this.initVis();
     }
+
+
 
     /**
      * Initialize visualization
@@ -263,6 +266,8 @@ class GeoMap {
             });
     }
 
+
+
     // Click on state to zoom in & display city jobs
     handleStateClick(event, d) {
         let vis = this;
@@ -360,6 +365,26 @@ class GeoMap {
         vis.chart.transition()
             .duration(750)
             .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+    }
+
+    // used for bidirectional linking
+    setBubbleChart(bubbleChart) {
+        this.bubbleChart = bubbleChart;
+    }
+
+    zoomToState(state) {
+        let vis = this;
+        
+        const stateName = vis.stateAbbreviations[state] || state;
+        const stateFeature = topojson.feature(vis.us, vis.us.objects.states).features
+        .find(d => d.properties.name === stateName);
+        
+        if (stateFeature) {
+            if (vis.selectedState) {
+                vis.resetZoom();
+            }
+            vis.handleStateClick(null, stateFeature);
+        }
     }
 
 }

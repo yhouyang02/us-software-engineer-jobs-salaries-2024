@@ -8,8 +8,11 @@ class BubbleChart {
         };
 
         this.data = _data;
+        this.geoMap;
         this.initVis();
     }
+
+  
 
     /**
      * Initialize the visualization
@@ -215,6 +218,12 @@ class BubbleChart {
             })
             .on("mouseleave", () => {
                 vis.tooltip.style("opacity", 0);
+            })
+            .on("click", (event, d) => {
+                if (vis.geoMap) {
+                    const state = d.location.split(',').pop().trim();
+                    vis.geoMap.zoomToState(state);
+                }
             });
 
         // Merge selections
@@ -240,5 +249,10 @@ class BubbleChart {
             .attr("cx", d => d.x)
             .attr("cy", d => d.y)
             .attr("transform", "translate(0,0)"); // Reset any transform
+    }
+
+    // used for bidirectional linking
+    setGeoMap(geoMap) {
+        this.geoMap = geoMap;
     }
 }

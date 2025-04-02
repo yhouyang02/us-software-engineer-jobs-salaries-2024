@@ -22,4 +22,8 @@ d3.csv('data/salaries_clean.csv').then(data => {
     const geoMap = new GeoMap({
         parentElement: '#map-svg',
     }, data);
+
+    bubbleChart.setGeoMap(geoMap);
+    geoMap.setBubbleChart(bubbleChart);
+
 });
