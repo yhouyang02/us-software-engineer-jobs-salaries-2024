@@ -220,7 +220,7 @@ class BubbleChart {
             .attr("cx", d => d.clusterX)
             .attr("cy", d => d.clusterY || vis.height / 2)
             .attr("fill", d => vis.colorScale(d.company_score))
-            .style("opacity", 0.8)
+            .style("opacity", 0.9)
             .attr("stroke", "black")
             .attr("stroke-width", 0.5)
             .style("cursor", "pointer")
@@ -313,7 +313,7 @@ class BubbleChart {
             vis.bubbles
                 .transition()
                 .duration(500)
-                .style("opacity", 0.8)
+                .style("opacity", 0.9)
                 .attr("display", null);
 
             // Run a reset simulation to redistribute all bubbles
@@ -347,7 +347,7 @@ class BubbleChart {
         vis.bubbles
             .transition()
             .duration(500)
-            .style("opacity", d => d.isVisible ? 0.8 : 0.1)
+            .style("opacity", d => d.isVisible ? 0.9 : 0.1)
             .attr("display", d => d.isVisible ? null : "none");
 
         // Update the force simulation with only the state data
