@@ -369,7 +369,7 @@ class GeoMap {
                 .attr('fill', d => colorScale(d.experience_level))
                 .attr('fill-opacity', 0.65)
                 .attr('stroke', 'black')
-                .attr('stroke-width', 0.2)
+                .attr('stroke-width', 0.1)
                 .style('cursor', 'pointer');
 
             jobCircles
