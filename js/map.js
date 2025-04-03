@@ -367,6 +367,7 @@ class GeoMap {
                 })
                 .attr('r', d => Math.sqrt(d.avg_salary) / 100)
                 .attr('fill', d => colorScale(d.experience_level))
+                .attr('fill-opacity', 0.65)
                 .attr('stroke', 'black')
                 .attr('stroke-width', 0.2)
                 .style('cursor', 'pointer');
