@@ -88,6 +88,16 @@ class GeoMap {
 
         vis.chart = vis.svg.append('g')
             .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+            
+        vis.svg.append("defs").append("filter")
+            .attr("id", "state-glow")
+            .append("feDropShadow")
+            .attr("dx", 0)
+            .attr("dy", 0)
+            .attr("stdDeviation", 4)
+            .attr("flood-color", "#000")
+            .attr("flood-opacity", 0.4);
+
 
         vis.projection = d3.geoAlbersUsa()
             .translate([vis.width / 2, vis.height / 2])
@@ -119,7 +129,42 @@ class GeoMap {
             vis.updateVis();
             vis.createLegend();
         });
+
+        vis.currentTransform = d3.zoomIdentity; 
+
+        vis.zoom = d3.zoom()
+            .scaleExtent([1, 8])
+            .on('zoom', (event) => {
+                vis.currentTransform = event.transform;
+                vis.chart.attr('transform', event.transform);
+            });
+
+        vis.svg.call(vis.zoom);
+
+
     }
+
+    resetZoom() {
+        let vis = this;
+        vis.selectedState = null;
+
+        vis.chart.selectAll('.job-circle').remove();
+
+        vis.svg.transition().duration(750)
+            .call(vis.zoom.transform, d3.zoomIdentity);
+
+        vis.chart.selectAll('.state')
+            .attr('stroke-width', 1)
+            .attr('stroke', 'black')
+            .attr('filter', null)
+            .attr('fill', d => {
+                const stateName = d.properties.name;
+                const count = vis.stateJobCounts.get(stateName) || 0;
+                return vis.colorScale(count);
+            });
+    }
+
+
 
     /**
      * Create legend for job counts
@@ -233,10 +278,12 @@ class GeoMap {
              .on('mouseover', function (event, d) {
                 const stateName = d.properties.name;
                 const jobCount = vis.stateJobCounts.get(stateName) || 0;
+                const originalColor = vis.colorScale(jobCount);
 
                 d3.select(this)
                     .attr('stroke-width', 0.6)
-                    .attr('stroke', '#333');
+                    .attr('stroke', '#333')
+                    .attr('fill', d3.color(originalColor).brighter(0.7));
 
                 vis.tooltip
                     .style('opacity', 1)
@@ -254,27 +301,39 @@ class GeoMap {
                     .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')
                     .style('top', (event.pageY + vis.config.tooltipPadding) + 'px');
             })
-            .on('mouseout', function () {
+           .on('mouseout', function (event, d) {
+                const stateName = d.properties.name;
+                const jobCount = vis.stateJobCounts.get(stateName) || 0;
+
+                const isSelected = vis.selectedState === stateName;
+
                 d3.select(this)
-                    .attr('stroke-width', 0.3)
-                    .attr('stroke', 'black');
+                    .attr('stroke-width', isSelected ? 1.5 : 1)
+                    .attr('stroke', isSelected ? '#222' : 'black')
+                    .attr('fill', isSelected 
+                        ? vis.colorScale(jobCount) 
+                        : vis.colorScale(jobCount)) 
+                    .attr('filter', isSelected ? 'url(#state-glow)' : null);
 
                 vis.tooltip.style('opacity', 0);
             })
+
+
             .on('click', function(event, d) {
                 vis.handleStateClick(event, d);
             })
+            .attr('pointer-events', 'all')
             // hacky wheel zoom in and out functionality
             // if you want proper zoom, copy the one from bubble_chart.js
-            .on('wheel', function(event, d) {
-                event.preventDefault(); // prevent default zoom behavior
-                if (event.deltaY < 0) {
-                    vis.handleStateClick(event, d);
-                } else {
-                    vis.selectedState = null;
-                    vis.resetZoom();
-                }
-            });
+            // .on('wheel', function(event, d) {
+            //     event.preventDefault(); // prevent default zoom behavior
+            //     if (event.deltaY < 0) {
+            //         vis.handleStateClick(event, d);
+            //     } else {
+            //         vis.selectedState = null;
+            //         vis.resetZoom();
+            //     }
+            // });
     }
 
 
@@ -283,7 +342,6 @@ class GeoMap {
     handleStateClick(event, d) {
         let vis = this;
         const clickedState = d.properties.name;
-    
         if (vis.selectedState === clickedState) {
             vis.selectedState = null;
             vis.resetZoom();
@@ -291,7 +349,7 @@ class GeoMap {
             // TODO: reset bubble chart filter here
 
             return;
-        }
+        } else {
     
         vis.selectedState = clickedState;
         const bounds = vis.geoPath.bounds(d);
@@ -299,15 +357,30 @@ class GeoMap {
         const dy = bounds[1][1] - bounds[0][1];
         const x = (bounds[0][0] + bounds[1][0]) / 2;
         const y = (bounds[0][1] + bounds[1][1]) / 2;
-        const scale = 0.9 / Math.max(dx / vis.width, dy / vis.height);
+        const scale = 0.5 / Math.max(dx / vis.width, dy / vis.height);
         const translate = [vis.width / 2 - scale * x, vis.height / 2 - scale * y];
     
-        vis.chart.transition()
-            .duration(750)
-            .attr("transform", `translate(${translate})scale(${scale})`)
+       vis.svg.transition()
+            .duration(900)
+            .call(vis.zoom.transform, d3.zoomIdentity
+                .translate(translate[0], translate[1])
+                .scale(scale))
             .on("end", () => {
                 vis.displayCityJobs(clickedState);
             });
+
+
+      vis.chart.selectAll('.state')
+            .attr('fill', s => {
+                const stateName = s.properties.name;
+                const count = vis.stateJobCounts.get(stateName) || 0;
+                return vis.colorScale(count);
+            })
+            .attr('stroke-width', s => s.properties.name === clickedState ? 2.5 : 1)
+            .attr('stroke', s => s.properties.name === clickedState ? '#222' : 'black')
+            .attr('filter', s => s.properties.name === clickedState ? 'url(#state-glow)' : null);
+
+            }
     }
     
     displayCityJobs(stateName) {
@@ -369,15 +442,6 @@ class GeoMap {
         });
     }
 
-    resetZoom() {
-        let vis = this;
-
-        vis.chart.selectAll('.job-circle').remove();
-        vis.chart.transition()
-            .duration(750)
-            .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
-    }
-
     // used for bidirectional linking
     setBubbleChart(bubbleChart) {
         this.bubbleChart = bubbleChart;
@@ -392,7 +456,7 @@ class GeoMap {
         
         if (stateFeature) {
             if (vis.selectedState) {
-                vis.resetZoom();
+             //   vis.resetZoom();
             }
             vis.handleStateClick(null, stateFeature);
         }
