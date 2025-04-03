@@ -347,7 +347,7 @@ class BubbleChart {
         vis.bubbles
             .transition()
             .duration(500)
-            .style("opacity", d => d.isVisible ? 0.9 : 0.1)
+            .style("opacity", 0.9)
             .attr("display", d => d.isVisible ? null : "none");
 
         // Update the force simulation with only the state data
