@@ -323,17 +323,6 @@ class GeoMap {
                 vis.handleStateClick(event, d);
             })
             .attr('pointer-events', 'all')
-            // hacky wheel zoom in and out functionality
-            // if you want proper zoom, copy the one from bubble_chart.js
-            // .on('wheel', function(event, d) {
-            //     event.preventDefault(); // prevent default zoom behavior
-            //     if (event.deltaY < 0) {
-            //         vis.handleStateClick(event, d);
-            //     } else {
-            //         vis.selectedState = null;
-            //         vis.resetZoom();
-            //     }
-            // });
     }
 
 
