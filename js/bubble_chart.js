@@ -12,8 +12,6 @@ class BubbleChart {
         this.initVis();
     }
 
-  
-
     /**
      * Initialize the visualization
      */
@@ -51,7 +49,7 @@ class BubbleChart {
 
         vis.radiusScale = d3.scaleSqrt()
             .domain([d3.min(vis.data, d => d.avg_salary), d3.max(vis.data, d => d.avg_salary)])
-            .range([2, 10]); // TODO: size of bubbles
+            .range([1, 13]);
 
         vis.colorScale = d3.scaleSequential(d3.interpolateRdYlBu)
             .domain([1, 5]);
@@ -202,7 +200,13 @@ class BubbleChart {
             .style("opacity", 0.8)
             .attr("stroke", "black")
             .attr("stroke-width", 0.5)
+            .style("cursor", "pointer")
             .on("mouseover", (event, d) => {
+                // Highlight the bubble
+                d3.select(event.target)
+                    .attr("stroke-width", 2)
+                    .attr("stroke", "#333");
+
                 vis.tooltip.style("opacity", 1);
                 vis.tooltip.html(`
                     <strong>${d.company}</strong><br>
@@ -216,7 +220,12 @@ class BubbleChart {
                     .style("left", (event.pageX + 10) + "px")
                     .style("top", (event.pageY - 20) + "px");
             })
-            .on("mouseleave", () => {
+            .on("mouseleave", (event) => {
+                // Reset highlight
+                d3.select(event.target)
+                    .attr("stroke-width", 0.5)
+                    .attr("stroke", "black");
+
                 vis.tooltip.style("opacity", 0);
             })
             .on("click", (event, d) => {
@@ -254,5 +263,102 @@ class BubbleChart {
     // used for bidirectional linking
     setGeoMap(geoMap) {
         this.geoMap = geoMap;
+    }
+
+    /**
+     * Filter bubbles by state
+     * @param {string} stateName - State name to filter by, or null to show all
+     */
+    filterByState(stateName) {
+        let vis = this;
+
+        // Store the current state filter
+        vis.filteredState = stateName;
+
+        // If no state is selected, show all bubbles
+        if (!stateName) {
+            vis.bubbles
+                .transition()
+                .duration(500)
+                .style("opacity", 0.8)
+                .attr("display", null);
+
+            // Reset the force simulation with all data
+            vis.updateForceSimulation(vis.data);
+            return;
+        }
+
+        // Filter bubbles to only show those in the selected state
+        const stateData = vis.data.filter(d => {
+            if (!d.location) return false;
+            const jobState = d.location.split(',').pop().trim();
+
+            // Check if the state matches directly, or if it's an abbreviation
+            return jobState === stateName ||
+                (jobState.length === 2 && vis.geoMap &&
+                    vis.geoMap.stateAbbreviations[jobState] === stateName);
+        });
+
+        // Update bubble visibility
+        vis.bubbles
+            .transition()
+            .duration(500)
+            .style("opacity", d => {
+                const jobState = d.location.split(',').pop().trim();
+                const isInState = jobState === stateName ||
+                    (jobState.length === 2 && vis.geoMap &&
+                        vis.geoMap.stateAbbreviations[jobState] === stateName);
+                return isInState ? 0.9 : 0.15;
+            })
+            .attr("display", d => {
+                const jobState = d.location.split(',').pop().trim();
+                const isInState = jobState === stateName ||
+                    (jobState.length === 2 && vis.geoMap &&
+                        vis.geoMap.stateAbbreviations[jobState] === stateName);
+                return isInState ? null : "none"; // Hide bubbles not in the state
+            });
+
+        // Update the force simulation with only the state data
+        vis.updateForceSimulation(stateData);
+    }
+
+    /**
+     * Update force simulation with new data
+     * @param {Array} data - Data to use for force simulation
+     */
+    updateForceSimulation(data) {
+        let vis = this;
+
+        // Stop any existing simulation
+        if (vis.simulation) {
+            vis.simulation.stop();
+        }
+
+        // Run a new simulation with the filtered data
+        vis.simulation = d3.forceSimulation(data)
+            .alphaDecay(0.05)
+            .velocityDecay(0.3)
+            .force("x", d3.forceX(d => d.clusterX).strength(0.8))
+            .force("y", d3.forceY(vis.height / 2).strength(0.1))
+            .force("collide", d3.forceCollide(d => vis.radiusScale(d.avg_salary) + 1).iterations(2))
+            .stop();
+
+        // Run the simulation in controlled steps
+        const simulationSteps = 50; // Fewer steps for better performance
+        for (let i = 0; i < simulationSteps; ++i) {
+            vis.simulation.tick();
+        }
+
+        // Apply the calculated positions to all bubbles that match the current data
+        data.forEach(d => {
+            const bubble = vis.bubbles.filter(b => b.id === d.id);
+            if (!bubble.empty()) {
+                bubble
+                    .transition()
+                    .duration(750)
+                    .attr("cx", d.x)
+                    .attr("cy", d.y);
+            }
+        });
     }
 }
