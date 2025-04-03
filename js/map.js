@@ -70,8 +70,6 @@ class GeoMap {
         this.initVis();
     }
 
-
-
     /**
      * Initialize visualization
      */
@@ -88,16 +86,27 @@ class GeoMap {
 
         vis.chart = vis.svg.append('g')
             .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
-            
-        vis.svg.append("defs").append("filter")
-            .attr("id", "state-glow")
-            .append("feDropShadow")
-            .attr("dx", 0)
-            .attr("dy", 0)
-            .attr("stdDeviation", 4)
-            .attr("flood-color", "#000")
-            .attr("flood-opacity", 0.4);
 
+        // Click blank space to reset zoom (bubble and map)
+        // @see bubble_chart.initVis()
+        vis.chart.append("rect")
+            .attr("class", "background")
+            .attr("width", vis.width)
+            .attr("height", vis.height)
+            .attr("fill", "transparent")
+            .style("cursor", "default")
+            .on("click", (event) => {
+                // Only trigger if the click was directly on the background (not a state)
+                if (event.target.classList.contains("background")) {
+                    vis.selectedState = null;
+                    vis.resetZoom();
+
+                    // Reset bubble chart as well
+                    if (vis.bubbleChart) {
+                        vis.bubbleChart.filterByState(null);
+                    }
+                }
+            });
 
         vis.projection = d3.geoAlbersUsa()
             .translate([vis.width / 2, vis.height / 2])
@@ -119,7 +128,6 @@ class GeoMap {
         vis.colorScale = d3.scaleSequential(d3.interpolateBlues)
             .domain([0, 100]);
 
-
         Promise.all([
             d3.json('data/us-states.json')
         ]).then(data => {
@@ -129,47 +137,12 @@ class GeoMap {
             vis.updateVis();
             vis.createLegend();
         });
-
-        vis.currentTransform = d3.zoomIdentity; 
-
-        vis.zoom = d3.zoom()
-            .scaleExtent([1, 8])
-            .on('zoom', (event) => {
-                vis.currentTransform = event.transform;
-                vis.chart.attr('transform', event.transform);
-            });
-
-        vis.svg.call(vis.zoom);
-
-
     }
-
-    resetZoom() {
-        let vis = this;
-        vis.selectedState = null;
-
-        vis.chart.selectAll('.job-circle').remove();
-
-        vis.svg.transition().duration(750)
-            .call(vis.zoom.transform, d3.zoomIdentity);
-
-        vis.chart.selectAll('.state')
-            .attr('stroke-width', 1)
-            .attr('stroke', 'black')
-            .attr('filter', null)
-            .attr('fill', d => {
-                const stateName = d.properties.name;
-                const count = vis.stateJobCounts.get(stateName) || 0;
-                return vis.colorScale(count);
-            });
-    }
-
-
 
     /**
      * Create legend for job counts
      */
-      createLegend() {
+    createLegend() {
         let vis = this;
 
         const legendGroup = vis.svg.append("g")
@@ -219,7 +192,6 @@ class GeoMap {
             .call(legendAxis);
     }
 
-
     /**
      * Process data and aggregate job counts by state
      */
@@ -228,7 +200,7 @@ class GeoMap {
 
         vis.stateJobCounts = new Map();
         vis.jobTitlesByState = new Map();
-
+        vis.stateJobsMap = {}; // Cache jobs by state for quicker access
 
         vis.data.forEach(d => {
             if (!d.location) return;
@@ -243,9 +215,11 @@ class GeoMap {
             if (!vis.stateJobCounts.has(state)) {
                 vis.stateJobCounts.set(state, 0);
                 vis.jobTitlesByState.set(state, {});
+                vis.stateJobsMap[state] = [];
             }
 
             vis.stateJobCounts.set(state, vis.stateJobCounts.get(state) + 1);
+            vis.stateJobsMap[state].push(d);
 
             const titleCounts = vis.jobTitlesByState.get(state);
             titleCounts[jobTitle] = (titleCounts[jobTitle] || 0) + 1;
@@ -275,15 +249,14 @@ class GeoMap {
             })
             .attr('stroke', 'black')
             .attr('stroke-width', 1)
-             .on('mouseover', function (event, d) {
+            .style('cursor', 'pointer')
+            .on('mouseover', function (event, d) {
                 const stateName = d.properties.name;
                 const jobCount = vis.stateJobCounts.get(stateName) || 0;
-                const originalColor = vis.colorScale(jobCount);
 
                 d3.select(this)
-                    .attr('stroke-width', 0.6)
-                    .attr('stroke', '#333')
-                    .attr('fill', d3.color(originalColor).brighter(0.7));
+                    .attr('stroke-width', 2)
+                    .attr('stroke', '#333');
 
                 vis.tooltip
                     .style('opacity', 1)
@@ -301,92 +274,84 @@ class GeoMap {
                     .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')
                     .style('top', (event.pageY + vis.config.tooltipPadding) + 'px');
             })
-           .on('mouseout', function (event, d) {
-                const stateName = d.properties.name;
-                const jobCount = vis.stateJobCounts.get(stateName) || 0;
-
-                const isSelected = vis.selectedState === stateName;
-
+            .on('mouseout', function () {
                 d3.select(this)
-                    .attr('stroke-width', isSelected ? 1.5 : 1)
-                    .attr('stroke', isSelected ? '#222' : 'black')
-                    .attr('fill', isSelected 
-                        ? vis.colorScale(jobCount) 
-                        : vis.colorScale(jobCount)) 
-                    .attr('filter', isSelected ? 'url(#state-glow)' : null);
+                    .attr('stroke-width', 1)
+                    .attr('stroke', 'black');
 
                 vis.tooltip.style('opacity', 0);
             })
-
-
-            .on('click', function(event, d) {
+            .on('click', function (event, d) {
                 vis.handleStateClick(event, d);
             })
-            .attr('pointer-events', 'all')
+            // hacky wheel zoom in and out functionality
+            // if you want proper zoom, copy the one from bubble_chart.js
+            .on('wheel', function (event, d) {
+                event.preventDefault(); // prevent default zoom behavior
+                if (event.deltaY < 0) {
+                    vis.handleStateClick(event, d);
+                } else {
+                    vis.selectedState = null;
+                    vis.resetZoom();
+                }
+            });
     }
-
-
 
     // Click on state to zoom in & display city jobs
     handleStateClick(event, d) {
         let vis = this;
         const clickedState = d.properties.name;
+
         if (vis.selectedState === clickedState) {
+            // Clicking the same state again - reset everything
             vis.selectedState = null;
             vis.resetZoom();
-            
-            // TODO: reset bubble chart filter here
+
+            // Reset bubble chart to show all bubbles
+            if (vis.bubbleChart) {
+                vis.bubbleChart.filterByState(null);
+            }
 
             return;
-        } else {
-    
+        }
+
         vis.selectedState = clickedState;
         const bounds = vis.geoPath.bounds(d);
         const dx = bounds[1][0] - bounds[0][0];
         const dy = bounds[1][1] - bounds[0][1];
         const x = (bounds[0][0] + bounds[1][0]) / 2;
         const y = (bounds[0][1] + bounds[1][1]) / 2;
-        const scale = 0.5 / Math.max(dx / vis.width, dy / vis.height);
+        const scale = 0.9 / Math.max(dx / vis.width, dy / vis.height);
         const translate = [vis.width / 2 - scale * x, vis.height / 2 - scale * y];
-    
-       vis.svg.transition()
-            .duration(900)
-            .call(vis.zoom.transform, d3.zoomIdentity
-                .translate(translate[0], translate[1])
-                .scale(scale))
+
+        // Filter bubble chart to show only bubbles in this state
+        if (vis.bubbleChart) {
+            vis.bubbleChart.filterByState(clickedState);
+        }
+
+        vis.chart.transition()
+            .duration(750)
+            .attr("transform", `translate(${translate})scale(${scale})`)
             .on("end", () => {
                 vis.displayCityJobs(clickedState);
             });
-
-
-      vis.chart.selectAll('.state')
-            .attr('fill', s => {
-                const stateName = s.properties.name;
-                const count = vis.stateJobCounts.get(stateName) || 0;
-                return vis.colorScale(count);
-            })
-            .attr('stroke-width', s => s.properties.name === clickedState ? 2.5 : 1)
-            .attr('stroke', s => s.properties.name === clickedState ? '#222' : 'black')
-            .attr('filter', s => s.properties.name === clickedState ? 'url(#state-glow)' : null);
-
-            }
     }
-    
+
     displayCityJobs(stateName) {
         let vis = this;
+
+        // Clear any previous job circles
+        vis.chart.selectAll('.job-circle').remove();
 
         const experienceLevels = ["Entry", "Intermediate", "Senior"];
         const colorScale = d3.scaleOrdinal()
             .domain(experienceLevels)
             .range(["#68ff68", "#65c1ff", "#c88bff"]);  // colors are based on experience levels from scatterplot
-        
+
         d3.json('data/us-cities.json').then(cityData => {
-            const stateJobs = vis.data.filter(job => {
-                const jobState = job.location.split(',').pop().trim();
-                return jobState === stateName || 
-                       (jobState.length === 2 && vis.stateAbbreviations[jobState] === stateName);
-            });
-    
+            // Use cached state jobs if available
+            const stateJobs = vis.stateJobsMap[stateName] || [];
+
             const jobCircles = vis.chart.selectAll('.job-circle')
                 .data(stateJobs)
                 .join('circle')
@@ -403,8 +368,9 @@ class GeoMap {
                 .attr('r', d => Math.sqrt(d.avg_salary) / 100)
                 .attr('fill', d => colorScale(d.experience_level))
                 .attr('stroke', 'black')
-                .attr('stroke-width', 0.2);
-    
+                .attr('stroke-width', 0.2)
+                .style('cursor', 'pointer');
+
             jobCircles
                 .on('mouseover', (event, d) => {
                     vis.tooltip
@@ -414,7 +380,7 @@ class GeoMap {
                                 ${d.company}
                             </div>
                             <div>Title: ${d.primary_title}</div>
-                            <div>Salary: $${d.avg_salary.toLocaleString()}</div>
+                            <div>Salary: ${d.avg_salary.toLocaleString()}</div>
                             <div>Location: ${d.location}</div>
                         `)
                         .style('left', (event.pageX + vis.config.tooltipPadding) + 'px')
@@ -428,7 +394,29 @@ class GeoMap {
                 .on('mouseout', () => {
                     vis.tooltip.style('opacity', 0);
                 });
+        }).catch(error => {
+            console.error("Error loading city data:", error);
         });
+    }
+
+    resetZoom() {
+        let vis = this;
+
+        // Clear job circles
+        vis.chart.selectAll('.job-circle').remove();
+
+        // Smoothly reset the zoom
+        vis.chart.transition()
+            .duration(750)
+            .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})scale(1)`)
+            .on("end", () => {
+                vis.selectedState = null;
+            });
+
+        // Reset bubble chart if needed
+        if (vis.bubbleChart && vis.selectedState) {
+            vis.bubbleChart.filterByState(null);
+        }
     }
 
     // used for bidirectional linking
@@ -438,17 +426,23 @@ class GeoMap {
 
     zoomToState(state) {
         let vis = this;
-        
+
+        // If state is an abbreviation, convert it to full name
         const stateName = vis.stateAbbreviations[state] || state;
+
+        // Find the state feature
         const stateFeature = topojson.feature(vis.us, vis.us.objects.states).features
-        .find(d => d.properties.name === stateName);
-        
+            .find(d => d.properties.name === stateName);
+
         if (stateFeature) {
-            if (vis.selectedState) {
-             //   vis.resetZoom();
+            if (vis.selectedState === stateName) {
+                // If already selected, reset zoom
+                vis.selectedState = null;
+                vis.resetZoom();
+            } else {
+                // Otherwise zoom to state
+                vis.handleStateClick(null, stateFeature);
             }
-            vis.handleStateClick(null, stateFeature);
         }
     }
-
 }
