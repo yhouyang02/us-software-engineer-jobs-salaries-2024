@@ -49,7 +49,7 @@ d3.csv("./data/salaries.csv").then(data => {
         .style("border", "1px solid #ddd")
         .style("padding", "8px")
         .style("border-radius", "5px")
-        .style("font-size", "12px")
+        .style("font-size", "14px")
         .style("visibility", "hidden")
         .style("pointer-events", "none");
 
@@ -120,11 +120,13 @@ d3.csv("./data/salaries.csv").then(data => {
             .on("mouseover", (event, d) => {
                 let tooltipContent = `
                     <strong>Company:</strong> ${d["Company"]} <br>
-                    <strong>Primary Title:</strong> ${d["Primary Title"]} <br>
+                    
                 `;
 
-                if (d["Secondary Title"] && d["Secondary Title"] !== "N/A") {
-                    tooltipContent += `<strong>Secondary Title:</strong> ${d["Secondary Title"]} <br>`;
+                if (d["Secondary Title"] && d["Secondary Title"] !== "n/a") {
+                    tooltipContent += `<strong>Title:</strong> ${d["Primary Title"]} (${d["Secondary Title"]})<br>`;
+                } else {
+                    tooltipContent += `<strong>Title:</strong> ${d["Primary Title"]} <br>`;
                 }
 
                 tooltipContent += `
