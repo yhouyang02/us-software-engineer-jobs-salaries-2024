@@ -233,8 +233,8 @@ class BubbleChart {
                 vis.tooltip.style("opacity", 1);
                 vis.tooltip.html(`
                     <strong>${d.company}</strong><br>
-                    Avg Salary: $${d.avg_salary.toLocaleString()}<br>
                     Rating: ${d.company_score}<br>
+                    Avg Salary: $${d.avg_salary.toLocaleString()}<br>
                     Location: ${d.location}
                 `);
             })
