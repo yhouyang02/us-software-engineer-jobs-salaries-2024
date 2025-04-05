@@ -9,26 +9,32 @@
 </head>
 
 
-
-
 <body>
 
-    <div id="container">
-        <h1 id="title">US Software Engineer <br> Jobs & Salaries 2024</h1>
+       <div id="container">
+        <div id="main-content">
+            <!-- Left Column: Title + Map -->
+            <div id="left-column">
+            <h1 id="title">US Software Engineer <br> Jobs & Salaries 2024</h1>
 
-        <div id="top-container">
+            <div class="map-section">
+                <p class="view-title">Jobs per State</p>
+                <div id="map">
+                <svg id="map-svg"></svg>
+                </div>
+            </div>
+            </div>
+
+            <!-- Right Column: Charts -->
+            <div id="right-column">
+            <p class="view-title">Average Salary and Company Rating</p>
             <div id="bubble-chart">
-                <p class="view-title">Average Salary and Company Rating</p>
                 <svg id="bubble-svg"></svg>
             </div>
-            <div id="map">
-                <p class="view-title">Jobs per State</p>
-                <svg id="map-svg"></svg>
-            </div>
-        </div>
-        <div id="scatter-plot">
+
             <p class="view-title">Average Salary by Company</p>
-            <div class="container">
+            <div id="scatter-plot">
+                <div class="container">
                 <label for="job-title">Filter by Job Title: </label>
                 <select id="job-title">
                     <option value="All">All Job Titles</option>
@@ -36,23 +42,26 @@
 
                 <div class="legend-container">
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #68ff68;"></div> Entry
+                    <div class="legend-color" style="background: #68ff68;"></div> Entry
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #65c1ff;"></div> Intermediate
+                    <div class="legend-color" style="background: #65c1ff;"></div> Intermediate
                     </div>
                     <div class="legend-item">
-                        <div class="legend-color" style="background: #c88bff;"></div> Senior
+                    <div class="legend-color" style="background: #c88bff;"></div> Senior
                     </div>
                 </div>
+                </div>
+
+                <div class="tooltip"></div>
+                <svg id="chart"></svg>
             </div>
-
-            <div class="tooltip"></div>
-            <svg id="chart"></svg>
-
-            <script src="scatter_chart.js"></script>
+            </div>
         </div>
+        </div>
+
     </div>
+
 
     <script src="js/d3.v6.min.js"></script>
     <script src="js/topojson.min.js"></script>

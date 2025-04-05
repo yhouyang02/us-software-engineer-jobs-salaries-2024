@@ -125,8 +125,18 @@ class GeoMap {
             .style('border-radius', '4px')
             .style('pointer-events', 'none');
 
-        vis.colorScale = d3.scaleSequential(d3.interpolateBlues)
-            .domain([0, 100]);
+    vis.colorScale = d3.scaleSequential()
+  .domain([0, 100]) // lowest to highest
+  .interpolator(d3.piecewise(d3.interpolateRgb, [
+      "#ffffff",
+      "#dfeced",
+      "#c0d9dc",
+      "#a0c6ca",
+      "#80b3b9",
+      "#5ea1a8",
+      "#368f98"
+  ]));
+
 
         Promise.all([
             d3.json('data/us-states.json')
@@ -146,15 +156,15 @@ class GeoMap {
         let vis = this;
 
         const legendGroup = vis.svg.append("g")
+            .attr("class", "legend-group")
             .attr("transform", `translate(${vis.width - vis.config.legendRight - vis.config.legendRectWidth - 50},${vis.config.legendTop})`);
 
         // Add legend title
         legendGroup.append("text")
+            .attr("class", "legend-title")
             .attr("x", vis.config.legendRectWidth / 2)
             .attr("y", -10)
             .attr("text-anchor", "middle")
-            .style("font-size", "14px")
-            .style("font-weight", "bold")
             .text("Number of Jobs");
 
         const legendGradient = vis.svg.append("defs")
@@ -172,11 +182,12 @@ class GeoMap {
             .attr("stop-color", d => d.color);
 
         legendGroup.append("rect")
+            .attr("class", "legend-gradient-rect")
             .attr("width", vis.config.legendRectWidth)
             .attr("height", vis.config.legendRectHeight)
             .style("fill", "url(#legend-gradient)");
 
-        // Create legend axis scale
+        // Legend axis
         const legendScale = d3.scaleLinear()
             .domain([0, 100])
             .range([0, vis.config.legendRectWidth]);
@@ -186,11 +197,12 @@ class GeoMap {
             .tickSize(4)
             .tickFormat(d3.format("d"));
 
-        // Append legend axis
         legendGroup.append("g")
+            .attr("class", "legend-axis")
             .attr("transform", `translate(0, ${vis.config.legendRectHeight})`)
             .call(legendAxis);
     }
+
 
     /**
      * Process data and aggregate job counts by state
@@ -261,7 +273,7 @@ class GeoMap {
                 vis.tooltip
                     .style('opacity', 1)
                     .html(`
-                <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+                <div style="text-align: center; font-weight: bold; margin-bottom: 5px; color: black;">
                   ${stateName}
                 </div>
                 <div>Total Jobs: ${jobCount}</div>
@@ -377,7 +389,7 @@ class GeoMap {
                     vis.tooltip
                         .style('opacity', 1)
                         .html(`
-                            <div style="text-align: center; font-weight: bold; margin-bottom: 5px;">
+                            <div style="text-align: center; font-weight: bold; margin-bottom: 5px; color: black;">
                                 ${d.company}
                             </div>
                             <div>Title: ${d.primary_title}</div>

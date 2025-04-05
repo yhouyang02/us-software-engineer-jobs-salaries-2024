@@ -1,8 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     text-align: center;
+    background-color: #0d121e;
+    color: white;
+    background-image: url("../images/background.png");
+    background-repeat: repeat;
+    background-size: auto;
+    height: 100vh;
+    overflow: hidden;
 }
 
 #title {
@@ -10,41 +17,62 @@ body {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
+    text-align: left;
+    color: white;
     line-height: 1.2;
+    width: calc(100% - 40px);
 }
 
-#container {
+#main-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-#top-container {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    height: calc(100vh - 100px);
     width: 100%;
+    gap: 20px;
+    padding: 0 20px 20px 20px;
+    box-sizing: border-box;
 }
 
-#bubble-chart,
 #map {
     flex: 1;
-    /* border: 2px dashed black; place holder */
-    padding: 10px;
     height: 500px;
-    position: relative;
+    border: 2px solid #6249aa;
+    border-radius: 10px;
+    background-color: #131a2a;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 900px;
+}
+
+#right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 20px;
+}
+
+
+#bubble-chart {
+    flex: 1;
+    border: 2px solid #6249aa;
+    border-radius: 10px;
+    background-color: #131a2a;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #scatter-plot {
-    width: 80%;
-    /* border: 2px dashed black; place holder */
-    padding: 10px;
-    height: 500px;
+  flex: none; /* Prevents it from stretching if you're using flex */
+  height: 350px; /* Or whatever height you want */
+  overflow-y: auto;
+  border: 2px solid #6249aa;
+  border-radius: 10px;
+  background-color: #131a2a;
+  padding: 10px;
+  box-sizing: border-box;
 }
+
 
 svg {
     width: 100%;
@@ -54,8 +82,10 @@ svg {
 .view-title {
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 15px;
-    color: #444;
+    margin: 20px 0 0px 0;
+    color: white;
+    text-align: left;
+    width: 100%;
 }
 
 .state {
@@ -76,6 +106,7 @@ svg {
     font-size: 14px;
     visibility: hidden;
     pointer-events: none;
+    color: black;
 }
 
 .legend-container {
@@ -90,6 +121,7 @@ svg {
     align-items: center;
     margin-right: 15px;
     font-size: 12px;
+    color: white;
 }
 
 .legend-color {
@@ -97,4 +129,16 @@ svg {
     height: 12px;
     display: inline-block;
     margin-right: 5px;
+}
+
+.legend-title {
+    font-size: 14px;
+    font-weight: bold;
+    fill: white; 
+}
+
+
+
+.tooltip {
+    color: black !important; 
 }

@@ -70,8 +70,11 @@ class BubbleChart {
             .domain([d3.min(vis.data, d => d.avg_salary), d3.max(vis.data, d => d.avg_salary)])
             .range([1, 13]);
 
-        vis.colorScale = d3.scaleSequential(d3.interpolateRdYlBu)
-            .domain([1, 5]);
+       vis.colorScale = d3.scaleQuantize()
+            .domain([1, 5])
+            .range(["#dd506d", "#ea8a97", "#f1bec3", "#f1f1f1", "#b7cfd2", "#7bafb5", "#368f98"]);
+
+            
 
         // X-Axis
         vis.xAxis = d3.axisBottom(vis.xScale);
@@ -147,6 +150,7 @@ class BubbleChart {
 
         // Append the gradient rectangle
         vis.svg.append("rect")
+        
             .attr("x", legendX)
             .attr("y", legendY)
             .attr("width", legendWidth)
@@ -158,14 +162,12 @@ class BubbleChart {
             .attr("x", legendX)
             .attr("y", legendY + legendHeight + 15)
             .attr("text-anchor", "start")
-            .style("font-size", "12px")
             .text("1.0");
 
         vis.svg.append("text")
             .attr("x", legendX + legendWidth)
             .attr("y", legendY + legendHeight + 15)
             .attr("text-anchor", "end")
-            .style("font-size", "12px")
             .text("5.0");
 
         // Title for the legend
@@ -173,9 +175,6 @@ class BubbleChart {
             .attr("x", legendX + legendWidth / 2)
             .attr("y", legendY - 10)
             .attr("text-anchor", "middle")
-            .style("font-size", "14px")
-            .style("fill", "#333")
-            .style("font-weight", "bold")
             .text("Company Rating");
     }
 
