@@ -25,7 +25,7 @@ d3.csv("./data/salaries.csv").then(data => {
     // dimensions of the graph
 const width = 900,
     initialHeight = 600,
-    margin = { top: 20, right: 20, bottom: 60, left: 300 };
+    margin = { top: 70, right: 20, bottom: 60, left: 300 };
 
 const svg = d3.select("#chart")
     .attr("viewBox", `0 0 ${width} ${initialHeight}`)
@@ -91,8 +91,7 @@ const svg = d3.select("#chart")
 
         // Update X-axis
         xAxisGroup.transition().duration(500)
-            .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
-            .call(d3.axisBottom(xScale));
+            .call(d3.axisTop(xScale));
 
 
         gridGroup.selectAll("line")
@@ -108,9 +107,10 @@ const svg = d3.select("#chart")
             .attr("class", "x-label")
             .attr("text-anchor", "middle")
             .attr("x", (width - margin.left - margin.right) / 2)
-            .attr("y", height - margin.top - margin.bottom + 40)
+            .attr("y", -30)
             .style("fill", "white")
             .text("Average Salary ($)");
+
 
         // binding
         const circles = svg.selectAll(".dot")
