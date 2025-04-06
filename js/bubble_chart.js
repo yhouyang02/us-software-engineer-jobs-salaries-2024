@@ -55,12 +55,20 @@ class BubbleChart {
         vis.bubbleGroup = vis.svg.append("g")
             .attr("class", "bubble-group")
             .attr("transform", `translate(${vis.config.margin.left},${vis.config.margin.top})`);
+        vis.svg.append("rect")
+            .attr("class", "x-axis-bg")
+            .attr("x", 0)
+            .attr("y", vis.config.containerHeight - vis.config.margin.bottom)
+            .attr("width", vis.config.containerWidth)
+            .attr("height", vis.config.margin.bottom)
+            .attr("fill", "#131a2a");
 
         // Group for the x-axis
         vis.xAxisGroupFixed = vis.svg.append("g")
             .attr("class", "x-axis-group")
             // Place the x-axis at the bottom of the drawing area
             .attr("transform", `translate(${vis.config.margin.left},${vis.config.containerHeight - vis.config.margin.bottom})`);
+        // X-axis background bar
 
         vis.xAxisLabelGroup = vis.svg.append("g")
             .attr("class", "x-axis-label-group");
@@ -112,6 +120,7 @@ class BubbleChart {
             .append("rect")
             .attr("width", vis.config.containerWidth)
             .attr("height", 60);
+
     }
 
     /**
