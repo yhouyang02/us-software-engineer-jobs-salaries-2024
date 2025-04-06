@@ -4,7 +4,7 @@ class GeoMap {
             parentElement: _config.parentElement,
             containerWidth: 900,
             containerHeight: 500,
-            margin: { top: 10, right: 10, bottom: 10, left: 10 },
+            margin: { top: 10, right: 40, bottom: 10, left: -50},
             tooltipPadding: 10,
             legendTop: 20,
             legendRight: 20,
@@ -154,9 +154,30 @@ class GeoMap {
     createLegend() {
         let vis = this;
 
+        const legendX = vis.width - vis.config.legendRight - vis.config.legendRectWidth - 9;
+        const legendY = vis.config.legendTop + 13;
+
         const legendGroup = vis.svg.append("g")
             .attr("class", "legend-group")
-            .attr("transform", `translate(${vis.width - vis.config.legendRight - vis.config.legendRectWidth - 50},${vis.config.legendTop})`);
+            .attr("transform", `translate(${legendX},${legendY})`);
+
+
+        // css colors
+        // border: 2px solid #6249aa;
+        // border-radius: 10px;
+        // background-color: #131a2a;
+        // Added background
+        legendGroup.append("rect")
+            .attr("class", "legend-background")
+            .attr("x", -15)
+            .attr("y", -30)
+            .attr("width", vis.config.legendRectWidth + 30)
+            .attr("height", vis.config.legendRectHeight + 60)
+            .attr("fill", "#131a2a")
+            .attr("stroke", "#6249aa")
+            .attr("stroke-width", 2)
+            .attr("rx", 6)
+            .attr("ry", 6);
 
         // Add legend title
         legendGroup.append("text")
@@ -201,6 +222,7 @@ class GeoMap {
             .attr("transform", `translate(0, ${vis.config.legendRectHeight})`)
             .call(legendAxis);
     }
+
 
 
     /**
@@ -306,6 +328,10 @@ class GeoMap {
                     vis.resetZoom();
                 }
             });
+
+
+
+
     }
 
     // Click on state to zoom in & display city jobs
@@ -329,7 +355,7 @@ class GeoMap {
         }
 
         vis.selectedState = clickedState;
-        d3.select("#selected-state").text("Selected state: " + clickedState);
+        d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState +  " again to view all states.");
 
         const bounds = vis.geoPath.bounds(d);
         const dx = bounds[1][0] - bounds[0][0];

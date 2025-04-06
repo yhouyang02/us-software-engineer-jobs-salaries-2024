@@ -25,7 +25,7 @@ d3.csv("./data/salaries.csv").then(data => {
     // dimensions of the graph
 const width = 900,
     initialHeight = 600,
-    margin = { top: 20, right: 140, bottom: 60, left: 180 };
+    margin = { top: 20, right: 20, bottom: 60, left: 300 };
 
 const svg = d3.select("#chart")
     .attr("viewBox", `0 0 ${width} ${initialHeight}`)
@@ -85,10 +85,20 @@ const svg = d3.select("#chart")
         yAxisGroup.transition().duration(500)
             .call(d3.axisLeft(yScale));
 
+
+        yAxisGroup.selectAll("text")
+            .style("font-size", "15px")
+
         // Update X-axis
         xAxisGroup.transition().duration(500)
             .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
             .call(d3.axisBottom(xScale));
+
+
+        gridGroup.selectAll("line")
+            .style("stroke", "white")
+            .style("stroke-opacity", 0.5);
+
 
         // end transition
 
@@ -117,6 +127,7 @@ const svg = d3.select("#chart")
             .attr("stroke", "black")
             .attr("stroke-width", 1)
             .on("mouseover", (event, d) => {
+                d3.select(event.currentTarget).style("cursor", "pointer");
                 let tooltipContent = `
                     <strong>Company:</strong> ${d["Company"]} <br>
                     
@@ -133,10 +144,21 @@ const svg = d3.select("#chart")
                     <strong>Avg Salary:</strong> $${d["Avg Salary"]}
                 `;
 
-                customTooltip.style("visibility", "visible")
-                    .html(tooltipContent)
-                    .style("left", (event.pageX + 10) + "px")
+                customTooltip.html(tooltipContent)
+                    .style("visibility", "visible");
+
+                const tooltipWidth = customTooltip.node().offsetWidth;
+                const pageWidth = window.innerWidth;
+
+                let leftPos = event.pageX + 10;
+                if (event.pageX + tooltipWidth + 20 > pageWidth) {
+                    leftPos = event.pageX - tooltipWidth - 10;
+                }
+
+                customTooltip
+                    .style("left", leftPos + "px")
                     .style("top", (event.pageY - 10) + "px");
+
             })
             .on("mouseout", () => {
                 customTooltip.style("visibility", "hidden");

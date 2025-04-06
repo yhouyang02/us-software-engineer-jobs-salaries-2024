@@ -147,8 +147,26 @@ class BubbleChart {
 
         const legendWidth = 150,
             legendHeight = 15,
-            legendX = vis.config.margin.left + 20, // Move to upper left 
-            legendY = vis.config.margin.top + 20; // Adjusted Y position
+            legendX = vis.config.margin.left + 8, // Move to upper left
+            legendY = vis.config.margin.top + 26; // Adjusted Y position
+
+        // Adding the background box for the legend
+        const paddingX = 15;
+        const totalBoxWidth = legendWidth + paddingX * 2;
+        const totalBoxHeight = legendHeight + 45;
+
+        // Background box with border
+        vis.svg.append("rect")
+            .attr("x", legendX - paddingX)
+            .attr("y", legendY - 35)
+            .attr("width", totalBoxWidth)
+            .attr("height", totalBoxHeight + 15)
+            .attr("fill", "#131a2a")
+            .attr("stroke", "#6249aa")
+            .attr("stroke-width", 2)
+            .attr("rx", 6)
+            .attr("ry", 6);
+
 
         // Append legend gradient inside the main SVG 
         const defs = vis.svg.append("defs");
@@ -263,8 +281,16 @@ class BubbleChart {
                 `);
             })
             .on("mousemove", (event) => {
+                const tooltipWidth = vis.tooltip.node().offsetWidth;
+                const pageWidth = window.innerWidth;
+
+                let leftPos = event.pageX + 10;
+                if (event.pageX + tooltipWidth + 20 > pageWidth) {
+                    leftPos = event.pageX - tooltipWidth - 10;
+                }
+
                 vis.tooltip
-                    .style("left", (event.pageX + 10) + "px")
+                    .style("left", leftPos + "px")
                     .style("top", (event.pageY - 20) + "px");
             })
             .on("mouseleave", (event) => {
