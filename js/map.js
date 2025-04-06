@@ -111,6 +111,17 @@ class GeoMap {
             .translate([vis.width / 2, vis.height / 2])
             .scale(vis.width);
 
+        vis.currentTransform = d3.zoomIdentity;
+
+        vis.zoom = d3.zoom()
+            .scaleExtent([1, 8])
+            .on('zoom', (event) => {
+                vis.currentTransform = event.transform;
+                vis.chart.attr('transform', event.transform);
+            });
+
+        vis.svg.call(vis.zoom);
+
         vis.geoPath = d3.geoPath()
             .projection(vis.projection);
 
@@ -146,6 +157,27 @@ class GeoMap {
             vis.updateVis();
             vis.createLegend();
         });
+    }
+
+
+    resetZoom() {
+        let vis = this;
+        vis.selectedState = null;
+
+        vis.chart.selectAll('.job-circle').remove();
+
+        vis.svg.transition().duration(750)
+            .call(vis.zoom.transform, d3.zoomIdentity);
+
+        vis.chart.selectAll('.state')
+            .attr('stroke-width', 1)
+            .attr('stroke', 'black')
+            .attr('filter', null)
+            .attr('fill', d => {
+                const stateName = d.properties.name;
+                const count = vis.stateJobCounts.get(stateName) || 0;
+                return vis.colorScale(count);
+            });
     }
 
     /**
@@ -314,21 +346,12 @@ class GeoMap {
 
                 vis.tooltip.style('opacity', 0);
             })
+            .attr('pointer-events', 'all')
             .on('click', function (event, d) {
                 vis.handleStateClick(event, d);
             })
-            // hacky wheel zoom in and out functionality
-            // if you want proper zoom, copy the one from bubble_chart.js
-            .on('wheel', function (event, d) {
-                event.preventDefault(); // prevent default zoom behavior
-                if (event.deltaY < 0) {
-                    vis.handleStateClick(event, d);
-                } else {
-                    vis.selectedState = null;
-                    vis.resetZoom();
-                }
-            });
-
+        // hacky wheel zoom in and out functionality
+        // if you want proper zoom, copy the one from bubble_chart.js
 
 
 
@@ -351,37 +374,39 @@ class GeoMap {
                 .style("margin-block-end", "0em")
                 .html("<br>");
 
-
             // Reset bubble chart to show all bubbles
             if (vis.bubbleChart) {
                 vis.bubbleChart.filterByState(null);
             }
 
             return;
+        } else {
+
+            vis.selectedState = clickedState;
+            d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState + " again to view all states.");
+
+            const bounds = vis.geoPath.bounds(d);
+            const dx = bounds[1][0] - bounds[0][0];
+            const dy = bounds[1][1] - bounds[0][1];
+            const x = (bounds[0][0] + bounds[1][0]) / 2;
+            const y = (bounds[0][1] + bounds[1][1]) / 2;
+            const scale = 0.9 / Math.max(dx / vis.width, dy / vis.height);
+            const translate = [vis.width / 2 - scale * x, vis.height / 2 - scale * y];
+
+            // Filter bubble chart to show only bubbles in this state
+            if (vis.bubbleChart) {
+                vis.bubbleChart.filterByState(clickedState);
+            }
+
+            vis.svg.transition()
+                .duration(900)
+                .call(vis.zoom.transform, d3.zoomIdentity
+                    .translate(translate[0], translate[1])
+                    .scale(scale))
+                .on("end", () => {
+                    vis.displayCityJobs(clickedState);
+                });
         }
-
-        vis.selectedState = clickedState;
-        d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState + " again to view all states.");
-
-        const bounds = vis.geoPath.bounds(d);
-        const dx = bounds[1][0] - bounds[0][0];
-        const dy = bounds[1][1] - bounds[0][1];
-        const x = (bounds[0][0] + bounds[1][0]) / 2;
-        const y = (bounds[0][1] + bounds[1][1]) / 2;
-        const scale = 0.9 / Math.max(dx / vis.width, dy / vis.height);
-        const translate = [vis.width / 2 - scale * x, vis.height / 2 - scale * y];
-
-        // Filter bubble chart to show only bubbles in this state
-        if (vis.bubbleChart) {
-            vis.bubbleChart.filterByState(clickedState);
-        }
-
-        vis.chart.transition()
-            .duration(750)
-            .attr("transform", `translate(${translate})scale(${scale})`)
-            .on("end", () => {
-                vis.displayCityJobs(clickedState);
-            });
     }
 
     displayCityJobs(stateName) {
@@ -454,13 +479,8 @@ class GeoMap {
         vis.chart.selectAll('.job-circle').remove();
 
         // Smoothly reset the zoom
-        vis.chart.transition()
-            .duration(950)
-            .ease(d3.easeCubicOut)
-            .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})scale(1)`)
-            .on("end", () => {
-                vis.selectedState = null;
-            });
+          vis.svg.transition().duration(750)
+            .call(vis.zoom.transform, d3.zoomIdentity);
 
         // Reset bubble chart if needed
         if (vis.bubbleChart && vis.selectedState) {
@@ -487,7 +507,7 @@ class GeoMap {
             if (vis.selectedState === stateName) {
                 // If already selected, reset zoom
                 vis.selectedState = null;
-                vis.resetZoom();
+                //vis.resetZoom();
             } else {
                 // Otherwise zoom to state
                 vis.handleStateClick(null, stateFeature);

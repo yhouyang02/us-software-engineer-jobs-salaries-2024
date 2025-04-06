@@ -23,16 +23,16 @@ d3.csv("./data/salaries.csv").then(data => {
         .range(["#68ff68", "#65c1ff", "#c88bff"]);
 
     // dimensions of the graph
-const width = 900,
-    initialHeight = 600,
-    margin = { top: 70, right: 20, bottom: 60, left: 300 };
+    const width = 900,
+        initialHeight = 600,
+        margin = { top: 70, right: 20, bottom: 60, left: 300 };
 
-const svg = d3.select("#chart")
-    .attr("viewBox", `0 0 ${width} ${initialHeight}`)
-    .attr("preserveAspectRatio", "xMidYMid meet")
-    .attr("width", "100%")
-    .append("g")
-    .attr("transform", `translate(${margin.left},${margin.top})`);
+    const svg = d3.select("#chart")
+        .attr("viewBox", `0 0 ${width} ${initialHeight}`)
+        .attr("preserveAspectRatio", "xMidYMid meet")
+        .attr("width", "100%")
+        .append("g")
+        .attr("transform", `translate(${margin.left},${margin.top})`);
 
 
     // x and y axis groups
@@ -61,7 +61,7 @@ const svg = d3.select("#chart")
         const companies = [...new Set(filteredData.map(d => d["Company"]))].sort();
         const rowSpacing = 25;
         const height = companies.length * rowSpacing + margin.top + margin.bottom;
-       d3.select("#chart").attr("viewBox", `0 0 ${width} ${height}`);
+        d3.select("#chart").attr("viewBox", `0 0 ${width} ${height}`);
 
 
         // xscale and yscale

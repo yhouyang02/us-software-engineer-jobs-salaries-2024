@@ -126,27 +126,37 @@ class BubbleChart {
     /**
      * Preprocess data to optimize simulation
      */
-    preprocessData() {
-        let vis = this;
+   preprocessData() {
+    let vis = this;
 
-        // Group data by rating buckets for better visualization
-        vis.groupedData = d3.group(vis.data, d => Math.round(d.company_score * 2) / 2); // Round to nearest 0.5
+    // Group data by rating buckets
+    vis.groupedData = d3.group(vis.data, d => Math.round(d.company_score * 2) / 2);
 
-        // Pre-calculate node positions for optimization
-        vis.data.forEach(d => {
-            d.clusterX = Math.max(
-                vis.config.margin.left,
-                Math.min(vis.xScale(d.company_score), vis.width)
-            );
+    // Pre-calculate node positions for optimization
+    vis.data.forEach(d => {
+        d.clusterX = Math.max(
+            vis.config.margin.left,
+            Math.min(vis.xScale(d.company_score), vis.width)
+        );
+        // Set an initial y-position
+        d.clusterY = vis.height / 2 + (Math.random() - 0.5) * 100;
+    });
 
-            // Stagger Y positions to prevent too much overlap initially
-            d.clusterY = vis.height / 2 + (Math.random() - 0.5) * 100;
+    // Set up and run the simulation to pre-compute positions
+    vis.simulation = d3.forceSimulation(vis.data)
+        .alphaDecay(0.05)
+        .velocityDecay(0.3)
+        .force("x", d3.forceX(d => d.clusterX).strength(0.8))
+        .force("y", d3.forceY(vis.height / 2).strength(0.1))
+        .force("collide", d3.forceCollide(d => vis.radiusScale(d.avg_salary) + 1).iterations(2));
 
-            // Store original position for reset
-            d.originalX = d.clusterX;
-            d.originalY = vis.height / 2 + (Math.random() - 0.5) * 100;
-        });
+    // Run the simulation for a number of ticks
+    const simulationSteps = 100;
+    for (let i = 0; i < simulationSteps; ++i) {
+        vis.simulation.tick();
     }
+}
+
 
     /**
      * Creates a color legend
