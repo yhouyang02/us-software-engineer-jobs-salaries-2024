@@ -178,7 +178,12 @@ class GeoMap {
                 const count = vis.stateJobCounts.get(stateName) || 0;
                 return vis.colorScale(count);
             });
+
+        if (vis.bubbleChart && vis.selectedState) {
+            vis.bubbleChart.filterByState(null);
+        }
     }
+
 
     /**
      * Create legend for job counts
@@ -321,7 +326,7 @@ class GeoMap {
 
                 d3.select(this)
                     .attr('stroke-width', 2)
-                    .attr('stroke', '#333');
+                    .attr('stroke', '#4D4D4D');
 
                 vis.tooltip
                     .style('opacity', 1)
@@ -384,6 +389,19 @@ class GeoMap {
 
             vis.selectedState = clickedState;
             d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState + " again to view all states.");
+            vis.chart.selectAll('.state')
+                .transition()
+                .duration(300)
+                .attr('fill', d => {
+                    const stateName = d.properties.name;
+                    const count = vis.stateJobCounts.get(stateName) || 0;
+
+                    if (stateName === clickedState) {
+                        return vis.colorScale(count); // normal color for selected
+                    } else {
+                        return "#d3d3d3"; // light gray for others
+                    }
+                });
 
             const bounds = vis.geoPath.bounds(d);
             const dx = bounds[1][0] - bounds[0][0];
@@ -406,6 +424,7 @@ class GeoMap {
                 .on("end", () => {
                     vis.displayCityJobs(clickedState);
                 });
+
         }
     }
 
@@ -470,22 +489,6 @@ class GeoMap {
         }).catch(error => {
             console.error("Error loading city data:", error);
         });
-    }
-
-    resetZoom() {
-        let vis = this;
-
-        // Clear job circles
-        vis.chart.selectAll('.job-circle').remove();
-
-        // Smoothly reset the zoom
-          vis.svg.transition().duration(750)
-            .call(vis.zoom.transform, d3.zoomIdentity);
-
-        // Reset bubble chart if needed
-        if (vis.bubbleChart && vis.selectedState) {
-            vis.bubbleChart.filterByState(null);
-        }
     }
 
     // used for bidirectional linking
