@@ -2,9 +2,9 @@ class BubbleChart {
     constructor(_config, _data) {
         this.config = {
             parentElement: _config.parentElement,
-            containerWidth: 900,
+            containerWidth: 1000,
             containerHeight: 375,
-            margin: { top: 50, right: 50, bottom: 50, left: 50 }
+            margin: { top: 10, right: 50, bottom: 50, left: 10 }
         };
 
         this.data = _data;
@@ -22,15 +22,17 @@ class BubbleChart {
         vis.height = vis.config.containerHeight - vis.config.margin.top - vis.config.margin.bottom;
 
         vis.svg = d3.select(vis.config.parentElement)
-            .attr("width", vis.config.containerWidth)
-            .attr("height", vis.config.containerHeight);
+            .attr("viewBox", `0 0 ${vis.config.containerWidth} ${vis.config.containerHeight}`)
+            .attr("preserveAspectRatio", "xMidYMid meet")
+            .style("width", "100%")
+            .style("height", "auto");
+
 
         // Append group for zoom
         vis.chartGroup = vis.svg.append("g")
-            .attr("transform", `translate(${vis.config.margin.left - 50},${vis.config.margin.top})`);
+            .attr("transform", `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
         // Click blank space to reset zoom (bubble and map)
-        // @see map.initVis()
         vis.chartGroup.append("rect")
             .attr("class", "background")
             .attr("width", vis.width + 100) // Make it cover the full chart area
@@ -50,15 +52,24 @@ class BubbleChart {
 
         // Define rating ranges (buckets)
         vis.ratingBuckets = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
+        vis.bubbleGroup = vis.svg.append("g")
+            .attr("class", "bubble-group")
+            .attr("transform", `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
+        // Group for the x-axis
         vis.xAxisGroupFixed = vis.svg.append("g")
-            .attr("transform", `translate(${vis.config.margin.left - 50},${vis.config.margin.top + vis.height + 60})`);
-        vis.svg.append("text")
+            .attr("class", "x-axis-group")
+            // Place the x-axis at the bottom of the drawing area
+            .attr("transform", `translate(${vis.config.margin.left},${vis.config.containerHeight - vis.config.margin.bottom})`);
+
+        vis.xAxisLabelGroup = vis.svg.append("g")
+            .attr("class", "x-axis-label-group");
+        vis.xAxisLabelGroup.append("text")
             .attr("class", "x-axis-label")
             .attr("x", vis.config.containerWidth / 2)
-            .attr("y", vis.config.containerHeight + 50)
+            .attr("y", vis.config.containerHeight - 10)
             .attr("text-anchor", "middle")
-            .style("font-size", "14px")
+            .style("fill", "white")
             .text("Company Rating");
 
         // Define X Scale for clusters
@@ -68,13 +79,12 @@ class BubbleChart {
 
         vis.radiusScale = d3.scaleSqrt()
             .domain([d3.min(vis.data, d => d.avg_salary), d3.max(vis.data, d => d.avg_salary)])
-            .range([1, 13]);
+            .range([1, 9]);
 
-       vis.colorScale = d3.scaleQuantize()
+        vis.colorScale = d3.scaleQuantize()
             .domain([1, 5])
             .range(["#dd506d", "#ea8a97", "#f1bec3", "#f1f1f1", "#b7cfd2", "#7bafb5", "#368f98"]);
 
-            
 
         // X-Axis
         vis.xAxis = d3.axisBottom(vis.xScale);
@@ -94,6 +104,14 @@ class BubbleChart {
         vis.createZoom();
         vis.preprocessData();
         vis.updateVis();
+
+        // Append a clip path to limit the x-axis drawing area
+        vis.svg.append("defs")
+            .append("clipPath")
+            .attr("id", "clip-x-axis")
+            .append("rect")
+            .attr("width", vis.config.containerWidth)
+            .attr("height", 60);
     }
 
     /**
@@ -107,7 +125,11 @@ class BubbleChart {
 
         // Pre-calculate node positions for optimization
         vis.data.forEach(d => {
-            d.clusterX = vis.xScale(d.company_score);
+            d.clusterX = Math.max(
+                vis.config.margin.left,
+                Math.min(vis.xScale(d.company_score), vis.width)
+            );
+
             // Stagger Y positions to prevent too much overlap initially
             d.clusterY = vis.height / 2 + (Math.random() - 0.5) * 100;
 
@@ -126,7 +148,7 @@ class BubbleChart {
         const legendWidth = 150,
             legendHeight = 15,
             legendX = vis.config.margin.left + 20, // Move to upper left 
-            legendY = vis.config.margin.top + 10; // Adjusted Y position
+            legendY = vis.config.margin.top + 20; // Adjusted Y position
 
         // Append legend gradient inside the main SVG 
         const defs = vis.svg.append("defs");
@@ -150,7 +172,7 @@ class BubbleChart {
 
         // Append the gradient rectangle
         vis.svg.append("rect")
-        
+
             .attr("x", legendX)
             .attr("y", legendY)
             .attr("width", legendWidth)
@@ -162,12 +184,14 @@ class BubbleChart {
             .attr("x", legendX)
             .attr("y", legendY + legendHeight + 15)
             .attr("text-anchor", "start")
+            .style("fill", "white")
             .text("1.0");
 
         vis.svg.append("text")
             .attr("x", legendX + legendWidth)
             .attr("y", legendY + legendHeight + 15)
             .attr("text-anchor", "end")
+            .style("fill", "white")
             .text("5.0");
 
         // Title for the legend
@@ -175,7 +199,8 @@ class BubbleChart {
             .attr("x", legendX + legendWidth / 2)
             .attr("y", legendY - 10)
             .attr("text-anchor", "middle")
-            .text("Company Rating");
+            .text("Company Rating")
+            .style("fill", "white");
     }
 
     /**
@@ -185,13 +210,13 @@ class BubbleChart {
         let vis = this;
 
         vis.zoom = d3.zoom()
-            .scaleExtent([0.9, 3]) // Set zoom limits
-            .translateExtent([[0, 0], [vis.width, vis.height]])
+            .scaleExtent([1, 3])
+            .translateExtent([[0, 0], [vis.config.containerWidth, vis.config.containerHeight]])
             .on("zoom", (event) => {
-                // Zoom the chart group (bubbles)
-                vis.chartGroup.attr("transform", event.transform);
-
-                let newXScale = event.transform.rescaleX(vis.xScale);
+                const transform = event.transform;
+                // Combine the original translation with the zoom transform
+                vis.bubbleGroup.attr("transform", `translate(${vis.config.margin.left + transform.x}, ${vis.config.margin.top + transform.y}) scale(${transform.k})`);
+                const newXScale = transform.rescaleX(vis.xScale);
                 vis.xAxisGroupFixed.call(vis.xAxis.scale(newXScale));
             });
 
@@ -204,8 +229,8 @@ class BubbleChart {
     updateVis() {
         let vis = this;
 
-        // Enter-update-exit (performance enhance)
-        vis.bubbles = vis.chartGroup.selectAll("circle.bubble")
+        // Enter-update-exit
+        vis.bubbles = vis.bubbleGroup.selectAll("circle.bubble")
             .data(vis.data, d => d.id);
 
         // Remove old elements
@@ -280,7 +305,7 @@ class BubbleChart {
 
         // Apply the calculated positions
         vis.bubbles
-            .attr("cx", d => d.x)
+            .attr("cx", d => Math.max(vis.config.margin.left, Math.min(d.x, vis.width)))
             .attr("cy", d => d.y)
             .attr("transform", "translate(0,0)"); // Reset any transform
 
@@ -289,6 +314,8 @@ class BubbleChart {
             d.initialX = d.x;
             d.initialY = d.y;
         });
+
+
     }
 
     // used for bidirectional linking
@@ -367,7 +394,6 @@ class BubbleChart {
             .force("y", d3.forceY(vis.height / 2).strength(0.1))
             .force("collide", d3.forceCollide(d => vis.radiusScale(d.avg_salary) + 1).iterations(2))
             .stop();
-
         // Run the simulation in controlled steps
         const simulationSteps = 100;
         for (let i = 0; i < simulationSteps; ++i) {

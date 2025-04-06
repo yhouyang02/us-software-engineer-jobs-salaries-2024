@@ -81,14 +81,13 @@ class GeoMap {
 
         // Initialize SVG
         vis.svg = d3.select(vis.config.parentElement)
-            .attr('width', vis.config.containerWidth)
-            .attr('height', vis.config.containerHeight);
+            .attr("viewBox", `0 0 ${vis.config.containerWidth} ${vis.config.containerHeight}`)
+            .attr("preserveAspectRatio", "xMidYMid meet");
 
         vis.chart = vis.svg.append('g')
             .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})`);
 
         // Click blank space to reset zoom (bubble and map)
-        // @see bubble_chart.initVis()
         vis.chart.append("rect")
             .attr("class", "background")
             .attr("width", vis.width)
@@ -125,17 +124,17 @@ class GeoMap {
             .style('border-radius', '4px')
             .style('pointer-events', 'none');
 
-    vis.colorScale = d3.scaleSequential()
-  .domain([0, 100]) // lowest to highest
-  .interpolator(d3.piecewise(d3.interpolateRgb, [
-      "#ffffff",
-      "#dfeced",
-      "#c0d9dc",
-      "#a0c6ca",
-      "#80b3b9",
-      "#5ea1a8",
-      "#368f98"
-  ]));
+        vis.colorScale = d3.scaleSequential()
+            .domain([0, 100]) // lowest to highest
+            .interpolator(d3.piecewise(d3.interpolateRgb, [
+                "#ffffff",
+                "#dfeced",
+                "#c0d9dc",
+                "#a0c6ca",
+                "#80b3b9",
+                "#5ea1a8",
+                "#368f98"
+            ]));
 
 
         Promise.all([
@@ -319,6 +318,8 @@ class GeoMap {
             vis.selectedState = null;
             vis.resetZoom();
 
+            d3.select("#selected-state").text("Selected state: All");
+
             // Reset bubble chart to show all bubbles
             if (vis.bubbleChart) {
                 vis.bubbleChart.filterByState(null);
@@ -328,6 +329,8 @@ class GeoMap {
         }
 
         vis.selectedState = clickedState;
+        d3.select("#selected-state").text("Selected state: " + clickedState);
+
         const bounds = vis.geoPath.bounds(d);
         const dx = bounds[1][0] - bounds[0][0];
         const dy = bounds[1][1] - bounds[0][1];
@@ -420,7 +423,8 @@ class GeoMap {
 
         // Smoothly reset the zoom
         vis.chart.transition()
-            .duration(750)
+            .duration(950)
+            .ease(d3.easeCubicOut)
             .attr('transform', `translate(${vis.config.margin.left},${vis.config.margin.top})scale(1)`)
             .on("end", () => {
                 vis.selectedState = null;

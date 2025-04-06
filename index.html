@@ -11,54 +11,57 @@
 
 <body>
 
-       <div id="container">
+    <div id="container">
         <div id="main-content">
             <!-- Left Column: Title + Map -->
             <div id="left-column">
-            <h1 id="title">US Software Engineer <br> Jobs & Salaries 2024</h1>
+                <h1 id="title">US Software Engineer <br> Jobs & Salaries 2024</h1>
 
-            <div class="map-section">
-                <p class="view-title">Jobs per State</p>
-                <div id="map">
-                <svg id="map-svg"></svg>
+                <div class="map-section">
+                    <p class="view-title">Jobs per State</p>
+                    <div id="map">
+                        <svg id="map-svg"></svg>
+                    </div>
+                    <div id="selected-state" style="text-align: center; margin-top: 10px;">
+                    Selected state: All
+                    </div>
                 </div>
-            </div>
             </div>
 
             <!-- Right Column: Charts -->
             <div id="right-column">
-            <p class="view-title">Average Salary and Company Rating</p>
-            <div id="bubble-chart">
-                <svg id="bubble-svg"></svg>
-            </div>
-
-            <p class="view-title">Average Salary by Company</p>
-            <div id="scatter-plot">
-                <div class="container">
-                <label for="job-title">Filter by Job Title: </label>
-                <select id="job-title">
-                    <option value="All">All Job Titles</option>
-                </select>
-
-                <div class="legend-container">
-                    <div class="legend-item">
-                    <div class="legend-color" style="background: #68ff68;"></div> Entry
-                    </div>
-                    <div class="legend-item">
-                    <div class="legend-color" style="background: #65c1ff;"></div> Intermediate
-                    </div>
-                    <div class="legend-item">
-                    <div class="legend-color" style="background: #c88bff;"></div> Senior
-                    </div>
-                </div>
+                <p class="view-title-right-column">Average Salary and Company Rating</p>
+                <div id="bubble-chart">
+                    <svg id="bubble-svg"></svg>
                 </div>
 
-                <div class="tooltip"></div>
-                <svg id="chart"></svg>
-            </div>
+                <p class="view-title-right-column">Average Salary by Job</p>
+                <div id="scatter-plot">
+                    <div class="container">
+                        <label for="job-title">Filter by Job Title: </label>
+                        <select id="job-title">
+                            <option value="All">All Job Titles</option>
+                        </select>
+
+                        <div class="legend-container">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #68ff68;"></div> Entry
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #65c1ff;"></div> Intermediate
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #c88bff;"></div> Senior
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tooltip"></div>
+                    <svg id="chart"></svg>
+                </div>
             </div>
         </div>
-        </div>
+    </div>
 
     </div>
 

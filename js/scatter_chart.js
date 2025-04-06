@@ -1,13 +1,10 @@
 // loading the salaries, then putting everything in a .then.catch structure
 d3.csv("./data/salaries.csv").then(data => {
-    console.log("data:", data);
-
     // preprocessing data to numbers
     data.forEach(d => {
         d["Avg Salary"] = +d["Avg Salary"];
     });
 
-    console.log("HERE1")
     // using primary titles as the key
     const jobTitles = [...new Set(data.map(d => d["Primary Title"]))].sort();
     const dropdown = d3.select("#job-title");
@@ -19,7 +16,6 @@ d3.csv("./data/salaries.csv").then(data => {
             .text(title);
     });
 
-    console.log("HERE2")
     // creating the scale for entry, intermediate, and senior levels
     const experienceLevels = ["Entry", "Intermediate", "Senior"];
     const colorScale = d3.scaleOrdinal()
@@ -27,13 +23,17 @@ d3.csv("./data/salaries.csv").then(data => {
         .range(["#68ff68", "#65c1ff", "#c88bff"]);
 
     // dimensions of the graph
-    const width = 900,
-        margin = { top: 20, right: 140, bottom: 60, left: 180 };
+const width = 900,
+    initialHeight = 600,
+    margin = { top: 20, right: 140, bottom: 60, left: 180 };
 
-    const svg = d3.select("#chart")
-        .attr("width", width)
-        .append("g")
-        .attr("transform", `translate(${margin.left},${margin.top})`);
+const svg = d3.select("#chart")
+    .attr("viewBox", `0 0 ${width} ${initialHeight}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("width", "100%")
+    .append("g")
+    .attr("transform", `translate(${margin.left},${margin.top})`);
+
 
     // x and y axis groups
     const xAxisGroup = svg.append("g").attr("class", "x-axis");
@@ -53,7 +53,6 @@ d3.csv("./data/salaries.csv").then(data => {
         .style("visibility", "hidden")
         .style("pointer-events", "none");
 
-    console.log("HERE3")
     // updateChart function
     function updateChart(selectedTitle) {
         const filteredData = selectedTitle === "All" ? data : data.filter(d => d["Primary Title"] === selectedTitle);
@@ -62,7 +61,8 @@ d3.csv("./data/salaries.csv").then(data => {
         const companies = [...new Set(filteredData.map(d => d["Company"]))].sort();
         const rowSpacing = 25;
         const height = companies.length * rowSpacing + margin.top + margin.bottom;
-        d3.select("#chart").attr("height", height);
+       d3.select("#chart").attr("viewBox", `0 0 ${width} ${height}`);
+
 
         // xscale and yscale
         const yScale = d3.scaleBand()
@@ -90,8 +90,6 @@ d3.csv("./data/salaries.csv").then(data => {
             .attr("transform", `translate(0,${height - margin.top - margin.bottom})`)
             .call(d3.axisBottom(xScale));
 
-        console.log("successfully set axis group animations")
-
         // end transition
 
         // labels
@@ -101,6 +99,7 @@ d3.csv("./data/salaries.csv").then(data => {
             .attr("text-anchor", "middle")
             .attr("x", (width - margin.left - margin.right) / 2)
             .attr("y", height - margin.top - margin.bottom + 40)
+            .style("fill", "white")
             .text("Average Salary ($)");
 
         // binding
@@ -153,7 +152,6 @@ d3.csv("./data/salaries.csv").then(data => {
     }
 
     updateChart("All");
-    console.log("HERE - updated chart")
     dropdown.on("change", function () { updateChart(this.value); });
 
 }).catch(error => console.log("Error: Data is not loading correctly:", error));
