@@ -3,7 +3,7 @@ class BubbleChart {
         this.config = {
             parentElement: _config.parentElement,
             containerWidth: 1000,
-            containerHeight: 375,
+            containerHeight: 330,
             margin: { top: 10, right: 50, bottom: 50, left: 10 }
         };
 

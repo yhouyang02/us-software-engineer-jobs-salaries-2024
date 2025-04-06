@@ -3,8 +3,8 @@ class GeoMap {
         this.config = {
             parentElement: _config.parentElement,
             containerWidth: 900,
-            containerHeight: 500,
-            margin: { top: 10, right: 40, bottom: 10, left: -50},
+            containerHeight: 450,
+            margin: { top: 10, right: 40, bottom: 10, left: -50 },
             tooltipPadding: 10,
             legendTop: 20,
             legendRight: 20,
@@ -344,7 +344,13 @@ class GeoMap {
             vis.selectedState = null;
             vis.resetZoom();
 
-            d3.select("#selected-state").text("Selected state: All");
+            d3.select("#selected-state")
+                .html("Selected state: All")
+                .append("p")
+                .style("margin-block-start", "0em")
+                .style("margin-block-end", "0em")
+                .html("<br>");
+
 
             // Reset bubble chart to show all bubbles
             if (vis.bubbleChart) {
@@ -355,7 +361,7 @@ class GeoMap {
         }
 
         vis.selectedState = clickedState;
-        d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState +  " again to view all states.");
+        d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState + " again to view all states.");
 
         const bounds = vis.geoPath.bounds(d);
         const dx = bounds[1][0] - bounds[0][0];
