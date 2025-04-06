@@ -93,6 +93,8 @@ d3.csv("./data/salaries.csv").then(data => {
         xAxisGroup.transition().duration(500)
             .call(d3.axisTop(xScale));
 
+        xAxisGroup.selectAll("text")
+            .style("font-size", "13px");
 
         gridGroup.selectAll("line")
             .style("stroke", "white")
