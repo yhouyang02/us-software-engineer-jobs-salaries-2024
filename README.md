@@ -1,4 +1,4 @@
-# US Software Engineer Jobs and Salries 2024
+# US Software Engineer Jobs and Salaries 2024
 
 
 ## Credits: 
