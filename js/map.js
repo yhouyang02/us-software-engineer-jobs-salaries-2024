@@ -174,7 +174,7 @@ class GeoMap {
 
         // Update the selected state label to show "All"
         d3.select("#selected-state")
-            .html("Selected state: All")
+            .html("Selected State: All")
             .append("p")
             .style("margin-block-start", "0em")
             .style("margin-block-end", "0em")
@@ -404,7 +404,7 @@ class GeoMap {
         } else {
 
             vis.selectedState = clickedState;
-            d3.select("#selected-state").html("Selected state: " + clickedState + "<br>Click " + clickedState + " again to view all states.");
+            d3.select("#selected-state").html("Selected State: " + clickedState + "<br>Click " + clickedState + " again to view all states.");
             vis.chart.selectAll('.state')
                 .transition()
                 .duration(300)
