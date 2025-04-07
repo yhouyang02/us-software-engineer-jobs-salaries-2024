@@ -355,10 +355,6 @@ class GeoMap {
             .on('click', function (event, d) {
                 vis.handleStateClick(event, d);
             })
-        // hacky wheel zoom in and out functionality
-        // if you want proper zoom, copy the one from bubble_chart.js
-
-
 
     }
 
@@ -421,7 +417,7 @@ class GeoMap {
                 .call(vis.zoom.transform, d3.zoomIdentity
                     .translate(translate[0], translate[1])
                     .scale(scale))
-                .on("end", () => {
+                .on("start", () => {
                     vis.displayCityJobs(clickedState);
                 });
 
