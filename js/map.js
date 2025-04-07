@@ -100,6 +100,14 @@ class GeoMap {
                     vis.selectedState = null;
                     vis.resetZoom();
 
+                    // Update the selected state label to show "All"
+                    d3.select("#selected-state")
+                        .html("Selected State: All")
+                        .append("p")
+                        .style("margin-block-start", "0em")
+                        .style("margin-block-end", "0em")
+                        .html("<br>");
+
                     // Reset bubble chart as well
                     if (vis.bubbleChart) {
                         vis.bubbleChart.filterByState(null);
@@ -163,6 +171,14 @@ class GeoMap {
     resetZoom() {
         let vis = this;
         vis.selectedState = null;
+
+        // Update the selected state label to show "All"
+        d3.select("#selected-state")
+            .html("Selected state: All")
+            .append("p")
+            .style("margin-block-start", "0em")
+            .style("margin-block-end", "0em")
+            .html("<br>");
 
         vis.chart.selectAll('.job-circle').remove();
 
@@ -373,7 +389,7 @@ class GeoMap {
             vis.resetZoom();
 
             d3.select("#selected-state")
-                .html("Selected state: All")
+                .html("Selected State: All")
                 .append("p")
                 .style("margin-block-start", "0em")
                 .style("margin-block-end", "0em")
