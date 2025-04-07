@@ -20,7 +20,7 @@ d3.csv("./data/salaries.csv").then(data => {
     const experienceLevels = ["Entry", "Intermediate", "Senior"];
     const colorScale = d3.scaleOrdinal()
         .domain(experienceLevels)
-        .range(["#55d355", "#4189b9", "#9c5cd4"]);
+        .range(["#68ff68", "#65c1ff", "#c88bff"]);
 
     // dimensions of the graph
     const width = 900,
