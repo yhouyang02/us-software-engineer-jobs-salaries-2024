@@ -20,7 +20,7 @@ body {
     font-size: 32px;
     font-weight: bold;
     text-transform: uppercase;
-    text-align: left;
+    text-align: center;
     color: white;
     line-height: 1.2;
     width: calc(100% - 40px);

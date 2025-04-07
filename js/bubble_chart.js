@@ -226,6 +226,7 @@ class BubbleChart {
 
         // Append legend labels
         vis.svg.append("text")
+            .attr("class", "legend-item")
             .attr("x", legendX)
             .attr("y", legendY + legendHeight + 15)
             .attr("text-anchor", "start")
@@ -233,6 +234,7 @@ class BubbleChart {
             .text("1.0");
 
         vis.svg.append("text")
+            .attr("class", "legend-item")
             .attr("x", legendX + legendWidth)
             .attr("y", legendY + legendHeight + 15)
             .attr("text-anchor", "end")
@@ -241,6 +243,7 @@ class BubbleChart {
 
         // Title for the legend
         vis.svg.append("text")
+            .attr("class", "legend-title")
             .attr("x", legendX + legendWidth / 2)
             .attr("y", legendY - 10)
             .attr("text-anchor", "middle")
