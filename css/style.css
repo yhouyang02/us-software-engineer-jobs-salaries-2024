@@ -32,7 +32,7 @@ body {
 
 #main-content {
     display: flex;
-    height: calc(100vh - 100px);
+    height: calc(100vh - 200px);
     width: 100%;
     gap: 20px;
     flex-wrap: wrap; 
@@ -82,7 +82,7 @@ body {
 
 #scatter-plot {
   flex: none; 
-  max-height: 80vh;
+  max-height: 75vh;
   width: 75vh;
   overflow-y: auto;
   border: 2px solid #6249aa;
