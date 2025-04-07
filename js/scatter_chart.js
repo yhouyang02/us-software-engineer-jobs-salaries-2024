@@ -25,7 +25,7 @@ d3.csv("./data/salaries.csv").then(data => {
     // dimensions of the graph
     const width = 900,
         initialHeight = 600,
-        margin = { top: 70, right: 20, bottom: 60, left: 300 };
+        margin = { top: 70, right: 20, bottom: 60, left: 350 };
 
     const svg = d3.select("#chart")
         .attr("viewBox", `0 0 ${width} ${initialHeight}`)
