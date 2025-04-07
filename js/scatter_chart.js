@@ -25,7 +25,7 @@ d3.csv("./data/salaries.csv").then(data => {
     // dimensions of the graph
     const width = 900,
         initialHeight = 600,
-        margin = { top: 70, right: 20, bottom: 60, left: 350 };
+        margin = { top: 70, right: 20, bottom: 60, left: 200 };
 
     const svg = d3.select("#chart")
         .attr("viewBox", `0 0 ${width} ${initialHeight}`)
@@ -83,8 +83,7 @@ d3.csv("./data/salaries.csv").then(data => {
 
         // updating x y axis. Adding transitions
         yAxisGroup.transition().duration(500)
-            .call(d3.axisLeft(yScale));
-
+            .call(d3.axisLeft(yScale).tickFormat(d => d.length > 20 ? d.slice(0, 17) + "..." : d));
 
         yAxisGroup.selectAll("text")
             .style("font-size", "15px")
