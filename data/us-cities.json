@@ -1062,5 +1062,9 @@
     "Lexington, MA": {
         "lat": 42.4473,
         "lng": -71.2272
+    },
+    "Point Mugu NAWC, CA": {
+        "lat": 34.1124,
+        "lng": -119.1024
     }
 }
