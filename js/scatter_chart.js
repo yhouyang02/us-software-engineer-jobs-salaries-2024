@@ -53,9 +53,21 @@ d3.csv("./data/salaries.csv").then(data => {
         .style("visibility", "hidden")
         .style("pointer-events", "none");
 
+
+    let currentSearchTerm = "";
+
+
     // updateChart function
     function updateChart(selectedTitle) {
-        const filteredData = selectedTitle === "All" ? data : data.filter(d => d["Primary Title"] === selectedTitle);
+        // const filteredData = selectedTitle === "All" ? data : data.filter(d => d["Primary Title"] === selectedTitle);
+
+        let filteredData = selectedTitle === "All" ? data : data.filter(d => d["Primary Title"] === selectedTitle);
+
+        if (currentSearchTerm.trim() !== "") {
+            const searchLower = currentSearchTerm.toLowerCase();
+            filteredData = filteredData.filter(d => d["Company"].toLowerCase().includes(searchLower));
+        }
+
 
         // Get unique companies for the filtered data
         const companies = [...new Set(filteredData.map(d => d["Company"]))].sort();
@@ -176,5 +188,12 @@ d3.csv("./data/salaries.csv").then(data => {
 
     updateChart("All");
     dropdown.on("change", function () { updateChart(this.value); });
+
+    d3.select("#company-search").on("input", function () {
+        currentSearchTerm = this.value;
+        const selectedTitle = dropdown.node().value;
+        updateChart(selectedTitle);
+    });
+
 
 }).catch(error => console.log("Error: Data is not loading correctly:", error));
