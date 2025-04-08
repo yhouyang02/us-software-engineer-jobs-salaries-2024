@@ -58,7 +58,7 @@ class BubbleChart {
                 }
             });
 
-        // Define rating ranges (buckets)
+        // Define rating ranges 
         vis.ratingBuckets = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5];
         vis.bubbleGroup = vis.svg.append("g")
             .attr("class", "bubble-group")
@@ -140,7 +140,7 @@ class BubbleChart {
         // Group data by rating buckets
         vis.groupedData = d3.group(vis.data, d => Math.round(d.company_score * 2) / 2);
 
-        // Pre-calculate node positions for optimization
+        // Pre-calculate node positions
         vis.data.forEach(d => {
             d.clusterX = Math.max(
                 vis.config.margin.left,
@@ -150,7 +150,7 @@ class BubbleChart {
             d.clusterY = vis.height / 2 + (Math.random() - 0.5) * 100;
         });
 
-        // Set up and run the simulation to pre-compute positions
+        // run the simulation 
         vis.simulation = d3.forceSimulation(vis.data)
             .alphaDecay(0.05)
             .velocityDecay(0.3)
@@ -158,7 +158,7 @@ class BubbleChart {
             .force("y", d3.forceY(vis.height / 2).strength(0.1))
             .force("collide", d3.forceCollide(d => vis.radiusScale(d.avg_salary) + 1).iterations(2));
 
-        // Run the simulation for a number of ticks
+        // Run the simulation for 100 ticks
         const simulationSteps = 100;
         for (let i = 0; i < simulationSteps; ++i) {
             vis.simulation.tick();
@@ -353,7 +353,7 @@ class BubbleChart {
             .force("collide", d3.forceCollide(d => vis.radiusScale(d.avg_salary) + 1).iterations(2))
             .stop(); // Don't start automatically
 
-        // Run the simulation in controlled steps
+        // Run the simulation 
         const simulationSteps = 100;
         for (let i = 0; i < simulationSteps; ++i) {
             vis.simulation.tick();
@@ -485,7 +485,7 @@ class BubbleChart {
             .force("collide", d3.forceCollide(d => vis.radiusScale(d.avg_salary) + 1).iterations(2))
             .stop();
 
-        // Run the simulation in controlled steps
+        // Run the simulation
         const simulationSteps = 50; // Fewer steps for better performance
         for (let i = 0; i < simulationSteps; ++i) {
             vis.simulation.tick();

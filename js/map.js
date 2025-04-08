@@ -208,7 +208,7 @@ class GeoMap {
         let vis = this;
 
         const legendX = vis.width - vis.config.legendRight - vis.config.legendRectWidth - 9;
-        const legendY = vis.config.legendTop + 13;
+        const legendY = vis.config.legendTop + 20;
 
         const legendGroup = vis.svg.append("g")
             .attr("class", "legend-group")
@@ -274,6 +274,12 @@ class GeoMap {
             .attr("class", "legend-axis")
             .attr("transform", `translate(0, ${vis.config.legendRectHeight})`)
             .call(legendAxis);
+
+        legendGroup.select(".legend-axis path").remove();
+
+        legendGroup
+            .attr("transform", `translate(${legendX},${legendY}) scale(1.2)`);
+
     }
 
 
