@@ -207,8 +207,8 @@ class GeoMap {
     createLegend() {
         let vis = this;
 
-        const legendX = vis.width - vis.config.legendRight - vis.config.legendRectWidth - 9;
-        const legendY = vis.config.legendTop + 20;
+        const legendX = vis.width - vis.config.legendRight - vis.config.legendRectWidth - 15;
+        const legendY = vis.config.legendTop + 350;
 
         const legendGroup = vis.svg.append("g")
             .attr("class", "legend-group")
